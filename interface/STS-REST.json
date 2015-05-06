@@ -79,7 +79,6 @@
   },
   "definitions" : {
     "Anvenderkontekst" : {
-      "summary" : "Anvenderkontekst (user context)",
       "description" : "An Anvenderkontekst (user context)",
       "required" : [
         "Cvr"
@@ -107,7 +106,6 @@
       }
     },
     "RequestSecurityToken" : {
-      "summary" : "A RequestSecurityToken message",
       "description" : "A `RequestSecurityToken` message",
       "required" : [
         "AppliesTo",
@@ -117,9 +115,17 @@
       ],
       "properties" : {
         "AppliesTo" : {
-          "EndpointReference" : {
-            "Address" : {
-              "type" : "string"
+          "type" : "object",
+          "title" : "AppliesTo",
+          "properties" : {
+            "EndpointReference" : {
+              "title" : "EndpointReference",
+              "type" : "object",
+              "properties" : {
+                "Address" : {
+                  "type" : "string"
+                }
+              }
             }
           }
         },
@@ -138,10 +144,7 @@
         "Anvenderkontekst" : {
           "title" : "Anvenderkontekst",
           "description" : "The Anvenderkontekst for this token",
-          "type" : "object",
-          "schema" : {
-            "$ref" : "#/definitions/Anvenderkontekst"
-          }
+          "$ref" : "#/definitions/Anvenderkontekst"
         },
         "OnBehalfOf" : {
           "title" : "OnBehalfOf",
@@ -151,17 +154,20 @@
       }
     },
     "RequestSecurityTokenResponse" : {
-      "summary" : "A RequestSecurityTokenResponse message",
       "description" : "A RequestSecurityTokenResponse message",
       "properties" : {
         "AppliesTo" : {
           "type" : "object",
           "title" : "AppliesTo",
-          "EndpointReference" : {
-            "type" : "object",
-            "title" : "EndpointReference",
-            "Address" : {
-              "type" : "string"
+          "properties" : {
+            "EndpointReference" : {
+              "title" : "EndpointReference",
+              "type" : "object",
+              "properties" : {
+                "Address" : {
+                  "type" : "string"
+                }
+              }
             }
           }
         },
@@ -176,9 +182,11 @@
         "RequestedSecurityToken" : {
           "type" : "object",
           "title" : "RequestedSecurityToken",
-          "Assertion" : {
-            "type" : "string",
-            "description" : "The base64 encoded value of the issued SAML2.0 token"
+          "properties" : {
+            "Assertion" : {
+              "type" : "string",
+              "description" : "The base64 encoded value of the issued SAML2.0 token"
+            }
           }
         },
         "RequestType" : {
