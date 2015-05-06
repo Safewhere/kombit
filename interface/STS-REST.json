@@ -1,0 +1,195 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "STS REST Service",
+    "description" : "This document describes an interface where tokens can be requested using a REST interface, instead of the WS-Trust variant also supported.",
+    "contact" : {
+      "name" : "Martin Strandbygaard / Safewhere"
+    }
+  },
+  "schemes" : [
+    "https"
+  ],
+  "consumes" : [
+    "application/json"
+  ],
+  "produces" : [
+    "application/json"
+  ],
+  "paths" : {
+    "/api/rest/wstrust/v1/issue" : {
+      "post" : {
+        "summary" : "Request a new SAML2.0 assertion",
+        "description" : "Request a new SAML2.0 assertion",
+        "tags" : [
+          "STS"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The RequestWstrustToken element",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/RequestSecurityToken"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/RequestSecurityTokenResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Anvenderkontekst" : {
+      "summary" : "Anvenderkontekst (user context)",
+      "description" : "An Anvenderkontekst (user context)",
+      "required" : [
+        "Cvr"
+      ],
+      "properties" : {
+        "Cvr" : {
+          "type" : "string",
+          "description" : "The CVR of the organization this Anvenderkontekst (user context) represents"
+        }
+      }
+    },
+    "Error" : {
+      "required" : [
+        "code",
+        "message"
+      ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RequestSecurityToken" : {
+      "summary" : "A RequestSecurityToken message",
+      "description" : "A `RequestSecurityToken` message",
+      "required" : [
+        "AppliesTo",
+        "KeyType",
+        "RequestType",
+        "TokenType"
+      ],
+      "properties" : {
+        "AppliesTo" : {
+          "EndpointReference" : {
+            "Address" : {
+              "type" : "string"
+            }
+          }
+        },
+        "KeyType" : {
+          "type" : "string",
+          "description" : "The type of key in use"
+        },
+        "RequestType" : {
+          "type" : "string",
+          "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
+        },
+        "TokenType" : {
+          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
+          "type" : "string"
+        },
+        "Anvenderkontekst" : {
+          "title" : "Anvenderkontekst",
+          "description" : "The Anvenderkontekst for this token",
+          "type" : "object",
+          "schema" : {
+            "$ref" : "#/definitions/Anvenderkontekst"
+          }
+        },
+        "OnBehalfOf" : {
+          "title" : "OnBehalfOf",
+          "description" : "The bootstrap token for the user this token should be issued on behalf of",
+          "type" : "string"
+        }
+      }
+    },
+    "RequestSecurityTokenResponse" : {
+      "summary" : "A RequestSecurityTokenResponse message",
+      "description" : "A RequestSecurityTokenResponse message",
+      "properties" : {
+        "AppliesTo" : {
+          "type" : "object",
+          "title" : "AppliesTo",
+          "EndpointReference" : {
+            "type" : "object",
+            "title" : "EndpointReference",
+            "Address" : {
+              "type" : "string"
+            }
+          }
+        },
+        "KeyType" : {
+          "type" : "string",
+          "description" : "The type of key in use"
+        },
+        "Lifetime" : {
+          "type" : "string",
+          "description" : "The lifetime of the issued token"
+        },
+        "RequestedSecurityToken" : {
+          "type" : "object",
+          "title" : "RequestedSecurityToken",
+          "Assertion" : {
+            "type" : "string",
+            "description" : "The base64 encoded value of the issued SAML2.0 token"
+          }
+        },
+        "RequestType" : {
+          "type" : "string",
+          "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
+        },
+        "TokenType" : {
+          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

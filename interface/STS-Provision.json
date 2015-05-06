@@ -1,0 +1,1839 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "Provisioning service",
+    "description" : "Provisioning service for Støttesystem STS",
+    "contact" : {
+      "name" : "Martin Strandbygaard / Safewhere"
+    }
+  },
+  "schemes" : [
+    "https"
+  ],
+  "consumes" : [
+    "application/json"
+  ],
+  "produces" : [
+    "application/json"
+  ],
+  "paths" : {
+    "/Anvendersystemer" : {
+      "get" : {
+        "summary" : "Get a list of all Anvendersystem (user system)",
+        "description" : "Get a list of all Anvendersystem (user system)",
+        "tags" : [
+          "Service"
+        ],
+        "operationId" : "getAllAnvendersystem",
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response. List of id's of all Anvendersystem objects",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create a new Anvendersystem (user system)",
+        "description" : "Create a new `Anvendersystem` (user system)",
+        "tags" : [
+          "Service"
+        ],
+        "operationId" : "createAnvendersystem",
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The Anvendersystem (user system) to create",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Anvendersystem"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id}" : {
+      "delete" : {
+        "summary" : "Delete a specific Anvendersystem (user system)",
+        "operationId" : "deleteAnvendersystemById",
+        "description" : "Delete a specific `Anvendersystem` object.",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system) to delete",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id}/Anvenderkontekster" : {
+      "put" : {
+        "summary" : "Add a list of Anvenderkontekster (user context) to to the list of Anvenderkontekster for this Anvendersystem (user system)",
+        "operationId" : "addAnvenderkontekstByAnvendersystemId",
+        "description" : "Add a list of Anvenderkontekster (user context) to to the list of Anvenderkontekster for this Anvendersystem (user system)",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "A list of Anvenderkontekster to add to the list of Anvenderkontekster for this Anvendersystem",
+            "required" : true,
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Anvenderkontekst"
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id1}/Anvenderkontekster/{id2}" : {
+      "delete" : {
+        "summary" : "Delete a specific Anvenderkontekst (user context) from this Anvendersystem (user system)",
+        "operationId" : "deleteAnvenderkontekstByAnvendersystemId",
+        "description" : "Delete a specific Anvenderkontekst (user context) from this Anvendersystem (user system)",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id1",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "id2",
+            "in" : "path",
+            "description" : "The CVR of the Anvenderkontekst to delete",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id}/ImpersonationAssignments" : {
+      "put" : {
+        "summary" : "Add ImpersonationAssignments on an Anvendersystem (user system)",
+        "operationId" : "addImpersonationAssignmentsByAnvendersystemId",
+        "description" : "Add an ImpersonationAssignments on an `Anvendersystem`",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The list of ImpersonationAssignments to add",
+            "required" : true,
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ImpersonationAssignment"
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete an ImpersonationAssignment on an Anvendersystem (user system)",
+        "operationId" : "deleteImpersonationAssignmentByAnvendersystemId",
+        "description" : "Delete an ImpersonationAssignment on an `Anvendersystem`",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The ImpersonationAssignment to delete",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/ImpersonationAssignment"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id}/RoleAssignments" : {
+      "put" : {
+        "summary" : "Add a list of RoleAssignments to to the list of RoleAssignments for this Anvendersystem (user system)",
+        "operationId" : "addRoleAssignmentByAnvendersystemId",
+        "description" : "Add a list of RoleAssignments to to the list of RoleAssignments for this Anvendersystem (user system). The role assignments are added to the list, and the existing ones are left unchanged. If a role assignment already in the list, is added, then the existing role assignment is replaced with the one being added.",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "A list of RoleAssignments to add to the list of RoleAssignments for this Anvendersystem",
+            "required" : true,
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/RoleAssignment"
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete a specific RoleAssignment from this Anvendersystem (user system)",
+        "operationId" : "deleteRoleAssignmentByAnvendersystemId",
+        "description" : "Delete a specific RoleAssignment from this Anvendersystem (user system)",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The specification for the RoleAssignment to delete",
+            "required" : true,
+            "schema" : {
+              "title" : "RoleAssignmentSpec",
+              "type" : "object",
+              "properties" : {
+                "Anvenderkontekst" : {
+                  "type" : "string",
+                  "description" : "The Anvenderkontekst (user context) for the role assignment to delete. The Anvenderkontekst is specified as the CVR of the organization."
+                },
+                "ServiceId" : {
+                  "type" : "string",
+                  "description" : "The Id of the service for the role assignment to delete"
+                },
+                "ServicesystemrolleId" : {
+                  "type" : "string",
+                  "description" : "The Id (claim type) of the Servicesystemrolle to delete"
+                }
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Anvendersystemer/{id}/OcesCertifikater" : {
+      "put" : {
+        "summary" : "Add an OCES Certifikat on a specific Anvendersystem (user system)",
+        "operationId" : "addOcesCertifikatByAnvendersystemId",
+        "description" : "Add an OCES Certifikat on a specific `Anvendersystem` object.",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The OCES Certifikat to add",
+            "required" : true,
+            "schema" : {
+              "type" : "string",
+              "items" : {
+                "title" : "OcesCertificate",
+                "type" : "object",
+                "properties" : {
+                  "Base64" : {
+                    "type" : "string",
+                    "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete an OCES Certifikat on a specific Anvendersystem (user system)",
+        "operationId" : "deleteOcesCertifikatByAnvendersystemIdAndCertificate",
+        "description" : "Delete an OCES Certifikat on a specific `Anvendersystem` object.",
+        "tags" : [
+          "Service"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system)",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The OCES Certifikat to delete",
+            "required" : true,
+            "schema" : {
+              "type" : "string",
+              "items" : {
+                "title" : "OcesCertificate",
+                "type" : "object",
+                "properties" : {
+                  "Base64" : {
+                    "type" : "string",
+                    "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Service" : {
+      "get" : {
+        "summary" : "Get a list of all Service",
+        "description" : "Get a list of all Service",
+        "tags" : [
+          "Service"
+        ],
+        "operationId" : "getAllService",
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response. A list of id's of all Service objects",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create a new Service",
+        "description" : "Create a new `Service`",
+        "tags" : [
+          "Service"
+        ],
+        "operationId" : "createService",
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The service to create",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Service/{id}" : {
+      "delete" : {
+        "summary" : "Delete a specific service",
+        "description" : "Delete a specific `Service`",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service to delete",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Service/{id}/ServiceMetadata" : {
+      "put" : {
+        "summary" : "Add service metadata to the list of service metadata on this service",
+        "description" : "Add service metadata to the list of service metadtaa on the specified `Service`",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The service metadata to add",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/ServiceMetadata"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Service/{id1}/ServiceMetadata/{id2}" : {
+      "delete" : {
+        "summary" : "Delete a version of service metadata",
+        "description" : "Delete a version of service metadata",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id1",
+            "in" : "path",
+            "description" : "The id of the service",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "id2",
+            "in" : "path",
+            "description" : "The id of the metadata to delete",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Servicesystemroller" : {
+      "get" : {
+        "summary" : "Get all Servicesystemrolle",
+        "description" : "Get all Servicesystemrolle",
+        "tags" : [
+          "Role"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response. A list of id's of all Servicesystemroller (service system roles)",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create a new Servicesystemrolle",
+        "description" : "Create a new`Servicesystemrolle`",
+        "tags" : [
+          "Role"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The Servicesystemrolle to create",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Servicesystemrolle"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Servicesystemroller/{id}" : {
+      "delete" : {
+        "summary" : "Delete a specific Servicesystemrolle",
+        "description" : "Delete a specific `Servicesystemrolle`",
+        "tags" : [
+          "Role"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Servicesystemrolle to delete",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Servicesystemroller/{id}/Aktiveringstidspunkt" : {
+      "put" : {
+        "summary" : "Set the activation time for the specified service system role",
+        "description" : "Set the activation time for the specified service system role",
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service system role to add activation times for",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The activation time to set",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Aktiveringstidspunkt"
+            }
+          }
+        ],
+        "tags" : [
+          "Role"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Servicesystemroller/{id}/Dataafgraensningstyper" : {
+      "put" : {
+        "summary" : "Add a Dataafgraensningstype to the Servicesystemrolle",
+        "description" : "Add a Dataafgraensningstype to the Servicesystemrolle",
+        "tags" : [
+          "Role"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service system role to add a Dataafgraensningstype for",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "description" : "The Dataafgraensningstype to add",
+            "required" : true,
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Dataafgraensningstype"
+              }
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Servicesystemroller/{id1}/Dataafgraensningstyper/{id2}" : {
+      "delete" : {
+        "summary" : "Delete a Dataafgraensningstype from the Servicesystemrolle",
+        "description" : "Delete a Dataafgraensningstype from the Servicesystemrolle",
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id1",
+            "in" : "path",
+            "description" : "The id of the service system role",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "id2",
+            "in" : "path",
+            "description" : "The id of the Dataafgraensningstype to delete",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "tags" : [
+          "Role"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Aktiveringstidspunkt" : {
+      "description" : "Aktiveringstidspunkt (activation time). A time ranges, when an object is enabled.",
+      "properties" : {
+        "Sluttidspunkt" : {
+          "type" : "string",
+          "description" : "The end time for this Aktiveringstidspunkt (activation time)"
+        },
+        "Starttidspunkt" : {
+          "type" : "string",
+          "description" : "The start time for this Aktiveringstidspunkt (activation time)"
+        }
+      }
+    },
+    "Anvenderkontekst" : {
+      "description" : "An Anvenderkontekst (user context)",
+      "required" : [
+        "Cvr"
+      ],
+      "properties" : {
+        "Aktiveringstidspunkt" : {
+          "description" : "The Aktiveringstidspunkt (activation time) during which, the Anvenderkontekst (user context) is enabled.",
+          "$ref" : "#/definitions/Aktiveringstidspunkt"
+        },
+        "Cvr" : {
+          "type" : "string",
+          "description" : "The CVR of the organization this Anvenderkontekst (user context) represents"
+        }
+      }
+    },
+    "Anvendersystem" : {
+      "description" : "An Anvendersystem (user system)",
+      "required" : [
+        "Id"
+      ],
+      "properties" : {
+        "Id" : {
+          "type" : "string",
+          "description" : "The unique id of this Anvendsystem (user system). This property is required to e.g. delete an Anvendersystem (user system)."
+        },
+        "Anvenderkontekster" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Anvenderkontekst"
+          }
+        },
+        "OcesCertifikater" : {
+          "type" : "array",
+          "description" : "A list of certificates for this Anvendersystem (user system).",
+          "items" : {
+            "title" : "OcesCertifikat",
+            "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data.",
+            "type" : "string"
+          }
+        },
+        "RoleAssignments" : {
+          "description" : "A list of Servicesystemrolle (service system roles) assigned to this Anvendersystem (user system).",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Servicesystemrolle"
+          }
+        },
+        "ImpersonationAssignments" : {
+          "description" : "A list of impersonation assignments (service system roles) assigned to this Anvendersystem (user system).",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ImpersonationAssignment"
+          }
+        }
+      }
+    },
+    "Dataafgraensningstype" : {
+      "description" : "A Dataafgraensningstype (data restriction type)",
+      "required" : [
+        "Id",
+        "SyntaxDefinition"
+      ],
+      "properties" : {
+        "Id" : {
+          "description" : "The Id (namespace) of this Dataafgrænsningstype (data restriction type)",
+          "type" : "string"
+        },
+        "SyntaxDefinition" : {
+          "description" : "Definition of the syntax that is used to define this data restriction",
+          "type" : "string"
+        },
+        "PresentationPreference" : {
+          "description" : "The presentation preference of this data restriction type",
+          "type" : "string"
+        },
+        "ValidationService" : {
+          "description" : "The URL of a validation service",
+          "type" : "string"
+        },
+        "PresentationName" : {
+          "description" : "The presentation name of this data restriction type",
+          "type" : "string"
+        },
+        "Description" : {
+          "description" : "A description of this data restriction type",
+          "type" : "string"
+        },
+        "Values" : {
+          "description" : "A list of data restriction values for this data restriction type",
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "required" : [
+        "code",
+        "message"
+      ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RoleAssignment" : {
+      "description" : "The relation between an Anvendersystem (user system) and assigned Servicesystemrolle for a Service",
+      "required" : [
+        "Anvenderkontekst",
+        "ServiceId",
+        "ServicesystemrolleId"
+      ],
+      "properties" : {
+        "Anvenderkontekst" : {
+          "type" : "string",
+          "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
+        },
+        "Dataafgraensningstyper" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Dataafgraensningstype"
+          }
+        },
+        "ServiceId" : {
+          "type" : "string",
+          "description" : "The Id of the service this role assignment applies to"
+        },
+        "ServicesystemrolleId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceMetadata" : {
+      "description" : "Metadata for a service",
+      "required" : [
+        "Aktiveringstidspunkt",
+        "Identifier"
+      ],
+      "properties" : {
+        "Id" : {
+          "type" : "string",
+          "description" : "The Id of this SAML metadata document"
+        },
+        "Aktiveringstidspunkt" : {
+          "description" : "The Aktiveringstidspunkt, when the Service Metadata is enabled.",
+          "$ref" : "#/definitions/Aktiveringstidspunkt"
+        },
+        "Identifier" : {
+          "type" : "string",
+          "description" : "The identifier for this service"
+        }
+      }
+    },
+    "Service" : {
+      "description" : "A service",
+      "required" : [
+        "Id",
+        "ServiceType"
+      ],
+      "properties" : {
+        "Id" : {
+          "type" : "string",
+          "description" : "The SAML2.0 EntityId of the service. The EntityId must be globally unique within the federation, and cannot be shared by any other service, identity provider or user system."
+        },
+        "ServiceType" : {
+          "type" : "string",
+          "description" : "The type of this service"
+        },
+        "ServiceMetadata" : {
+          "description" : "A list of SAML2.0 metadata for this service",
+          "items" : {
+            "$ref" : "#/definitions/ServiceMetadata"
+          }
+        }
+      }
+    },
+    "Servicesystemrolle" : {
+      "description" : "Servicesystemrolle (service system role). A Servicesystemrolle (service system role) is related to exactly one `Service`. A `Service` can have 0 or more `Servicesystemrolle` related.",
+      "required" : [
+        "Id",
+        "Version",
+        "Aktiveringstidspunkt"
+      ],
+      "properties" : {
+        "Id" : {
+          "type" : "string",
+          "description" : "The id of the role."
+        },
+        "Version" : {
+          "type" : "string",
+          "description" : "The version of the user system role. This is also the SAML2.0 attribute name (claim type) of the SAML attribute that is issued in the user token."
+        },
+        "Aktiveringstidspunkt" : {
+          "description" : "An Aktiveringstidspunkt (activation time), when this Servicesystemrolle (service system role) is enabled.",
+          "$ref" : "#/definitions/Aktiveringstidspunkt"
+        },
+        "Dataafgraensningstyper" : {
+          "description" : "A list of Dataafgraensningstyper (data restriction types) this Servicesystemrolle supports",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Dataafgraensningstype"
+          }
+        }
+      }
+    },
+    "ImpersonationAssignment" : {
+      "description" : "The relation between an Anvenderkontekst (user context) and OCES certificate for an Anvendersystem",
+      "required" : [
+        "Anvenderkontekst",
+        "OcesCertificate",
+        "Aktiveringstidspunkt"
+      ],
+      "properties" : {
+        "Anvenderkontekst" : {
+          "type" : "string",
+          "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
+        },
+        "OcesCertificate" : {
+          "type" : "string",
+          "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
+        },
+        "Aktiveringstidspunkt" : {
+          "description" : "The Aktiveringstidspunkt, when the impersonation assignment is active",
+          "$ref" : "#/definitions/Aktiveringstidspunkt"
+        }
+      }
+    }
+  }
+}
