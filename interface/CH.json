@@ -2996,6 +2996,10 @@
     },
     "Brugersystemrolle" : {
       "description" : "Brugersystemrolle (user system role). A `Brugersystemrolle` (user system role) is related to exactly one `BrugervendtSystem`. A `BrugervendtSystem` can have 0 or more `Brugersystemrolle` related.",
+      "required" : [
+        "Id",
+        "Version"
+      ],
       "properties" : {
         "Id" : {
           "type" : "string",
