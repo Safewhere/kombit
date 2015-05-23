@@ -3084,65 +3084,6 @@
         }
       }
     },
-    "IdentityProvider" : {
-      "description" : "An identity provider.",
-      "required" : [
-        "Id",
-        "Beskrivelse",
-        "AssuranceLevel",
-        "KenderRoller",
-        "Mobilvenlig",
-        "Praesentationsnavn",
-        "SamlMetadata"
-      ],
-      "properties" : {
-        "Id" : {
-          "type" : "string",
-          "description" : "The SAML2.0 EntityId of the IdentityProvider. The SAML2.0 EntityId must be globally unique within the federation, and thus cannot be used by any other identity provider or user system."
-        },
-        "Anvenderkontekster" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/Anvenderkontekst"
-          }
-        },
-        "AssuranceLevel" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "The supported assurance level of this IdentityProvider"
-        },
-        "Beskrivelse" : {
-          "type" : "string",
-          "description" : "Describes this identity provider"
-        },
-        "KenderRoller" : {
-          "type" : "boolean",
-          "description" : "Specifies is this IdentityProvider issue JobFunktionsRoller (job function roles)"
-        },
-        "Mobilvenlig" : {
-          "type" : "boolean",
-          "description" : "Specifies if this IdentityProvider should be enabled for mobile use"
-        },
-        "Praesentationsnavn" : {
-          "type" : "string",
-          "description" : "The name this identity provider will be presented as to the user"
-        },
-        "SamlMetadata" : {
-          "description" : "A list SAML2.0 metadata documents for this IdentityProvider",
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/SamlMetadata"
-          }
-        },
-        "IpAdresser" : {
-          "description" : "A list of IP addresses. If a user comes from one of these IP addresses, then this identity provider will be automatically selected, if it is the only identity provider for which the addreses are registered.",
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        }
-      }
-    },
     "Jobfunktionsrolle" : {
       "description" : "Job funktions rolle (job function role)",
       "properties" : {
