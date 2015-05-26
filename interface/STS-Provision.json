@@ -1698,6 +1698,23 @@
         }
       }
     },
+    "Dataafgraensningsvaerdi" : {
+      "description" : "A Dataafgraensningsvaerdi (data restriction value) for a Dataafgraensningstype (data restriction type)",
+      "required" : [
+        "DataafgraensningstypeId",
+        "Value"
+      ],
+      "properties" : {
+        "DataafgraensningstypeId" : {
+          "description" : "The Dataafgraensningstype (data restriction type) for this Dataafgraensningsvaerdi (data restriction value). This is the ID of the Dataafgraensningstype, which is defined as a URL.",
+          "type" : "string"
+        },
+        "Value" : {
+          "description" : "The value",
+          "type" : "string"
+        }
+      }
+    },
     "Error" : {
       "required" : [
         "code",
@@ -1713,6 +1730,28 @@
         }
       }
     },
+    "ImpersonationAssignment" : {
+      "description" : "The relation between an Anvenderkontekst (user context) and OCES certificate for an Anvendersystem",
+      "required" : [
+        "Anvenderkontekst",
+        "OcesCertificate",
+        "Aktiveringstidspunkt"
+      ],
+      "properties" : {
+        "Anvenderkontekst" : {
+          "type" : "string",
+          "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
+        },
+        "OcesCertificate" : {
+          "type" : "string",
+          "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
+        },
+        "Aktiveringstidspunkt" : {
+          "description" : "The Aktiveringstidspunkt, when the impersonation assignment is active",
+          "$ref" : "#/definitions/Aktiveringstidspunkt"
+        }
+      }
+    },
     "RoleAssignment" : {
       "description" : "The relation between an Anvendersystem (user system) and assigned Servicesystemrolle for a Service",
       "required" : [
@@ -1725,10 +1764,11 @@
           "type" : "string",
           "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
         },
-        "Dataafgraensningstyper" : {
+        "Dataafgraensningsvaerdi" : {
           "type" : "array",
+          "description" : "A list of Dataafgraensningsvaerdi (data restriction values) for this role assignment",
           "items" : {
-            "$ref" : "#/definitions/Dataafgraensningstype"
+            "$ref" : "#/definitions/Dataafgraensningsvaerdi"
           }
         },
         "ServiceId" : {
@@ -1810,28 +1850,6 @@
           "items" : {
             "$ref" : "#/definitions/Dataafgraensningstype"
           }
-        }
-      }
-    },
-    "ImpersonationAssignment" : {
-      "description" : "The relation between an Anvenderkontekst (user context) and OCES certificate for an Anvendersystem",
-      "required" : [
-        "Anvenderkontekst",
-        "OcesCertificate",
-        "Aktiveringstidspunkt"
-      ],
-      "properties" : {
-        "Anvenderkontekst" : {
-          "type" : "string",
-          "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
-        },
-        "OcesCertificate" : {
-          "type" : "string",
-          "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
-        },
-        "Aktiveringstidspunkt" : {
-          "description" : "The Aktiveringstidspunkt, when the impersonation assignment is active",
-          "$ref" : "#/definitions/Aktiveringstidspunkt"
         }
       }
     }
