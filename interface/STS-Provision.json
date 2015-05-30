@@ -1661,8 +1661,7 @@
     "Dataafgraensningstype" : {
       "description" : "A Dataafgraensningstype (data restriction type)",
       "required" : [
-        "Id",
-        "SyntaxDefinition"
+        "Id"
       ],
       "properties" : {
         "Id" : {
@@ -1715,6 +1714,23 @@
         }
       }
     },
+    "Datarestriction" : {
+      "description" : "A data restriction is key,value pair consisting of a data restriction type, and a data restriction value.",
+      "required" : [
+        "Dataafgraensningstype",
+        "Dataafgraensningsvaerdi"
+      ],
+      "properties" : {
+        "Dataafgraensningstype" : {
+          "description" : "The data restriction type",
+          "$ref" : "#/definitions/Dataafgraensningstype"
+        },
+        "Dataafgraensningsvaerdi" : {
+          "description" : "The data restriction value",
+          "$ref" : "#/definitions/Dataafgraensningsvaerdi"
+        }
+      }
+    },
     "Error" : {
       "required" : [
         "code",
@@ -1764,11 +1780,11 @@
           "type" : "string",
           "description" : "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
         },
-        "Dataafgraensningsvaerdi" : {
+        "Datarestrictions" : {
           "type" : "array",
-          "description" : "A list of Dataafgraensningsvaerdi (data restriction values) for this role assignment",
+          "description" : "A list of {data restriction type, data restriction value} for this role assignment. Each role assignment can have multiple data restriction values, and each values is related to a specific type, and this array property captures these key,value-pairs",
           "items" : {
-            "$ref" : "#/definitions/Dataafgraensningsvaerdi"
+            "$ref" : "#/definitions/Datarestriction"
           }
         },
         "ServiceId" : {
@@ -1827,9 +1843,7 @@
     "Servicesystemrolle" : {
       "description" : "Servicesystemrolle (service system role). A Servicesystemrolle (service system role) is related to exactly one `Service`. A `Service` can have 0 or more `Servicesystemrolle` related.",
       "required" : [
-        "Id",
-        "Version",
-        "Aktiveringstidspunkt"
+        "Id"
       ],
       "properties" : {
         "Id" : {
