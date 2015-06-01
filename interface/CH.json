@@ -2997,17 +2997,12 @@
     "Brugersystemrolle" : {
       "description" : "Brugersystemrolle (user system role). A `Brugersystemrolle` (user system role) is related to exactly one `BrugervendtSystem`. A `BrugervendtSystem` can have 0 or more `Brugersystemrolle` related.",
       "required" : [
-        "Id",
-        "Version"
+        "Id"
       ],
       "properties" : {
         "Id" : {
           "type" : "string",
           "description" : "The id of the role."
-        },
-        "Version" : {
-          "type" : "string",
-          "description" : "The version of the user system role. This is also the SAML2.0 attribute name (claim type) of the SAML attribute that is issued in the user token."
         },
         "Aktiveringstidspunkt" : {
           "description" : "The Aktiveringstidspunkt (activation time), when this Brugersystemrolle (user role) is active",
@@ -3145,14 +3140,13 @@
     },
     "Jobfunktionsrolle" : {
       "description" : "Job funktions rolle (job function role)",
+      "required" : [
+        "Id"
+      ],
       "properties" : {
         "Id" : {
           "description" : "The id of the job function role.",
           "type" : "string"
-        },
-        "Version" : {
-          "type" : "string",
-          "description" : "The version of the job function role. This is also the SAML2.0 attribute name (=claim type) of the SAML attribute that is issued in the user token."
         },
         "Aktiveringstidspunkt" : {
           "description" : "The Aktiveringstidspunkt (activation time), when the job function role is enabled.",

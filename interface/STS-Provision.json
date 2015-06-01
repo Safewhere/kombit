@@ -1850,10 +1850,6 @@
           "type" : "string",
           "description" : "The id of the role."
         },
-        "Version" : {
-          "type" : "string",
-          "description" : "The version of the user system role. This is also the SAML2.0 attribute name (claim type) of the SAML attribute that is issued in the user token."
-        },
         "Aktiveringstidspunkt" : {
           "description" : "An Aktiveringstidspunkt (activation time), when this Servicesystemrolle (service system role) is enabled.",
           "$ref" : "#/definitions/Aktiveringstidspunkt"
