@@ -1643,10 +1643,10 @@
           }
         },
         "RoleAssignments" : {
-          "description" : "A list of Servicesystemrolle (service system roles) assigned to this Anvendersystem (user system).",
+          "description" : "A list of RoleAssignments assigned to this Anvendersystem (user system).",
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Servicesystemrolle"
+            "$ref" : "#/definitions/RoleAssignment"
           }
         },
         "ImpersonationAssignments" : {
