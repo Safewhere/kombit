@@ -26,15 +26,15 @@ WSDL for the STS test stub can be downloaded here:
 
 #### STS Test Signing Service
 
-The STS test signing service is available here:
-
-[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STSTestSigningService](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STSTestSigningService)
-
 The STS test signing service can be called with a previously issued SAML assertion as input, and will reply with an updated version of the SAML assertion in which the following elements are updated:
 
 - Id
 - Timestamp
 - Signature
+
+The STS test signing service is available here:
+
+[https://adgangsstyringeksempler.test-stoettesystemerne.dk/STSTestSigningService](https://adgangsstyringeksempler.test-stoettesystemerne.dk/STSTestSigningService)
 
 ## Sample Applications
 
