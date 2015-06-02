@@ -1,0 +1,96 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://docs.oasis-open.org/ws-sx/ws-trust/200512/RST/Issue</a:Action>
+    <a:MessageID u:Id="_3">urn:uuid:47ab786e-9237-4020-b3f7-c88df5c20dbd</a:MessageID>
+    <a:ReplyTo u:Id="_4">
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <a:To s:mustUnderstand="1" u:Id="_6">https://saml.adgangsstyring.test-stoettesystemer.dk/kombit/sts/certificate</a:To>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-3ef074b0-3421-4b9b-9b1e-229f8d09bf84-1">
+        <u:Created>2015-04-20T11:19:26.537Z</u:Created>
+        <u:Expires>2015-04-20T11:24:26.537Z</u:Expires>
+      </u:Timestamp>
+      <o:BinarySecurityToken u:Id="uuid-4915065f-3afa-49f0-97d8-6c15c89be584-4" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">MIIDCTCCAfGgAwIBAgIQUVsdCkocHoVDJ6QI5LEMcDANBgkqhkiG9w0BAQsFADAnMRQwEgYKCZImiZPyLGQBGRYEdGVzdDEPMA0GA1UEAwwGS29tYml0MB4XDTE1MDIxNTE2MTcyM1oXDTMwMDIxNTE2MTcyM1owJzEUMBIGCgmSJomT8ixkARkWBHRlc3QxDzANBgNVBAMMBktvbWJpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+zZ4ln2m3PpehsyLlRCWAv1OX5WtHmHN2493sFtohEqCY3GNuyRc3+sKawdSa9u53Q8L17tqbGWx23sbX0/IRB/k7BgRa4O6uyoCIhWDzenx6nPhagByvopO35mxkC1h5KBF+3ME9J8jBLXKcqOacvsBI1kqixkdhRCR/BldTS3SfHZHvbZi9KGjPJc/pO2l8L5V7wH1N7O/qz6ACGdXzzHuxcFR06LXmgNu99nNUieMnHz6Ta9Tm0j+kWsQsPEr1gBV06QrePB8wjXts7q3MZhKjkndUZ7nCEH1dNp+EqnXhLH11P9T0bYi3oactlvDqLvFUyBbIkChPgRQ/CWwUCAwEAAaMxMC8wHQYDVR0OBBYEFCS2r2VDmlYa0se2ojHX91Kxa/XaMA4GA1UdDwEB/wQEAwIFIDANBgkqhkiG9w0BAQsFAAOCAQEADpRLvnY3fU9vXS9O97E9u1MLJeikPMko7+2sA2dzQYeFp/f4iUAXELwsqkAps6kqi2DYJ/HdDoCSzWqveYOMpSy4X8UoNWLoFlCVbes7wZNKH6znTgTDJmVKaKpOIHKgQ0cjVyV+HCosDS5QMxHHCNpqSDQi4HZ+/CUUxp1AVuU/cohS9i5S30HxyIDqlOFuVcFxPGmeA9vI/20jvRTfyEACbogTeH6NegNfXz7WwtbN/2plb8TDkUTi2dlfMqebDpO/39jBxc1WKWTxLrFZvQ3IC3rByq/0G9kH83lZxFVRgOgbu/+McUqp4PvkWxECrQsPhgDfHvLF6ax25C057w==</o:BinarySecurityToken>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+          <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+          <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+          <Reference URI="#_1">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>2vTh23eRkUQyls6PWa7WqTDkq+uJEalzj3/lyk/zYc8=</DigestValue>
+          </Reference>
+          <Reference URI="#_2">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>uuEGNwk01svoaz0fSEebr2D3reDvhGWTxRvS+lR+iCc=</DigestValue>
+          </Reference>
+          <Reference URI="#_3">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>I68cBgrlZdzCOvTfKl0fmLbUpICyhcTCQJedS9JqnIU=</DigestValue>
+          </Reference>
+          <Reference URI="#_4">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>9HkPO0/ytOkQpknjLrCKETMEwF9PivE1aZsD+t3dw6A=</DigestValue>
+          </Reference>
+          <Reference URI="#_5">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>LaK0gKDTrpwNrRknkxvk93Ev5IxAr/UGyZ89AAh4CAs=</DigestValue>
+          </Reference>
+          <Reference URI="#uuid-3ef074b0-3421-4b9b-9b1e-229f8d09bf84-1">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+            <DigestValue>FO7whQ01RJ6/ggiFp7l2Lr9xer82H0aqNqFVW5eLz8g=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>GXou6eLtHvIwlQGz25uBgoLjKqC67If6Keh5f5EEbw7qpXWJ2iAU16flv2vYtDKHpFebP6wK5Hw0m29SBegxoJVFIADaCPng3u5MYgTlgq4XWDgyDxLf24gdI+F2k5yax38xULBoyBULoT6JcCvmrnD2HxAK4iwiARREC6Le3EGl0hiA/fLDq0URo9hw6dyUwUuMxak/oL1+XxBV/VwJKimdYDedmIh154ZuitNfF+lzUThYBVV2CDLvhl+RYMpxfA31I1NEq5Uo5hOsiZwOsnKnEk3EjHSkMSMygK1GmacnTHBmy+Fu4WOEJP5vVjl6lHYijqxI7PLEV1ybBo4ShA==</SignatureValue>
+        <KeyInfo>
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" URI="#uuid-4915065f-3afa-49f0-97d8-6c15c89be584-4" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+      </Signature>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_1">
+    <trust:RequestSecurityToken xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">
+      <wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+          <wsa:Address>https://localhost:44302/kombit/service</wsa:Address>
+        </wsa:EndpointReference>
+      </wsp:AppliesTo>
+      <trust:Claims Dialect="http://docs.oasis-open.org/wsfed/authorization/200706/authclaims" xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
+        <auth:ClaimType Uri="dk:gov:saml:attribute:CvrNumberIdentifier" Optional="false">
+          <auth:Value>12345678</auth:Value>
+        </auth:ClaimType>
+      </trust:Claims>
+      <trust:KeyType>http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey</trust:KeyType>
+      <trust:RequestType>http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue</trust:RequestType>
+      <trust:TokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0</trust:TokenType>
+      <trust:UseKey>
+        <BinarySecurityToken u:Id="uuid-4915065f-3afa-49f0-97d8-6c15c89be584-1" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">MIIDCTCCAfGgAwIBAgIQUVsdCkocHoVDJ6QI5LEMcDANBgkqhkiG9w0BAQsFADAnMRQwEgYKCZImiZPyLGQBGRYEdGVzdDEPMA0GA1UEAwwGS29tYml0MB4XDTE1MDIxNTE2MTcyM1oXDTMwMDIxNTE2MTcyM1owJzEUMBIGCgmSJomT8ixkARkWBHRlc3QxDzANBgNVBAMMBktvbWJpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+zZ4ln2m3PpehsyLlRCWAv1OX5WtHmHN2493sFtohEqCY3GNuyRc3+sKawdSa9u53Q8L17tqbGWx23sbX0/IRB/k7BgRa4O6uyoCIhWDzenx6nPhagByvopO35mxkC1h5KBF+3ME9J8jBLXKcqOacvsBI1kqixkdhRCR/BldTS3SfHZHvbZi9KGjPJc/pO2l8L5V7wH1N7O/qz6ACGdXzzHuxcFR06LXmgNu99nNUieMnHz6Ta9Tm0j+kWsQsPEr1gBV06QrePB8wjXts7q3MZhKjkndUZ7nCEH1dNp+EqnXhLH11P9T0bYi3oactlvDqLvFUyBbIkChPgRQ/CWwUCAwEAAaMxMC8wHQYDVR0OBBYEFCS2r2VDmlYa0se2ojHX91Kxa/XaMA4GA1UdDwEB/wQEAwIFIDANBgkqhkiG9w0BAQsFAAOCAQEADpRLvnY3fU9vXS9O97E9u1MLJeikPMko7+2sA2dzQYeFp/f4iUAXELwsqkAps6kqi2DYJ/HdDoCSzWqveYOMpSy4X8UoNWLoFlCVbes7wZNKH6znTgTDJmVKaKpOIHKgQ0cjVyV+HCosDS5QMxHHCNpqSDQi4HZ+/CUUxp1AVuU/cohS9i5S30HxyIDqlOFuVcFxPGmeA9vI/20jvRTfyEACbogTeH6NegNfXz7WwtbN/2plb8TDkUTi2dlfMqebDpO/39jBxc1WKWTxLrFZvQ3IC3rByq/0G9kH83lZxFVRgOgbu/+McUqp4PvkWxECrQsPhgDfHvLF6ax25C057w==</BinarySecurityToken>
+      </trust:UseKey>
+      <trust:Issuer>
+        <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+          <wsa:Address>https://saml.adgangsstyring.test-stoettesystemer.dk/</wsa:Address>
+        </wsa:EndpointReference>
+      </trust:Issuer>
+    </trust:RequestSecurityToken>
+  </s:Body>
+</s:Envelope>

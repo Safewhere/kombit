@@ -1,0 +1,25 @@
+<LogoutRequest ID="id6686c35d7a0742de884953c36175fc3f" Version="2.0" IssueInstant="2015-03-25T16:11:43.4034768Z" Destination="https://fed.test-stoettesystemerne.dk/adfs/ls/" xmlns="urn:oasis:names:tc:SAML:2.0:protocol">
+	<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://saml.adgangsstyring.stoettesystemerne.dk/</Issuer>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<Reference URI="#id6686c35d7a0742de884953c36175fc3f">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>uoXVs9S8oYA1yMdgt/OW73KQ02A=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>WIpo5N0M+3zc+9O6sHGpZZa7RwhsqVd79o1D/Cx0RNFrRXcrU2dbkQ9i7UNJV7kBdff5bSkGcMxVH5XWE9P6a2QVQVdQdWLXKO5gpks5DfsJZGF86n1v1hYs1GzJzA27uCde9B6HE1RIp5gGqfosswmGnNs5G58kwq4gB5ydKCtQg8+UEtGtEfxfRtEFe14XAlEeY8KBF7fMt8RCEx2XTzA5jQ15hlm71iPua7jThFl/gQNzr4hUu5198BpXdL8I5aXkSENN/Dhs5VBRBAiEDdhmZuP9br4SThz80FVyrOrq2FiMzQELzaTDqMnfV71NRU2F+w68qzvwW0nKHqGD8A==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>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</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C=DK, O=30808460, CN=TEST MOCES1, Serial=CVR:30808460-RID:53051752</NameID>
+	<SessionIndex>_48b90cfb-6577-41a8-84d9-05066e717ac6</SessionIndex>
+</LogoutRequest>

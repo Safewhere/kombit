@@ -1,0 +1,57 @@
+<samlp:Response ID="_4f927b70-3940-4e42-8ba7-cd1f5e56ccd5" Version="2.0" IssueInstant="2015-03-23T08:51:01.251Z" Destination="https://adgangsstyring.test-stoettesystemerne.dk/runtime/saml2auth/consume.idp" Consent="urn:oasis:names:tc:SAML:2.0:consent:unspecified" InResponseTo="id83a40ff0ea4e4e2fa1c0991d65da55f6" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
+	<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">http://fed.test-stoettesystemerne.dk/adfs/services/trust</Issuer>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<ds:Reference URI="#_4f927b70-3940-4e42-8ba7-cd1f5e56ccd5">
+				<ds:Transforms>
+					<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</ds:Transforms>
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<ds:DigestValue>mb/+Vn3UXnrbR6hcoLvABqCwYck=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>inKG0mfj3BrpVG+rjrnsqBtR+R8EbQVpfFfsoNBGnHK5oNs9hfWtv+dU6qDbS+BgF2Lfzr65y1DCHGw3FcAnb9rCXCaAdgbt0e8jZKdyzDAI/pRZDH4ADvqvJLNJ0E7G1MxpXCmbfg46Q4bidqOMesEYUl240412g2IcjeX1GQINvHjDpvkT+vEKjsW6dihWJ76rfoGRQBA2OM90MqDMtGCZyuwc/9/wJy7OYZEl04HKHElyvTqMkKgLniv4BhZyV+KvDUYMyCLVFAP36SCsKNZwm/iM6mRildT9A/ehNjSn+5e3JzJ9ahda3u0OawSf/hBPtAbrnVeM1k+SIMZAnQ==</ds:SignatureValue>
+		<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+			<ds:X509Data>
+				<ds:X509Certificate>MIIC3jCCAcagAwIBAgIQQucLvoBelLBLrcDAtqr89DANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDEyBBREZTIFNpZ25pbmcgLSBmZWQuc2FmZXdoZXJlLm9yZzAeFw0xNDA5MjMwODU1NTNaFw0xNTA5MjMwODU1NTNaMCsxKTAnBgNVBAMTIEFERlMgU2lnbmluZyAtIGZlZC5zYWZld2hlcmUub3JnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyEIfranr2kIOF59sOOyD3z3qI98TeN6096mBYEeHlB55CI4KJP6EgbO6+YJCbdNU9dwV/oFFlOKNycCKU8RPS8gq5ar6mh0dX4XZgDIvLCwMRFTP2jcIhq/bflZE132ahzU6Fb6xdpY9/ejVVJydXovxriCIcby7I58b5lbDIUvNqKn/MigNYhlwAHVpKHlilXFkZuC9u6HluqXcB/8O1LpUTWv13xGbFpWO+pZV7rJCefb+xEG3DPe2MYVxBX5HrytU90LRBuBsuij1nGVGXh+tp8aVHJf0CAYIMWEUsiNCY/PLbXRlSX4+C49wD7yDdnRnEkLEHLNFPwih1TFZJwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAMBrnyWOCSgQiwDKYhuto8Ww8jM4cibeg6KhKyMLfLBXoCDrXCMVQFOD3RrsKQ0U4pFubl7ISc924HIVZ2CmcoFOonnLF0DwRmVNCCzEK2JIrZMgrBbUndf/JSWC2hoAqf1iS959CFUskyGufsz4/jSd+ThZpOu7WIp8pkgDgWsUgmEIhAPVjEjIt4eYr3Vrdtjx88ItgdnBrqvf8xvvIHajnWpO9hus6YjcW0IqrgJWd5SJ0uBJ2zPlQtYyLxlwlikTA30QKEAFO+5tu8KoHvMZxe71ofe6bBS3XdrHtAmT4i9QI6PYskSp0gDLy8Bpst5aojQVtBWgJiCLKHmFwU</ds:X509Certificate>
+			</ds:X509Data>
+		</KeyInfo>
+	</ds:Signature>
+	<samlp:Status>
+		<samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+	</samlp:Status>
+	<Assertion ID="_17d79e32-a5f8-4f8c-be6f-030d615d5f9a" IssueInstant="2015-03-23T08:51:01.251Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+		<Issuer>https://saml.idp.odense.dk/</Issuer>
+		<Subject>
+			<NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C=DK, O=30808460, CN=TEST MOCES1, Serial=CVR:30808460-RID:53051752</NameID>
+			<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+				<SubjectConfirmationData InResponseTo="id83a40ff0ea4e4e2fa1c0991d65da55f6" NotOnOrAfter="2015-03-23T08:56:01.251Z" Recipient="https://adgangsstyring.test-stoettesystemerne.dk/runtime/saml2auth/consume.idp" />
+			</SubjectConfirmation>
+		</Subject>
+		<Conditions NotBefore="2015-03-23T08:51:01.239Z" NotOnOrAfter="2015-03-23T09:51:01.239Z">
+			<AudienceRestriction>
+				<Audience>https://saml.adgangsstyring.stoettesystemerne.dk/</Audience>
+			</AudienceRestriction>
+		</Conditions>
+		<AttributeStatement>
+			<Attribute Name="dk:gov:saml:attribute:KombitSpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<AttributeValue>1.0</AttributeValue>
+			</Attribute>
+			<Attribute Name="dk:gov:saml:attribute:CvrNumberIdentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<AttributeValue>30808460</AttributeValue>
+			</Attribute>
+			<Attribute Name="dk:gov:saml:attribute:Privileges_intermediate" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<AttributeValue>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxicHA6UHJpdmlsZWdlTGlzdCB4bWxuczpicHA9Imh0dHA6Ly9pdHN0LmRrL29pb3NhbWwvYmFzaWNfcHJpdmlsZWdlX3Byb2ZpbGUiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICA8UHJpdmlsZWdlR3JvdXAgU2NvcGU9InVybjpkazpnb3Y6c2FtbDpjdnJOdW1iZXJJZGVudGlmaWVyOjMwODA4NDYwIj4NCiAgICA8UHJpdmlsZWdlPmh0dHA6Ly9vZGVuc2UuZGsvcm9sZXMvam9icm9sZS9zYWdzYmVoYW5kbGVyLzQ8L1ByaXZpbGVnZT4NCiAgPC9Qcml2aWxlZ2VHcm91cD4NCiAgPFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjozMDgwODQ2MCI</AttributeValue>
+			</Attribute>
+			<Attribute Name="dk:gov:saml:attribute:AssuranceLevel" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<AttributeValue>3</AttributeValue>
+			</Attribute>
+			<Attribute Name="dk:gov:saml:attribute:SpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+				<AttributeValue>DK-SAML-2.0</AttributeValue>
+			</Attribute>
+		</AttributeStatement>
+	</Assertion>
+</samlp:Response>

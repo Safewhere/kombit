@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<q1:LogoutRequest ID="id92ab4a57f5c343f49b4398e5951d89e8" Version="2.0" IssueInstant="2015-03-25T16:09:21.7672994Z" Destination="https://adgangsstyring.test-stoettesystemerne.dk/runtime/saml2/issue.idp" Reason="urn:oasis:names:tc:SAML:2.0:logout:user" xmlns:q1="urn:oasis:names:tc:SAML:2.0:protocol">
+	<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://oiosaml.test-stoettesystemerne.dk</Issuer>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<Reference URI="#id92ab4a57f5c343f49b4398e5951d89e8">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>MNzxgL7wG/FjGngHjUuArZEc3SQ=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>CRz/mRU1Szdb0JjQe6TgVa0XjcopIRUOSoQldstr0ZdeKI+DS6WwNII8YOTUoctMOFMlBpKDFwikpGw6Fa0hwVb8Amc5YWtQIxRcWA1LGLogrn70WdEWuh7ktLoYMlMFqCxZgd8/Y8lTPtw9ApYRYw3KNpqE3qwIjRETt40mKzGwenO39iKAdmFMV6AXRGWnJDeGmZX9WDyyJCpRnI72rntz4DiryccKpsht1FRejtc2NRAxNFPIp2n5Wao8KIf4aW/GZQDRwcfXQR6duxXlYUYWmRgUWGprHFW2r4iEZmoist0igIr6oinvJ8Dq4QiC7sMSwE8gvGeuWxd3nYmmcQ==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIDCTCCAfGgAwIBAgIQUVsdCkocHoVDJ6QI5LEMcDANBgkqhkiG9w0BAQsFADAnMRQwEgYKCZImiZPyLGQBGRYEdGVzdDEPMA0GA1UEAwwGS29tYml0MB4XDTE1MDIxNTE2MTcyM1oXDTMwMDIxNTE2MTcyM1owJzEUMBIGCgmSJomT8ixkARkWBHRlc3QxDzANBgNVBAMMBktvbWJpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+zZ4ln2m3PpehsyLlRCWAv1OX5WtHmHN2493sFtohEqCY3GNuyRc3+sKawdSa9u53Q8L17tqbGWx23sbX0/IRB/k7BgRa4O6uyoCIhWDzenx6nPhagByvopO35mxkC1h5KBF+3ME9J8jBLXKcqOacvsBI1kqixkdhRCR/BldTS3SfHZHvbZi9KGjPJc/pO2l8L5V7wH1N7O/qz6ACGdXzzHuxcFR06LXmgNu99nNUieMnHz6Ta9Tm0j+kWsQsPEr1gBV06QrePB8wjXts7q3MZhKjkndUZ7nCEH1dNp+EqnXhLH11P9T0bYi3oactlvDqLvFUyBbIkChPgRQ/CWwUCAwEAAaMxMC8wHQYDVR0OBBYEFCS2r2VDmlYa0se2ojHX91Kxa/XaMA4GA1UdDwEB/wQEAwIFIDANBgkqhkiG9w0BAQsFAAOCAQEADpRLvnY3fU9vXS9O97E9u1MLJeikPMko7+2sA2dzQYeFp/f4iUAXELwsqkAps6kqi2DYJ/HdDoCSzWqveYOMpSy4X8UoNWLoFlCVbes7wZNKH6znTgTDJmVKaKpOIHKgQ0cjVyV+HCosDS5QMxHHCNpqSDQi4HZ+/CUUxp1AVuU/cohS9i5S30HxyIDqlOFuVcFxPGmeA9vI/20jvRTfyEACbogTeH6NegNfXz7WwtbN/2plb8TDkUTi2dlfMqebDpO/39jBxc1WKWTxLrFZvQ3IC3rByq/0G9kH83lZxFVRgOgbu/+McUqp4PvkWxECrQsPhgDfHvLF6ax25C057w==</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C=DK, O=30808460, CN=TEST MOCES1, Serial=CVR:30808460-RID:53051752</NameID>
+	<q1:SessionIndex>832341371</q1:SessionIndex>
+</q1:LogoutRequest>

@@ -1,0 +1,31 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <AttributeQuery ID="idea46b5a4fb624ce094c29fa3ed0b4ff9" Version="2.0" IssueInstant="2015-03-22T05:09:44.9704608Z" xmlns="urn:oasis:names:tc:SAML:2.0:protocol">
+      <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://saml.adgangsstyring.test-stoettesystemer.dk/</Issuer>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+          <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+          <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+          <Reference URI="#idea46b5a4fb624ce094c29fa3ed0b4ff9">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>YvEpIImvx4gZgvFbp4US6fzXL/c=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>lxudoHN7EjxR9QFkOgujCbWEbN33wASaYBfY2hsjvj30bFzYhYg5Bd1HEUVFxJMZYCGdO2dFA8Hsi4o+qk83I2klf3u4+b1exBLf0WKZRwr8A7+i9sLycWiwVfMHoXO4QL3rJKJHrConGdEnxrosxt/QQhw4G3z01Lh/DgPIk9XC4xaee1ZrnLnHj5L66pxsidErnqo98eaEeDnPAeE/yW5MoX8mJONqHRUcjIbCRg7mC/4KU0RtVkBiEmAMJlZZJCHw7SdXIqmAtS0o4Y6WHRPdzWwUTpjljXZGcNhc37FtjhtXQj0hXyrn9lhODuQWOxgSFUL3koDw0qecvG15Uw==</SignatureValue>
+        <KeyInfo>
+          <X509Data>
+            <X509Certificate>MIIDIzCCAg+gAwIBAgIQIjsgDFW1bpRJndNkDKmVrTAJBgUrDgMCHQUAMBgxFjAUBgNVBAMTDWF1dG9tYXRpb24gQ0EwHhcNMTQwNTIwMDMwNTQ5WhcNMjIwNTIwMDMwNTQ4WjAdMRswGQYDVQQDExJhdXRvbWF0aW9uIFNpZ25pbmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6l7WzLlnew7vPbX7LiCob5dGIrAt6zVZu3BgMaXlcC+iDEz9N2RKorTWF+R0utnPEb1CLxqwpHFr2vHTG/cJokOvEpa0FeoU9c5HlcnHQXrgNh6Ca3WcOctwRfAzZQC2yIS7+aroB8sZxl5R+wvG3kB7iuK476OUUGDOYe2KtnVeltd9oERFNO7iymYrdW4UuoaVJ5OmvZZb7++1rkdYQFokd3UZvQUQ1viIFRZKgEJaSpR/PDlHOihkWMQdrcHFmgs9fPZ4HoEREea2xpJ25MfWaINGGM8sZu38rEEe1vpsbbmlwWE/qITzSYFPERLJgyNHfro1wogzjbj9cF8G5AgMBAAGjbDBqMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBJBgNVHQEEQjBAgBAHw5BNq5nm19kAGtIJjy4FoRowGDEWMBQGA1UEAxMNYXV0b21hdGlvbiBDQYIQK6khv31MV5JOHrW69n7NwjAJBgUrDgMCHQUAA4IBAQASl1Nt5qAJHnyydur6MPIFsKnKvQdcSpJ56rpyTpv+GBu8AqOa6InhUhRwi36G9PQ5igxKUTVsSa6bs8ZnadY5DJsAi7w7xfCvxBx+xzu1ENVj6tlV/ulwi+fwToq9kKJOyTxEZHM7O/HxhchgStgEHU2DM88D8qkJmDtaBHHyJU2I7/Of4hAviTLaNZix57mWphjOuaZrwU0AqOdeKIQ8ycAY6Z0kRoU2hBjAbw6q/EWDkzdtehJ7UYHeXctiH08vp5mNWyLPnQX/9DpCeLOm9EvV6KiqPlA9hYdzTCTh65MT7r1rCY8jZPD5lRmMfwScEiF+8WIIUNaxgxnQLui2</X509Certificate>
+          </X509Data>
+        </KeyInfo>
+      </Signature>
+      <Subject xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+        <NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C=DK, O=30808460, CN=TEST MOCES1, Serial=CVR:30808460-RID:53051752</NameID>
+      </Subject>
+    </AttributeQuery>
+  </s:Body>
+</s:Envelope>
