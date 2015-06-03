@@ -1618,7 +1618,7 @@
       }
     },
     "Anvendersystem" : {
-      "description" : "An Anvendersystem (user system)",
+      "description" : "An Anvendersystem (service consumer)",
       "required" : [
         "Id"
       ],
@@ -1643,14 +1643,14 @@
           }
         },
         "RoleAssignments" : {
-          "description" : "A list of RoleAssignments assigned to this Anvendersystem (user system).",
+          "description" : "A list of RoleAssignments assigned to this Anvendersystem (service consumer).",
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/RoleAssignment"
           }
         },
         "ImpersonationAssignments" : {
-          "description" : "A list of impersonation assignments (service system roles) assigned to this Anvendersystem (user system).",
+          "description" : "A list of impersonation assignments assigned to this Anvendersystem (service consumer).",
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/ImpersonationAssignment"
@@ -1730,11 +1730,11 @@
       }
     },
     "ImpersonationAssignment" : {
-      "description" : "The relation between an Anvenderkontekst (user context) and OCES certificate for an Anvendersystem",
+      "description" : "The relation between an Anvenderkontekst (user context) and a certificate for an Anvendersystem (service consumer). An impersonation assignment is a relation between a Anvendersystem (service consumer) as represented by a certificate, and a user context (Anvenderkontekst) for which another Anvendersystem (service consumer) may request a proxy-OnBehalfOf token. The ImpersonationAssignment is added to the Anvendersystem (service consumer) that may request the token.",
       "required" : [
+        "Aktiveringstidspunkt",
         "Anvenderkontekst",
-        "OcesCertificate",
-        "Aktiveringstidspunkt"
+        "OcesCertificate"
       ],
       "properties" : {
         "Anvenderkontekst" : {
