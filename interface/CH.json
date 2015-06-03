@@ -3055,6 +3055,22 @@
           "description" : "Definition of the syntax that is used to define this data restriction",
           "type" : "string"
         },
+        "PresentationPreference" : {
+          "description" : "The presentation preference of this data restriction type",
+          "type" : "string"
+        },
+        "ValidationService" : {
+          "description" : "The URL of a validation service",
+          "type" : "string"
+        },
+        "PresentationName" : {
+          "description" : "The presentation name of this data restriction type",
+          "type" : "string"
+        },
+        "Description" : {
+          "description" : "A description of this data restriction type",
+          "type" : "string"
+        },
         "Values" : {
           "description" : "A list of Dataafgraensninger (data restrictions) for this user system role",
           "type" : "array",
