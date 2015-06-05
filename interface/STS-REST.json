@@ -111,9 +111,15 @@
         "AppliesTo",
         "KeyType",
         "RequestType",
-        "TokenType"
+        "TokenType",
+        "UseKey"
       ],
       "properties" : {
+        "Anvenderkontekst" : {
+          "title" : "Anvenderkontekst",
+          "description" : "The Anvenderkontekst for this token",
+          "$ref" : "#/definitions/Anvenderkontekst"
+        },
         "AppliesTo" : {
           "type" : "object",
           "title" : "AppliesTo",
@@ -133,6 +139,11 @@
           "type" : "string",
           "description" : "The type of key in use"
         },
+        "OnBehalfOf" : {
+          "title" : "OnBehalfOf",
+          "description" : "The bootstrap token for the user this token should be issued on behalf of",
+          "type" : "string"
+        },
         "RequestType" : {
           "type" : "string",
           "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
@@ -141,14 +152,8 @@
           "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
           "type" : "string"
         },
-        "Anvenderkontekst" : {
-          "title" : "Anvenderkontekst",
-          "description" : "The Anvenderkontekst for this token",
-          "$ref" : "#/definitions/Anvenderkontekst"
-        },
-        "OnBehalfOf" : {
-          "title" : "OnBehalfOf",
-          "description" : "The bootstrap token for the user this token should be issued on behalf of",
+        "UseKey" : {
+          "description" : "The UseKey element of the RST. Should contain a base64 encoded X.509v3 certificate.",
           "type" : "string"
         }
       }
