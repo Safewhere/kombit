@@ -3019,10 +3019,21 @@
     },
     "BrugervendtSystem" : {
       "description" : "A BrugervendtSystem (user system)",
+      "required" : [
+        "AssuranceLevel",
+        "Cvr",
+        "Id",
+        "SamlMetadata"
+      ],
       "properties" : {
         "Id" : {
           "type" : "string",
           "description" : "The SAML2.0 EntityId of the `BrugervendtSystem`. The EntityId must be globally unique within the federation."
+        },
+        "AssuranceLevel" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "The requested assurance level of this Brugervendt system (user system). This property must be a value of 1-4."
         },
         "SamlMetadata" : {
           "description" : "A list SAML2.0 metadata documents for this `BrugervendtSystem`",
@@ -3120,7 +3131,7 @@
         "AssuranceLevel" : {
           "type" : "integer",
           "format" : "int32",
-          "description" : "The supported assurance level of this IdentityProvider"
+          "description" : "The supported assurance level of this IdentityProvider. This property must be a value of 1-4."
         },
         "Beskrivelse" : {
           "type" : "string",
