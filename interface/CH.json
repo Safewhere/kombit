@@ -1172,6 +1172,78 @@
         }
       }
     },
+    "/BrugervendteSystemer/{id}/AssuranceLevel/{value}" : {
+      "put" : {
+        "summary" : "Set the minimum required assurance level for this BrugervendtSystem (user system)",
+        "description" : "Set the minimum required assurance level for this `BrugervendtSystem` (user system)",
+        "tags" : [
+          "SP"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the user system to set assurance level for.",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "name" : "value",
+            "in" : "path",
+            "description" : "The minimum requested assurance level for this user system",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/BrugervendteSystemer/{id}/SamlMetadata" : {
       "put" : {
         "summary" : "Add a SAML metadata version on the specified user system",
