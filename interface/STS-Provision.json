@@ -983,7 +983,7 @@
           {
             "name" : "id",
             "in" : "path",
-            "description" : "The id of the service to delete",
+            "description" : "The id of the service to delete. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "type" : "string",
             "required" : true
           }
@@ -1048,7 +1048,7 @@
           {
             "name" : "id",
             "in" : "path",
-            "description" : "The id of the service",
+            "description" : "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           },
@@ -1122,7 +1122,7 @@
           {
             "name" : "id1",
             "in" : "path",
-            "description" : "The id of the service",
+            "description" : "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           },
@@ -1307,7 +1307,7 @@
     "/Servicesystemroller/{id}" : {
       "delete" : {
         "summary" : "Delete a specific Servicesystemrolle",
-        "description" : "Delete a specific `Servicesystemrolle`",
+        "description" : "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
         "tags" : [
           "Role"
         ],
@@ -1380,7 +1380,7 @@
           {
             "name" : "id",
             "in" : "path",
-            "description" : "The id of the service system role to add activation times for",
+            "description" : "The id of the service system role to add activation times for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           },
@@ -1457,7 +1457,7 @@
           {
             "name" : "id",
             "in" : "path",
-            "description" : "The id of the service system role to add a Dataafgraensningstype for",
+            "description" : "The id of the service system role to add a Dataafgraensningstype for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           },
@@ -1528,7 +1528,7 @@
           {
             "name" : "id1",
             "in" : "path",
-            "description" : "The id of the service system role",
+            "description" : "The id of the service system role. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           },
