@@ -1687,13 +1687,6 @@
         "Description" : {
           "description" : "A description of this data restriction type",
           "type" : "string"
-        },
-        "Values" : {
-          "description" : "A list of data restriction values for this data restriction type",
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
         }
       }
     },
