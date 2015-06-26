@@ -1809,7 +1809,8 @@
           "description" : "The type of this service"
         },
         "ServiceMetadata" : {
-          "description" : "A list of SAML2.0 metadata for this service",
+          "description" : "A list of service metadata for this service",
+          "type" : "array",
           "items" : {
             "$ref" : "#/definitions/ServiceMetadata"
           }
