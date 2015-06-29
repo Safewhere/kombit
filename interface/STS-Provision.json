@@ -700,7 +700,7 @@
             "description" : "The OCES Certifikat to add",
             "required" : true,
             "schema" : {
-              "type" : "string",
+              "type" : "array",
               "items" : {
                 "title" : "OcesCertificate",
                 "type" : "object",
