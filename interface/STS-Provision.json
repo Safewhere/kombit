@@ -593,6 +593,9 @@
         "tags" : [
           "Service"
         ],
+        "consumes" : [
+          "application/json"
+        ],
         "produces" : [
           "application/json"
         ],
@@ -783,7 +786,7 @@
             "description" : "The OCES Certifikat to delete",
             "required" : true,
             "schema" : {
-              "type" : "string",
+              "type" : "object",
               "items" : {
                 "title" : "OcesCertificate",
                 "type" : "object",
