@@ -2106,7 +2106,7 @@
         }
       }
     },
-    "/IdentityProviders/{id}/IpAddresser" : {
+    "/IdentityProviders/{id}/IpAdresser" : {
       "put" : {
         "summary" : "Add IP addresses to the list of IP addresses for which this IdP should be pre-selected.",
         "description" : "Add IP addresses to the list of IP addresses for which this IdP should be pre-selected.",
@@ -2183,7 +2183,7 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/IpAddresser/{id2}" : {
+    "/IdentityProviders/{id1}/IpAdresser/{id2}" : {
       "delete" : {
         "summary" : "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
         "description" : "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
