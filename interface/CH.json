@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "1.0.0",
+    "version" : "1.1.0",
     "title" : "Provisioning service",
     "description" : "Provisioning service for Støttesystem Context Handler",
     "contact" : {
@@ -3142,6 +3142,25 @@
         }
       }
     },
+    "Dataafgraensning" : {
+      "description" : "A Dataafgraensning (data restriction) comprises a DRT and DRV, and can be thought of as an instantation of DRT",
+      "required" : [
+        "DataafgraensningstypeId"
+      ],
+      "properties" : {
+        "DataafgraensningstypeId" : {
+          "description" : "The Dataafgraensningstype (data restriction type) for this Dataafgraensnings (data restriction). This is the ID of the Dataafgraensningstype, which is defined as a URL.",
+          "type" : "string"
+        },
+        "Values" : {
+          "description" : "The values",
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
     "Dataafgraensningstype" : {
       "description" : "A Dataafgraensningstype (data restriction type)",
       "properties" : {
@@ -3168,13 +3187,6 @@
         "Description" : {
           "description" : "A description of this data restriction type",
           "type" : "string"
-        },
-        "Values" : {
-          "description" : "A list of Dataafgraensninger (data restrictions) for this user system role",
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
         }
       }
     },
@@ -3280,7 +3292,7 @@
       }
     },
     "RoleMapping" : {
-      "description" : "Defines a one-to-many mapping between a single job function role, and one or more user system roles.",
+      "description" : "Defines a one-to-many mapping between a single job function role, and one or more Brugersystemrolle (user system roles).",
       "required" : [
         "JobfunktionsrolleId",
         "Brugersystemroller"
@@ -3299,6 +3311,13 @@
           "type" : "array",
           "items" : {
             "type" : "string"
+          }
+        },
+        "Dataafgraensninger" : {
+          "description" : "A list of Dataafgraensninger (data restrictions) for this role mapping. The DRT for each Dataafgraensning element has to match one or more Brugersystemrolle in this RoleMapping.",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Dataafgraensning"
           }
         }
       }
