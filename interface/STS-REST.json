@@ -148,11 +148,11 @@
           "$ref" : "#/definitions/AppliesTo"
         },
         "KeyType" : {
-          "description" : "The type of key in use",
+          "description" : "The type of key in use. This value MUST be specified as \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey\"",
           "type" : "string"
         },
         "OnBehalfOf" : {
-          "description" : "The bootstrap token for the user this token should be issued on behalf of",
+          "description" : "The bootstrap token for the user this token should be issued on behalf of. This must be either the base64 encoded X.509v3 certificate (for proxy-OnBehalfOf) or the assertion (for regular OnBehalfOf).",
           "type" : "string"
         },
         "RequestType" : {
