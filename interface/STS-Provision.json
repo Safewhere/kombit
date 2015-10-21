@@ -148,6 +148,138 @@
       }
     },
     "/Anvendersystemer/{id}" : {
+      "get" : {
+        "summary" : "Get a specific Anvendersystem (user system)",
+        "description" : "Get a specific `Anvendersystem` object.",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system) to get",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Anvendersystem"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific Anvendersystem (user system)",
+        "description" : "Update a specific `Anvendersystem` object.",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Anvendersystem (user system) to update",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The updated Anvendersystem (user system)",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Anvendersystem"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific Anvendersystem (user system)",
         "operationId" : "deleteAnvendersystemById",
@@ -958,6 +1090,138 @@
       }
     },
     "/Service/{id}" : {
+      "get" : {
+        "summary" : "Get a specific service",
+        "description" : "Get a specific `Service`",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service to get. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific service",
+        "description" : "Update a specific `Service`",
+        "tags" : [
+          "Service"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the service to update. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The update service",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific service",
         "description" : "Delete a specific `Service`",
@@ -1293,6 +1557,138 @@
       }
     },
     "/Servicesystemroller/{id}" : {
+      "get" : {
+        "summary" : "Get a specific Servicesystemrolle",
+        "description" : "Get a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "tags" : [
+          "Role"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Servicesystemrolle to get",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Servicesystemrolle"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific Servicesystemrolle",
+        "description" : "Update a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "tags" : [
+          "Role"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the Servicesystemrolle to get",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The updated Servicesystemrolle",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Servicesystemrolle"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific Servicesystemrolle",
         "description" : "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
