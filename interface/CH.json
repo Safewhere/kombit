@@ -148,6 +148,138 @@
       }
     },
     "/AttributServices/{id}" : {
+      "get" : {
+        "summary" : "Get a specific AttributeService",
+        "description" : "Get a specific `AttributeService`",
+        "tags" : [
+          "IdP"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the attribute service to get. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/AttributeService"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update an existing attribute service",
+        "description" : "Update an existing attribute service",
+        "tags" : [
+          "IdP"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the attribute service to update. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The updated AttributeService",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/AttributeService"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific AttributeService",
         "description" : "Delete a specific `AttributeService`",
@@ -656,7 +788,7 @@
           {
             "in" : "body",
             "name" : "body",
-            "description" : "The job function role to create",
+            "description" : "The user system role to create",
             "required" : true,
             "schema" : {
               "$ref" : "#/definitions/Brugersystemrolle"
@@ -707,6 +839,141 @@
       }
     },
     "/Brugersystemroller/{id}" : {
+      "get" : {
+        "summary" : "Get a specific user system role",
+        "description" : "Get a specific user system role ",
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the user system role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "tags" : [
+          "Role"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Brugersystemrolle"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update an existing user system role",
+        "description" : "Update an existing user system role",
+        "tags" : [
+          "Role"
+        ],
+        "consumes" : [
+          "application/json"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the user system role to update. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The user system role to update",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Brugersystemrolle"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific user system role",
         "description" : "Delete a specific user system role ",
@@ -1117,6 +1384,138 @@
       }
     },
     "/BrugervendteSystemer/{id}" : {
+      "get" : {
+        "summary" : "Get a specific BrugervendtSystem",
+        "description" : "Get a specific `BrugervendtSystem`",
+        "tags" : [
+          "SP"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the BrugervendtSystem to get. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/BrugervendtSystem"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific BrugervendtSystem",
+        "description" : "Update a specific `BrugervendtSystem`",
+        "tags" : [
+          "SP"
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the BrugervendtSystem to update. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The BrugervendtSystem to update",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/BrugervendtSystem"
+            }
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific BrugervendtSystem",
         "description" : "Delete a specific `BrugervendtSystem`",
@@ -1668,6 +2067,132 @@
       }
     },
     "/IdentityProviders/{id}" : {
+      "get" : {
+        "summary" : "Get a specific IdentityProvider object.",
+        "description" : "Get a specific `IdentityProvider` object.",
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "tags" : [
+          "IdP"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/IdentityProvider"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific IdentityProvider object.",
+        "description" : "Update a specific `IdentityProvider` object.",
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required" : true,
+            "type" : "string"
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The IdentityProvider to update",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/IdentityProvider"
+            }
+          }
+        ],
+        "tags" : [
+          "IdP"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific IdentityProvider object.",
         "description" : "Delete a specific `IdentityProvider` object.",
@@ -1675,7 +2200,7 @@
           {
             "name" : "id",
             "in" : "path",
-            "description" : "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description" : "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required" : true,
             "type" : "string"
           }
@@ -2749,6 +3274,138 @@
       }
     },
     "/Jobfunktionsroller/{id}" : {
+      "get" : {
+        "summary" : "Get a specific job function role",
+        "description" : "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be retrieved, and the calling get with the ID of the found role.",
+        "tags" : [
+          "Role"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          }
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "schema" : {
+              "$ref" : "#/definitions/Jobfunktionsrolle"
+            }
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update a specific job function role",
+        "description" : "Update a specific `Jobfunktionsrolle` object",
+        "tags" : [
+          "Role"
+        ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "description" : "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type" : "string",
+            "required" : true
+          },
+          {
+            "in" : "body",
+            "name" : "body",
+            "description" : "The updated job function role",
+            "required" : true,
+            "schema" : {
+              "$ref" : "#/definitions/Jobfunktionsrolle"
+            }
+          }
+        ],
+        "produces" : [
+          "application/json"
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful response"
+          },
+          "400" : {
+            "description" : "Invalid data supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Unknown id",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "409" : {
+            "description" : "Conflicting request",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "500" : {
+            "description" : "Unexpected server error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "503" : {
+            "description" : "Unavailable",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete" : {
         "summary" : "Delete a specific job function role",
         "description" : "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be deleted, and the calling delet with the ID of the found role.",
