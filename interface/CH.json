@@ -3292,10 +3292,10 @@
       }
     },
     "RoleMapping" : {
-      "description" : "Defines a one-to-many mapping between a single job function role, and one or more Brugersystemrolle (user system roles).",
+      "description" : "Defines a mapping between a job function role, and a Brugersystemrolle (user system role) including data restrictions.",
       "required" : [
         "JobfunktionsrolleId",
-        "Brugersystemroller"
+        "BrugersystemrolleId"
       ],
       "properties" : {
         "Id" : {
@@ -3306,12 +3306,9 @@
           "description" : "The Id of the job function role to map from",
           "type" : "string"
         },
-        "Brugersystemroller" : {
-          "description" : "A list of Id of the user system roles to map to ",
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
+        "BrugersystemrolleId" : {
+          "description" : "The Id of the Brugersystemrolle to map to",
+          "type" : "string"
         },
         "Dataafgraensninger" : {
           "description" : "A list of Dataafgraensninger (data restrictions) for this role mapping. The DRT for each Dataafgraensning element has to match one or more Brugersystemrolle in this RoleMapping.",
