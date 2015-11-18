@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "1.0.0",
+    "version" : "1.1.0",
     "title" : "Provisioning service",
     "description" : "Provisioning service for Støttesystem STS",
     "contact" : {
@@ -595,6 +595,9 @@
         "tags" : [
           "Service"
         ],
+        "consumes" : [
+          "application/json"
+        ],
         "produces" : [
           "application/json"
         ],
@@ -768,7 +771,7 @@
             "description" : "The OCES Certifikat to delete",
             "required" : true,
             "schema" : {
-              "type" : "string",
+              "type" : "object",
               "items" : {
                 "title" : "OcesCertificate",
                 "type" : "object",
@@ -1679,16 +1682,19 @@
       "description" : "A Dataafgraensningsvaerdi (data restriction value) for a Dataafgraensningstype (data restriction type)",
       "required" : [
         "DataafgraensningstypeId",
-        "Value"
+        "Values"
       ],
       "properties" : {
         "DataafgraensningstypeId" : {
           "description" : "The Dataafgraensningstype (data restriction type) for this Dataafgraensningsvaerdi (data restriction value). This is the ID of the Dataafgraensningstype, which is defined as a URL.",
           "type" : "string"
         },
-        "Value" : {
-          "description" : "The value",
-          "type" : "string"
+        "Values" : {
+          "description" : "The values",
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
         }
       }
     },

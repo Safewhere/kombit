@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "1.0.0",
+    "version" : "1.1.0",
     "title" : "Provisioning service",
     "description" : "Provisioning service for Støttesystem Context Handler",
     "contact" : {
@@ -234,6 +234,9 @@
         "tags" : [
           "IdP"
         ],
+        "consumes" : [
+          "application/json"
+        ],
         "produces" : [
           "application/json"
         ],
@@ -380,6 +383,9 @@
         ],
         "tags" : [
           "IdP"
+        ],
+        "consumes" : [
+          "application/json"
         ],
         "produces" : [
           "application/json"
@@ -1898,6 +1904,9 @@
         "tags" : [
           "IdP"
         ],
+        "consumes" : [
+          "application/json"
+        ],
         "produces" : [
           "application/json"
         ],
@@ -2020,6 +2029,9 @@
         "tags" : [
           "IdP"
         ],
+        "consumes" : [
+          "application/json"
+        ],
         "produces" : [
           "application/json"
         ],
@@ -2094,7 +2106,7 @@
         }
       }
     },
-    "/IdentityProviders/{id}/IpAddresser" : {
+    "/IdentityProviders/{id}/IpAdresser" : {
       "put" : {
         "summary" : "Add IP addresses to the list of IP addresses for which this IdP should be pre-selected.",
         "description" : "Add IP addresses to the list of IP addresses for which this IdP should be pre-selected.",
@@ -2171,7 +2183,7 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/IpAddresser/{id2}" : {
+    "/IdentityProviders/{id1}/IpAdresser/{id2}" : {
       "delete" : {
         "summary" : "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
         "description" : "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
@@ -2387,6 +2399,9 @@
         "description" : "Set the Præsentationsnavn (display name) of this identity provider",
         "tags" : [
           "IdP"
+        ],
+        "consumes" : [
+          "application/json"
         ],
         "produces" : [
           "application/json"
@@ -3127,6 +3142,25 @@
         }
       }
     },
+    "Dataafgraensning" : {
+      "description" : "A Dataafgraensning (data restriction) comprises a DRT and DRV, and can be thought of as an instantation of DRT",
+      "required" : [
+        "DataafgraensningstypeId"
+      ],
+      "properties" : {
+        "DataafgraensningstypeId" : {
+          "description" : "The Dataafgraensningstype (data restriction type) for this Dataafgraensnings (data restriction). This is the ID of the Dataafgraensningstype, which is defined as a URL.",
+          "type" : "string"
+        },
+        "Values" : {
+          "description" : "The values",
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
     "Dataafgraensningstype" : {
       "description" : "A Dataafgraensningstype (data restriction type)",
       "properties" : {
@@ -3153,13 +3187,6 @@
         "Description" : {
           "description" : "A description of this data restriction type",
           "type" : "string"
-        },
-        "Values" : {
-          "description" : "A list of Dataafgraensninger (data restrictions) for this user system role",
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
         }
       }
     },
@@ -3265,10 +3292,10 @@
       }
     },
     "RoleMapping" : {
-      "description" : "Defines a one-to-many mapping between a single job function role, and one or more user system roles.",
+      "description" : "Defines a mapping between a job function role, and a Brugersystemrolle (user system role) including data restrictions.",
       "required" : [
         "JobfunktionsrolleId",
-        "Brugersystemroller"
+        "BrugersystemrolleId"
       ],
       "properties" : {
         "Id" : {
@@ -3279,11 +3306,15 @@
           "description" : "The Id of the job function role to map from",
           "type" : "string"
         },
-        "Brugersystemroller" : {
-          "description" : "A list of Id of the user system roles to map to ",
+        "BrugersystemrolleId" : {
+          "description" : "The Id of the Brugersystemrolle to map to",
+          "type" : "string"
+        },
+        "Dataafgraensninger" : {
+          "description" : "A list of Dataafgraensninger (data restrictions) for this role mapping. The DRT for each Dataafgraensning element has to match one or more Brugersystemrolle in this RoleMapping.",
           "type" : "array",
           "items" : {
-            "type" : "string"
+            "$ref" : "#/definitions/Dataafgraensning"
           }
         }
       }

@@ -90,6 +90,30 @@
         }
       }
     },
+    "AppliesTo" : {
+      "description" : "The AppliesTo",
+      "required" : [
+        "EndpointReference"
+      ],
+      "properties" : {
+        "EndpointReference" : {
+          "description" : "The EndpointReference",
+          "$ref" : "#/definitions/EndpointReference"
+        }
+      }
+    },
+    "EndpointReference" : {
+      "description" : "The EndpointReference",
+      "required" : [
+        "Address"
+      ],
+      "properties" : {
+        "Address" : {
+          "description" : "The address of this endpoint reference",
+          "type" : "string"
+        }
+      }
+    },
     "Error" : {
       "required" : [
         "code",
@@ -116,31 +140,18 @@
       ],
       "properties" : {
         "Anvenderkontekst" : {
-          "title" : "Anvenderkontekst",
           "description" : "The Anvenderkontekst for this token",
           "$ref" : "#/definitions/Anvenderkontekst"
         },
         "AppliesTo" : {
-          "type" : "object",
-          "title" : "AppliesTo",
-          "properties" : {
-            "EndpointReference" : {
-              "title" : "EndpointReference",
-              "type" : "object",
-              "properties" : {
-                "Address" : {
-                  "type" : "string"
-                }
-              }
-            }
-          }
+          "description" : "The AppliesTo",
+          "$ref" : "#/definitions/AppliesTo"
         },
         "KeyType" : {
-          "type" : "string",
-          "description" : "The type of key in use"
+          "description" : "The type of key in use",
+          "type" : "string"
         },
         "OnBehalfOf" : {
-          "title" : "OnBehalfOf",
           "description" : "The bootstrap token for the user this token should be issued on behalf of",
           "type" : "string"
         },
@@ -149,7 +160,7 @@
           "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
         },
         "TokenType" : {
-          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
+          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0",
           "type" : "string"
         },
         "UseKey" : {
@@ -162,19 +173,8 @@
       "description" : "A RequestSecurityTokenResponse message",
       "properties" : {
         "AppliesTo" : {
-          "type" : "object",
-          "title" : "AppliesTo",
-          "properties" : {
-            "EndpointReference" : {
-              "title" : "EndpointReference",
-              "type" : "object",
-              "properties" : {
-                "Address" : {
-                  "type" : "string"
-                }
-              }
-            }
-          }
+          "description" : "The AppliesTo",
+          "$ref" : "#/definitions/AppliesTo"
         },
         "KeyType" : {
           "type" : "string",
@@ -185,14 +185,8 @@
           "description" : "The lifetime of the issued token"
         },
         "RequestedSecurityToken" : {
-          "type" : "object",
-          "title" : "RequestedSecurityToken",
-          "properties" : {
-            "Assertion" : {
-              "type" : "string",
-              "description" : "The base64 encoded value of the issued SAML2.0 token"
-            }
-          }
+          "description" : "The RequestedSecurityToken",
+          "$ref" : "#/definitions/RequestedSecurityToken"
         },
         "RequestType" : {
           "type" : "string",
@@ -201,6 +195,18 @@
         "TokenType" : {
           "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
           "type" : "string"
+        }
+      }
+    },
+    "RequestedSecurityToken" : {
+      "description" : "The RequestedSecurityToken",
+      "required" : [
+        "Assertion"
+      ],
+      "properties" : {
+        "Assertion" : {
+          "type" : "string",
+          "description" : "The base64 encoded value of the issued SAML2.0 token"
         }
       }
     }
