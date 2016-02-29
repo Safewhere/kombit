@@ -3,7 +3,7 @@
   "info" : {
     "version" : "1.0.0",
     "title" : "STS REST Service",
-    "description" : "This document describes an interface where tokens can be requested using a REST interface, instead of the WS-Trust variant also supported.",
+    "description" : "(D.03.07.10001) This document describes an interface where tokens can be requested using a REST interface, instead of the WS-Trust variant also supported.",
     "contact" : {
       "name" : "Martin Strandbygaard / Safewhere"
     }
