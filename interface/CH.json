@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2.0.0",
+    "version" : "2.0.1",
     "title" : "Provisioning service",
     "description" : "(D.03.08.10000) Provisioning service for Støttesystem Context Handler",
     "contact" : {
@@ -3694,10 +3694,12 @@
       "properties" : {
         "Sluttidspunkt" : {
           "type" : "string",
+          "format" : "date-time",
           "description" : "The end time for this Aktiveringstidspunkt (activation time)"
         },
         "Starttidspunkt" : {
           "type" : "string",
+          "format" : "date-time",
           "description" : "The start time for this Aktiveringstidspunkt (activation time)"
         }
       }
@@ -3709,7 +3711,8 @@
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Cvr" : {
-          "type" : "string",
+          "type" : "integer",
+          "format" : "int32",
           "description" : "The CVR of the organization this user context represents"
         }
       }
