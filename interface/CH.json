@@ -3706,7 +3706,6 @@
       "description" : "Anvenderkontekst (a user context)",
       "properties" : {
         "Aktiveringstidspunkt" : {
-          "description" : "The Aktiveringstidspunkt (activation time) during which, the Anvenderkontekst (user context) is enabled.",
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Cvr" : {
@@ -3749,7 +3748,6 @@
           "description" : "The id of the role."
         },
         "Aktiveringstidspunkt" : {
-          "description" : "The Aktiveringstidspunkt (activation time), when this Brugersystemrolle (user role) is active",
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Dataafgraensningstyper" : {
@@ -3932,18 +3930,15 @@
           "type" : "string"
         },
         "Aktiveringstidspunkt" : {
-          "description" : "The Aktiveringstidspunkt (activation time), when the job function role is enabled.",
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "DelegeretTil" : {
-          "description" : "List of Anvenderkontekst (user contexts) this job function role is delegated to. If a job function role is delegated to a user context, then an identity provider for that user context may issue this job function role",
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/Anvenderkontekst"
           }
         },
         "Anvenderkontekst" : {
-          "description" : "The user context that defines this job function role",
           "$ref" : "#/definitions/Anvenderkontekst"
         }
       }
@@ -3984,7 +3979,6 @@
       ],
       "properties" : {
         "Aktiveringstidspunkt" : {
-          "description" : "The Aktiveringstidspunkt (activation time), when the SAML metadata is active.",
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Id" : {
