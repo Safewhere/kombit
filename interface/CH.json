@@ -3797,6 +3797,10 @@
         "Cvr" : {
           "type" : "string",
           "description" : "The CVR for the organization this BrugervendtSystem belongs to. This property is necessary to support the scoping element required by a proxy IdP in accordance with OIOSAML."
+        },
+        "IncludeBootstrapToken" : {
+          "type" : "boolean",
+          "description" : "Specifies if a bootstrap token should be include in the token issued to the Brugervendt system. If set to true, the token received by CH from the upstream IdP will be included as a separate attribute in the token issued to this Brugervendt system. The bootstrap token is included as a base64 encoded string containing the original token that was received by CH from the upstream IdP."
         }
       }
     },
