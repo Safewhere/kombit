@@ -2400,6 +2400,13 @@
           "type" : "string",
           "description" : "The SAML2.0 EntityId of the service. The EntityId must be globally unique within the federation, and cannot be shared by any other service, identity provider or user system."
         },
+        "RoleMappings" : {
+          "description" : "A list of role mappings for this Service",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/RoleMapping"
+          }
+        },
         "ServiceType" : {
           "type" : "string",
           "description" : "The type of this service"
