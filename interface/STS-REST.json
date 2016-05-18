@@ -85,7 +85,8 @@
       ],
       "properties" : {
         "Cvr" : {
-          "type" : "string",
+          "type" : "integer",
+          "format" : "int32",
           "description" : "The CVR of the organization this Anvenderkontekst (user context) represents"
         }
       }
