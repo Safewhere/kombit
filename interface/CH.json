@@ -3711,8 +3711,7 @@
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Cvr" : {
-          "type" : "integer",
-          "format" : "int32",
+          "type" : "string",
           "description" : "The CVR of the organization this user context represents"
         }
       }
