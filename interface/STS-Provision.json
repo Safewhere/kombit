@@ -1977,12 +1977,10 @@
       "properties" : {
         "Sluttidspunkt" : {
           "type" : "string",
-          "format" : "date-time",
           "description" : "The end time for this Aktiveringstidspunkt (activation time)"
         },
         "Starttidspunkt" : {
           "type" : "string",
-          "format" : "date-time",
           "description" : "The start time for this Aktiveringstidspunkt (activation time)"
         }
       }
@@ -2163,8 +2161,7 @@
           "type" : "string"
         },
         "IssuedAnvenderkontekst" : {
-          "type" : "integer",
-          "format" : "int32",
+          "type" : "string",
           "description" : "The issued Anvenderkontekst (user context) for this role assignment. If issued user context IS specified, then the scope on the privilegegroup for this role assignment will be set to this value. If the issue user context is NOT specified, then the scope of the privilege group will be set to the value of the Anvenderkontekst (user context) on this role assignment."
         }
       }
