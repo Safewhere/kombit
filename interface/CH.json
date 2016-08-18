@@ -589,10 +589,13 @@
           {
             "name" : "body",
             "in" : "body",
-            "description" : "The metadata to add",
+            "description" : "A list of metadata elements to add. The list MUST contain exactly one element.",
             "required" : true,
             "schema" : {
-              "$ref" : "#/definitions/SamlMetadata"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/SamlMetadata"
+              }
             }
           }
         ],
