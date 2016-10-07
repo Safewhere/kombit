@@ -589,10 +589,13 @@
           {
             "name" : "body",
             "in" : "body",
-            "description" : "The metadata to add",
+            "description" : "A list of metadata elements to add. The list MUST contain exactly one element.",
             "required" : true,
             "schema" : {
-              "$ref" : "#/definitions/SamlMetadata"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/SamlMetadata"
+              }
             }
           }
         ],
@@ -3694,12 +3697,10 @@
       "properties" : {
         "Sluttidspunkt" : {
           "type" : "string",
-          "format" : "date-time",
           "description" : "The end time for this Aktiveringstidspunkt (activation time)"
         },
         "Starttidspunkt" : {
           "type" : "string",
-          "format" : "date-time",
           "description" : "The start time for this Aktiveringstidspunkt (activation time)"
         }
       }
@@ -3711,8 +3712,7 @@
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
         "Cvr" : {
-          "type" : "integer",
-          "format" : "int32",
+          "type" : "string",
           "description" : "The CVR of the organization this user context represents"
         }
       }
