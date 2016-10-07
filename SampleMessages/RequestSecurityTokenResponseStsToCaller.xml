@@ -1,4 +1,4 @@
-<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
   <s:Header>
     <a:Action s:mustUnderstand="1" u:Id="_2">http://docs.oasis-open.org/ws-sx/ws-trust/200512/RSTRC/IssueFinal</a:Action>
     <ActivityId CorrelationId="11fcb37e-3974-4435-b4bb-5924df302d2f" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">a47b840e-46b8-4e3f-8851-9f5777580b6b</ActivityId>
