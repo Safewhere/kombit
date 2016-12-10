@@ -796,9 +796,9 @@
     },
     "/Anvendersystemer/{id}/OcesCertifikater" : {
       "put" : {
-        "summary" : "Add an OCES Certifikat on a specific Anvendersystem (user system)",
-        "operationId" : "addOcesCertifikatByAnvendersystemId",
-        "description" : "Add an OCES Certifikat on a specific `Anvendersystem` object.",
+        "summary" : "Add OCES certificates to a specific Anvendersystem (user system)",
+        "operationId" : "addOcesCertificatesByAnvendersystemId",
+        "description" : "Add one or more OCES certificates on a specific `Anvendersystem` object.",
         "tags" : [
           "Service"
         ],
@@ -819,19 +819,14 @@
           {
             "name" : "body",
             "in" : "body",
-            "description" : "The OCES Certifikat to add",
+            "description" : "A list of OCES certificates to add to this Anvendersystem (user system).",
             "required" : true,
             "schema" : {
               "type" : "array",
               "items" : {
-                "title" : "OcesCertificate",
-                "type" : "object",
-                "properties" : {
-                  "Base64" : {
-                    "type" : "string",
-                    "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
-                  }
-                }
+                "type" : "string",
+                "title" : "OcesCertifikat",
+                "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
               }
             }
           }
