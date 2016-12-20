@@ -898,16 +898,11 @@
             "description" : "The OCES Certifikat to delete",
             "required" : true,
             "schema" : {
-              "type" : "object",
+              "type" : "array",
               "items" : {
-                "title" : "OcesCertificate",
-                "type" : "object",
-                "properties" : {
-                  "Base64" : {
-                    "type" : "string",
-                    "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
-                  }
-                }
+                "type" : "string",
+                "title" : "OcesCertifikat",
+                "description" : "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
               }
             }
           }
