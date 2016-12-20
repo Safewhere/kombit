@@ -3932,6 +3932,10 @@
           "description" : "The id of the job function role.",
           "type" : "string"
         },
+        "Version" : {		
+          "type" : "string",		
+          "description" : "The version of the job function role. The last part of the JFR name is always '/[version]', e.g. '/1', and this property must be set to '[version]' for this JFR, e.g. '1'"		
+        },
         "Aktiveringstidspunkt" : {
           "$ref" : "#/definitions/Aktiveringstidspunkt"
         },
