@@ -3941,6 +3941,7 @@
     "RoleMapping" : {
       "description" : "Defines a mapping between a job function role, and a Brugersystemrolle (user system role) including data restrictions.",
       "required" : [
+        "Id",
         "JobfunktionsrolleId",
         "BrugersystemrolleId"
       ],
