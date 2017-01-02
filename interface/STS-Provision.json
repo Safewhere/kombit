@@ -2156,6 +2156,7 @@
     "ServiceMetadata": {
       "description": "Metadata for a service",
       "required": [
+        "Id",
         "Aktiveringstidspunkt",
         "Identifier"
       ],
