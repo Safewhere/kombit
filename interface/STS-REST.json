@@ -97,7 +97,6 @@
       ],
       "properties" : {
         "EndpointReference" : {
-          "description" : "The EndpointReference",
           "$ref" : "#/definitions/EndpointReference"
         }
       }
@@ -148,7 +147,7 @@
           "$ref" : "#/definitions/AppliesTo"
         },
         "KeyType" : {
-          "description" : "The type of key in use. This value MUST be specified as \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey\"",
+          "description" : "The type of key in use. This value MUST be specified as \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey\" or \"http://schemas.microsoft.com/idfx/keytype/asymmetric\"",
           "type" : "string"
         },
         "OnBehalfOf" : {
@@ -157,7 +156,7 @@
         },
         "RequestType" : {
           "type" : "string",
-          "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
+          "description" : "Must be set to \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue\" or \"http://schemas.microsoft.com/idfx/requesttype/issue\""
         },
         "TokenType" : {
           "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0",
