@@ -2578,16 +2578,8 @@
             "required" : true,
             "schema" : {
               "type" : "string",
-              "items" : {
-                "title" : "Beskrivelse",
-                "type" : "object",
-                "properties" : {
-                  "Id" : {
-                    "description" : "The description",
-                    "type" : "string"
-                  }
-                }
-              }
+              "title" : "Beskrivelse",
+              "description" : "The Beskrivelse (description) of this identity provider."
             }
           }
         ],
@@ -2948,17 +2940,9 @@
             "description" : "The Præsentationsnavn (display name) of this identity provider",
             "required" : true,
             "schema" : {
-              "type" : "string",
-              "items" : {
-                "title" : "Beskrivelse",
-                "type" : "object",
-                "properties" : {
-                  "Id" : {
-                    "description" : "The description",
-                    "type" : "string"
-                  }
-                }
-              }
+              "type": "string",
+              "title": "Praesentationsnavn",
+              "description": "The Præsentationsnavn (display name) of this identity provider."
             }
           }
         ],
