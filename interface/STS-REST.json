@@ -1,211 +1,211 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "version" : "1.0.0",
-    "title" : "STS REST Service",
-    "description" : "(D.03.07.10001) This document describes an interface where tokens can be requested using a REST interface, instead of the WS-Trust variant also supported.",
-    "contact" : {
-      "name" : "Martin Strandbygaard / Safewhere"
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "STS REST Service",
+    "description": "(D.03.07.10001) This document describes an interface where tokens can be requested using a REST interface, instead of the WS-Trust variant also supported.",
+    "contact": {
+      "name": "Martin Strandbygaard / Safewhere"
     }
   },
-  "schemes" : [
+  "schemes": [
     "https"
   ],
-  "consumes" : [
+  "consumes": [
     "application/json"
   ],
-  "produces" : [
+  "produces": [
     "application/json"
   ],
-  "paths" : {
-    "/api/rest/wstrust/v1/issue" : {
-      "post" : {
-        "summary" : "Request a new SAML2.0 assertion",
-        "description" : "Request a new SAML2.0 assertion",
-        "tags" : [
+  "paths": {
+    "/api/rest/wstrust/v1/issue": {
+      "post": {
+        "summary": "Request a new SAML2.0 assertion",
+        "description": "Request a new SAML2.0 assertion",
+        "tags": [
           "STS"
         ],
-        "consumes" : [
+        "consumes": [
           "application/json"
         ],
-        "produces" : [
+        "produces": [
           "application/json"
         ],
-        "parameters" : [
+        "parameters": [
           {
-            "in" : "body",
-            "name" : "body",
-            "description" : "The RequestWstrustToken element",
-            "required" : true,
-            "schema" : {
-              "$ref" : "#/definitions/RequestSecurityToken"
+            "in": "body",
+            "name": "body",
+            "description": "The RequestWstrustToken element",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RequestSecurityToken"
             }
           }
         ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/RequestSecurityTokenResponse"
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/RequestSecurityTokenResponse"
             }
           },
-          "401" : {
-            "description" : "Unauthorized",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
             }
           },
-          "400" : {
-            "description" : "Invalid data supplied",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
             }
           },
-          "409" : {
-            "description" : "Conflicting request",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
             }
           },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/Error"
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
             }
           }
         }
       }
     }
   },
-  "definitions" : {
-    "Anvenderkontekst" : {
-      "description" : "An Anvenderkontekst (user context)",
-      "required" : [
+  "definitions": {
+    "Anvenderkontekst": {
+      "description": "An Anvenderkontekst (user context)",
+      "required": [
         "Cvr"
       ],
-      "properties" : {
-        "Cvr" : {
-          "type" : "string",
-          "description" : "The CVR of the organization this Anvenderkontekst (user context) represents"
+      "properties": {
+        "Cvr": {
+          "type": "string",
+          "description": "The CVR of the organization this Anvenderkontekst (user context) represents"
         }
       }
     },
-    "AppliesTo" : {
-      "description" : "The AppliesTo",
-      "required" : [
+    "AppliesTo": {
+      "description": "The AppliesTo",
+      "required": [
         "EndpointReference"
       ],
-      "properties" : {
-        "EndpointReference" : {
-          "$ref" : "#/definitions/EndpointReference"
+      "properties": {
+        "EndpointReference": {
+          "$ref": "#/definitions/EndpointReference"
         }
       }
     },
-    "EndpointReference" : {
-      "description" : "The EndpointReference",
-      "required" : [
+    "EndpointReference": {
+      "description": "The EndpointReference",
+      "required": [
         "Address"
       ],
-      "properties" : {
-        "Address" : {
-          "description" : "The address of this endpoint reference",
-          "type" : "string"
+      "properties": {
+        "Address": {
+          "description": "The address of this endpoint reference",
+          "type": "string"
         }
       }
     },
-    "Error" : {
-      "required" : [
+    "Error": {
+      "required": [
         "code",
         "message"
       ],
-      "properties" : {
-        "code" : {
-          "type" : "integer",
-          "format" : "int32"
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
         },
-        "message" : {
-          "type" : "string"
+        "message": {
+          "type": "string"
         }
       }
     },
-    "RequestSecurityToken" : {
-      "description" : "A `RequestSecurityToken` message",
-      "required" : [
+    "RequestSecurityToken": {
+      "description": "A `RequestSecurityToken` message",
+      "required": [
         "AppliesTo",
         "KeyType",
         "RequestType",
         "TokenType",
         "UseKey"
       ],
-      "properties" : {
-        "Anvenderkontekst" : {
-          "description" : "The Anvenderkontekst for this token",
-          "$ref" : "#/definitions/Anvenderkontekst"
+      "properties": {
+        "Anvenderkontekst": {
+          "description": "The Anvenderkontekst for this token",
+          "$ref": "#/definitions/Anvenderkontekst"
         },
-        "AppliesTo" : {
-          "description" : "The AppliesTo",
-          "$ref" : "#/definitions/AppliesTo"
+        "AppliesTo": {
+          "description": "The AppliesTo",
+          "$ref": "#/definitions/AppliesTo"
         },
-        "KeyType" : {
-          "description" : "The type of key in use. This value MUST be specified as \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey\" or \"http://schemas.microsoft.com/idfx/keytype/asymmetric\"",
-          "type" : "string"
+        "KeyType": {
+          "description": "The type of key in use. This value MUST be specified as \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/PublicKey\" or \"http://schemas.microsoft.com/idfx/keytype/asymmetric\"",
+          "type": "string"
         },
-        "OnBehalfOf" : {
-          "description" : "The bootstrap token for the user this token should be issued on behalf of. This must be either the base64 encoded X.509v3 certificate (for proxy-OnBehalfOf) or the assertion (for regular OnBehalfOf).",
-          "type" : "string"
+        "OnBehalfOf": {
+          "description": "The bootstrap token for the user this token should be issued on behalf of. This must be either the base64 encoded X.509v3 certificate (for proxy-OnBehalfOf) or the assertion (for regular OnBehalfOf).",
+          "type": "string"
         },
-        "RequestType" : {
-          "type" : "string",
-          "description" : "Must be set to \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue\" or \"http://schemas.microsoft.com/idfx/requesttype/issue\""
+        "RequestType": {
+          "type": "string",
+          "description": "Must be set to \"http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue\" or \"http://schemas.microsoft.com/idfx/requesttype/issue\""
         },
-        "TokenType" : {
-          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0",
-          "type" : "string"
+        "TokenType": {
+          "description": "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0",
+          "type": "string"
         },
-        "UseKey" : {
-          "description" : "The UseKey element of the RST. Should contain a base64 encoded X.509v3 certificate.",
-          "type" : "string"
+        "UseKey": {
+          "description": "The UseKey element of the RST. Should contain a base64 encoded X.509v3 certificate.",
+          "type": "string"
         }
       }
     },
-    "RequestSecurityTokenResponse" : {
-      "description" : "A RequestSecurityTokenResponse message",
-      "properties" : {
-        "AppliesTo" : {
-          "description" : "The AppliesTo",
-          "$ref" : "#/definitions/AppliesTo"
+    "RequestSecurityTokenResponse": {
+      "description": "A RequestSecurityTokenResponse message",
+      "properties": {
+        "AppliesTo": {
+          "description": "The AppliesTo",
+          "$ref": "#/definitions/AppliesTo"
         },
-        "KeyType" : {
-          "type" : "string",
-          "description" : "The type of key in use"
+        "KeyType": {
+          "type": "string",
+          "description": "The type of key in use"
         },
-        "Lifetime" : {
-          "type" : "string",
-          "description" : "The lifetime of the issued token"
+        "Lifetime": {
+          "type": "string",
+          "description": "The lifetime of the issued token"
         },
-        "RequestedSecurityToken" : {
-          "description" : "The RequestedSecurityToken",
-          "$ref" : "#/definitions/RequestedSecurityToken"
+        "RequestedSecurityToken": {
+          "description": "The RequestedSecurityToken",
+          "$ref": "#/definitions/RequestedSecurityToken"
         },
-        "RequestType" : {
-          "type" : "string",
-          "description" : "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
+        "RequestType": {
+          "type": "string",
+          "description": "Must be set to http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue"
         },
-        "TokenType" : {
-          "description" : "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
-          "type" : "string"
+        "TokenType": {
+          "description": "Must be set to http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile- 1.1#SAMLV2.0",
+          "type": "string"
         }
       }
     },
-    "RequestedSecurityToken" : {
-      "description" : "The RequestedSecurityToken",
-      "required" : [
+    "RequestedSecurityToken": {
+      "description": "The RequestedSecurityToken",
+      "required": [
         "Assertion"
       ],
-      "properties" : {
-        "Assertion" : {
-          "type" : "string",
-          "description" : "The base64 encoded value of the issued SAML2.0 token"
+      "properties": {
+        "Assertion": {
+          "type": "string",
+          "description": "The base64 encoded value of the issued SAML2.0 token"
         }
       }
     }
