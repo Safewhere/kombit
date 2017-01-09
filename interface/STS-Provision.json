@@ -1297,10 +1297,7 @@
             "description": "The service metadata to add",
             "required": true,
             "schema": {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/ServiceMetadata"
-              }
+              "$ref": "#/definitions/ServiceMetadata"
             }
           }
         ],
