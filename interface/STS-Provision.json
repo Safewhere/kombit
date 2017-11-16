@@ -2024,7 +2024,10 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ImpersonationAssignment"
-          }
+          }        },
+        "Betroet": {
+          "description": "Defines if this Anvendersystem is globally authorized to perform proxy OnBehalfOf token request.",
+          "type": "bool"
         }
       }
     },
