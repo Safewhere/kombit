@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<q1:AuthnRequest ID="id7410bd69223f486d9df156443a8b262a" Version="2.0" IssueInstant="2015-03-24T02:13:28.8037787Z" Destination="https://adgangsstyring.test-stoettesystemerne.dk/runtime/saml2/issue.idp" IsPassive="false" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" xmlns:q1="urn:oasis:names:tc:SAML:2.0:protocol">
+	<Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://oiosaml.test-stoettesystemerne.dk</Issuer>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+			<Reference URI="#id7410bd69223f486d9df156443a8b262a">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>ZQGGlK7P1+/TmkE0b/BwFB4YcKY=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>Wqa08XRfPdEVSIxz9I7h9U6NDP0IBxNzwPEBSkuFmgu/mVykrBSIYIQSdsOnDhScLBunsyGkKKj9gbWhuBXOHP7hakAO7uDo6HxATz+tZkmXz8DU3G6mNKu/0pXgj7CAxX4rJrosDLORsoYsTND1VItD81LiC/bHEArBlwYE7nlIvzsVCh8bnUdVYTIRaDwRUIDcXueSWy1q9QjjEATSL5sfQLbkYQGu2hZPbOYfaqHxNF6NTlHctv1CSJkoMdlBEUYeUQes07RHP5+FYLFwLeWxD/m7NC/wKLyiHyeqKTV+nHmjD4T8Xt62Xdea09e6Arj0dgLPr9Sv7fXUSR/1ng==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIDCTCCAfGgAwIBAgIQUVsdCkocHoVDJ6QI5LEMcDANBgkqhkiG9w0BAQsFADAnMRQwEgYKCZImiZPyLGQBGRYEdGVzdDEPMA0GA1UEAwwGS29tYml0MB4XDTE1MDIxNTE2MTcyM1oXDTMwMDIxNTE2MTcyM1owJzEUMBIGCgmSJomT8ixkARkWBHRlc3QxDzANBgNVBAMMBktvbWJpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+zZ4ln2m3PpehsyLlRCWAv1OX5WtHmHN2493sFtohEqCY3GNuyRc3+sKawdSa9u53Q8L17tqbGWx23sbX0/IRB/k7BgRa4O6uyoCIhWDzenx6nPhagByvopO35mxkC1h5KBF+3ME9J8jBLXKcqOacvsBI1kqixkdhRCR/BldTS3SfHZHvbZi9KGjPJc/pO2l8L5V7wH1N7O/qz6ACGdXzzHuxcFR06LXmgNu99nNUieMnHz6Ta9Tm0j+kWsQsPEr1gBV06QrePB8wjXts7q3MZhKjkndUZ7nCEH1dNp+EqnXhLH11P9T0bYi3oactlvDqLvFUyBbIkChPgRQ/CWwUCAwEAAaMxMC8wHQYDVR0OBBYEFCS2r2VDmlYa0se2ojHX91Kxa/XaMA4GA1UdDwEB/wQEAwIFIDANBgkqhkiG9w0BAQsFAAOCAQEADpRLvnY3fU9vXS9O97E9u1MLJeikPMko7+2sA2dzQYeFp/f4iUAXELwsqkAps6kqi2DYJ/HdDoCSzWqveYOMpSy4X8UoNWLoFlCVbes7wZNKH6znTgTDJmVKaKpOIHKgQ0cjVyV+HCosDS5QMxHHCNpqSDQi4HZ+/CUUxp1AVuU/cohS9i5S30HxyIDqlOFuVcFxPGmeA9vI/20jvRTfyEACbogTeH6NegNfXz7WwtbN/2plb8TDkUTi2dlfMqebDpO/39jBxc1WKWTxLrFZvQ3IC3rByq/0G9kH83lZxFVRgOgbu/+McUqp4PvkWxECrQsPhgDfHvLF6ax25C057w==</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<Conditions xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+		<AudienceRestriction>
+			<Audience>https://oiosaml.test-stoettesystemerne.dk</Audience>
+		</AudienceRestriction>
+	</Conditions>
+	<saml2p:RequestedAuthnContext Comparison="minimum">
+		<saml2:AuthnContextClassRef xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">http://schemas.microsoft.com/claims/multipleauthn</saml2:AuthnContextClassRef>
+	</saml2p:RequestedAuthnContext>
+</q1:AuthnRequest>
