@@ -1949,7 +1949,7 @@
         "summary": "Get all identity providers",
         "description": "Get all identity providers",
         "tags": [
-          "Role"
+          "IdP"
         ],
         "consumes": [
           "application/json"
@@ -2916,7 +2916,7 @@
         }
       }
     },
-	"/IdentityProviders/{id}/SupportsScope/{value}": {
+	  "/IdentityProviders/{id}/SupportsScope/{value}": {
       "put": {
         "summary": "Set if this identity provider is scrope support or not",
         "description": "Set if this identity provider is scrope support or not",
@@ -2985,7 +2985,7 @@
         }
       }
     },
-	"/IdentityProviders/{id}/SupportsStepUp/{value}": {
+	  "/IdentityProviders/{id}/SupportsStepUp/{value}": {
       "put": {
         "summary": "Set if this identity provider is 'step up' support or not",
         "description": "Set if this identity provider is 'step up' support or not",
@@ -4030,14 +4030,14 @@
           "type": "boolean",
           "description": "Specifies if this IdentityProvider should be enabled for mobile use"
         },
-		"SupportsScope": {
-		  "type": "boolean",
-		  "description": "Specifies if this IdentityProvider should be enabled for scoping. When an Identity Provider is provisioned without the attribute, the default value will be FALSE"
-		},
-		"SupportsStepUp": {
-		  "type": "string",
-		  "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED, and SUPPORTED_ADFS. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED. Although ADFS doesn’t support Scoping, the combination of[SupportsScope = true, SupportsStepUp = SUPPORTED_ADFS] is still allowed."
-		},
+		    "SupportsScope": {
+		      "type": "boolean",
+		      "description": "Specifies if this IdentityProvider should be enabled for scoping. When an Identity Provider is provisioned without the attribute, the default value will be FALSE"
+		    },
+		    "SupportsStepUp": {
+		      "type": "string",
+		      "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED, and SUPPORTED_ADFS. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED. Although ADFS doesn’t support Scoping, the combination of[SupportsScope = true, SupportsStepUp = SUPPORTED_ADFS] is still allowed."
+		    },
         "Praesentationsnavn": {
           "type": "string",
           "description": "The name this identity provider will be presented as to the user"
