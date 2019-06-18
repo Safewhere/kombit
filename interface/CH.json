@@ -2987,8 +2987,8 @@
     },
 	  "/IdentityProviders/{id}/SupportsStepUp/{value}": {
       "put": {
-        "summary": "Set if this identity provider is enabled for 'step up' support or not",
-        "description": "Set if this identity provider is enabled for 'step up' support or not",
+        "summary": "Set if this identity provider is enabled for Step-Up support or not",
+        "description": "Set if this identity provider is enabled for Step-Up support or not",
         "tags": [
           "IdP"
         ],
