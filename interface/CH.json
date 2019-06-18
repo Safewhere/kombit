@@ -2918,8 +2918,8 @@
     },
 	  "/IdentityProviders/{id}/SupportsScope/{value}": {
       "put": {
-        "summary": "Set if this identity provider is scrope support or not",
-        "description": "Set if this identity provider is scrope support or not",
+        "summary": "Set if this identity provider is enabled for scoping or not",
+        "description": "Set if this identity provider is enabled for scoping or not",
         "tags": [
           "IdP"
         ],
@@ -2930,14 +2930,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set scope support for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "true/false if the identity provider is scope support",
+            "description": "true/false if the identity provider is enabled/ disabled for scoping",
             "required": true,
             "type": "string"
           }
@@ -2987,8 +2987,8 @@
     },
 	  "/IdentityProviders/{id}/SupportsStepUp/{value}": {
       "put": {
-        "summary": "Set if this identity provider is 'step up' support or not",
-        "description": "Set if this identity provider is 'step up' support or not",
+        "summary": "Set if this identity provider is enabled for 'step up' support or not",
+        "description": "Set if this identity provider is enabled for 'step up' support or not",
         "tags": [
           "IdP"
         ],
@@ -2999,7 +2999,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set 'step up' support for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
