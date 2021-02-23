@@ -1949,7 +1949,7 @@
         "summary": "Get all identity providers",
         "description": "Get all identity providers",
         "tags": [
-          "Role"
+          "IdP"
         ],
         "consumes": [
           "application/json"
@@ -2869,6 +2869,144 @@
             "name": "value",
             "in": "path",
             "description": "true/false if the identity provider is mobile friendly",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/SupportsScope/{value}": {
+      "put": {
+        "summary": "Set if this identity provider is enabled for scoping or not",
+        "description": "Set if this identity provider is enabled for scoping or not",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "true/false if the identity provider is enabled/ disabled for scoping",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/SupportsStepUp/{value}": {
+      "put": {
+        "summary": "Set if this identity provider is enabled for Step-Up support or not",
+        "description": "Set if this identity provider is enabled for Step-Up support or not",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "One of predefined values 'NOT_SUPPORTED', 'SUPPORTED', 'SUPPORTED_ADFS'",
             "required": true,
             "type": "string"
           }
@@ -3891,6 +4029,14 @@
         "Mobilvenlig": {
           "type": "boolean",
           "description": "Specifies if this IdentityProvider should be enabled for mobile use"
+        },
+        "SupportsScope": {
+          "type": "boolean",
+          "description": "Specifies if this IdentityProvider should be enabled for scoping. When an Identity Provider is provisioned without the attribute, the default value will be FALSE"
+        },
+        "SupportsStepUp": {
+          "type": "string",
+          "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED, and SUPPORTED_ADFS. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED. Although ADFS doesn’t support Scoping, the combination of[SupportsScope = true, SupportsStepUp = SUPPORTED_ADFS] is still allowed."
         },
         "Praesentationsnavn": {
           "type": "string",
