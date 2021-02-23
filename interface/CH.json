@@ -2677,28 +2677,31 @@
         }
       }
     },
-    "/IdentityProviders/{id}/SupportsScope/{value}": {
+    "/IdentityProviders/{id}/NSISAssuranceLevel/{value}": {
       "put": {
-        "summary": "Set if this identity provider is enabled for scoping or not",
-        "description": "Set if this identity provider is enabled for scoping or not",
+        "summary": "Set the NSISAssuranceLevel for this IdentityProvider",
+        "description": "Set the 'NSISAssuranceLevel' for this `IdentityProvider'",
         "tags": [
           "IdP"
         ],
         "produces": [
           "application/json"
         ],
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "true/false if the identity provider is enabled/ disabled for scoping",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
@@ -2746,28 +2749,31 @@
         }
       }
     },
-    "/IdentityProviders/{id}/SupportsStepUp/{value}": {
+    "/IdentityProviders/{id}/OIOSAMLProfile/{value}": {
       "put": {
-        "summary": "Set if this identity provider is enabled for Step-Up support or not",
-        "description": "Set if this identity provider is enabled for Step-Up support or not",
+        "summary": "Set the OIOSAMLProfile for this IdentityProvider",
+        "description": "Set the 'OIOSAMLProfile' for this `IdentityProvider'",
         "tags": [
           "IdP"
         ],
         "produces": [
           "application/json"
         ],
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set OIO SAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "One of predefined values 'NOT_SUPPORTED', 'SUPPORTED', 'SUPPORTED_ADFS'",
+            "description": "The OIO SAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
             "required": true,
             "type": "string"
           }
@@ -2846,6 +2852,78 @@
               "title": "Praesentationsnavn",
               "description": "The Præsentationsnavn (display name) of this identity provider."
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/ProductType/{value}": {
+      "put": {
+        "summary": "Set the ProductType for this IdentityProvider",
+        "description": "Set the 'ProductType' for this `IdentityProvider'",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The product for this identity provider. The value MUST not exceed 32 characters and it can be empty. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'.",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -3056,222 +3134,6 @@
             "name": "value",
             "in": "path",
             "description": "One of predefined values 'NOT_SUPPORTED', 'SUPPORTED', 'SUPPORTED_ADFS'",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/NSISAssuranceLevel/{value}": {
-      "put": {
-        "summary": "Set the NSISAssuranceLevel for this IdentityProvider",
-        "description": "Set the 'NSISAssuranceLevel' for this `IdentityProvider'",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider to set NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "value",
-            "in": "path",
-            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/OIOSAMLProfile/{value}": {
-      "put": {
-        "summary": "Set the OIOSAMLProfile for this IdentityProvider",
-        "description": "Set the 'OIOSAMLProfile' for this `IdentityProvider'",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider to set OIO SAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "value",
-            "in": "path",
-            "description": "The OIO SAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/ProductType/{value}": {
-      "put": {
-        "summary": "Set the ProductType for this IdentityProvider",
-        "description": "Set the 'ProductType' for this `IdentityProvider'",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "value",
-            "in": "path",
-            "description": "The product for this identity provider. The value MUST not exceed 32 characters and it can be empty. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'.",
             "required": true,
             "type": "string"
           }
