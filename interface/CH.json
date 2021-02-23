@@ -484,91 +484,10 @@
         }
       }
     },
-    "/AttributServices/{id1}/Anvenderkontekster/{id2}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Akteringstidspunkt (activation times) for this attribute service",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) for this attribute service",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the anvenderkontekst to set the activation time for",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "tags": [
-          "IdP"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
     "/AttributServices/{id}/SamlMetadata": {
       "put": {
-        "summary": "Add a SAML2.0 metadata document on this AttributService",
-        "description": "Add a SAML2.0 metadata document on this `AttributeService`",
+        "summary": "Update the SAML2.0 metadata document on this AttributService",
+        "description": "Update the SAML2.0 metadata document on this `AttributeService`",
         "tags": [
           "IdP"
         ],
@@ -589,86 +508,11 @@
           {
             "name": "body",
             "in": "body",
-            "description": "A list of metadata elements to add. The list MUST contain exactly one element.",
+            "description": "A metadata document to update.",
             "required": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
+              "$ref": "#/definitions/SamlMetadata"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/AttributServices/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SAML2.0 metadata document from this AttributService",
-        "description": "Delete a SAML2.0 metadata document from this `AttributeService`",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the metadata to delete",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -990,80 +834,6 @@
             "description": "The id of the user system role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "Role"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/Brugersystemroller/{id}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Aktiveringstidspunkt (activation time) on the specified user system role",
-        "description": "Set the Aktiveringstidspunkt (activation time) on the specified user system role",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the user system role to add activation times for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
           }
         ],
         "tags": [
@@ -1652,10 +1422,10 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id}/SamlMetadata": {
+    "/BrugervendteSystemer/{id}/OIOSAMLProfile/{value}": {
       "put": {
-        "summary": "Add a SAML metadata version on the specified user system",
-        "description": "Add a `SamlMetadata` version on the specified `BrugervendtSystem`",
+        "summary": "Set the OIOSAMLProfile for this BrugervendtSystem (user system)",
+        "description": "Set the 'OIOSAMLProfile' for this `BrugervendtSystem` (user system)",
         "tags": [
           "SP"
         ],
@@ -1669,21 +1439,16 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set OIO SAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "body",
-            "in": "body",
-            "description": "The metadata to add",
+            "name": "value",
+            "in": "path",
+            "description": "The OIO SAML profile for this user system. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
             "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -1729,31 +1494,108 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SAML metadata version on the specified user system",
-        "description": "Delete a `SamlMetadata` version on the specified `BrugervendtSystem`",
+    "/BrugervendteSystemer/{id}/NSISAssuranceLevel/{value}": {
+      "put": {
+        "summary": "Set the NSISAssuranceLevel for this BrugervendtSystem (user system)",
+        "description": "Set the 'NSISAssuranceLevel' for this `BrugervendtSystem` (user system)",
+        "tags": [
+          "SP"
+        ],
         "produces": [
+          "application/json"
+        ],
+        "consumes": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the user system to delete a SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "value",
             "in": "path",
-            "description": "The id of the SAML2.0 metadata version to delete",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BrugervendteSystemer/{id}/SamlMetadata": {
+      "put": {
+        "summary": "Update the SAML metadata version on the specified user system",
+        "description": "Update the `SamlMetadata` version on the specified `BrugervendtSystem`",
         "tags": [
           "SP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The metadata to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SamlMetadata"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -2356,87 +2198,6 @@
         ],
         "tags": [
           "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id1}/Anvenderkontekster/{id2}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Akteringstidspunkt (activation time) on this Anvenderkontekst (user context)",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) on this `Anvenderkontekst` (user context)",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the IdentityProvider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the anvenderkontekst to set the activation time for",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation times) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "tags": [
-          "IdP"
-        ],
-        "consumes": [
-          "application/json"
         ],
         "produces": [
           "application/json"
@@ -3132,8 +2893,8 @@
     },
     "/IdentityProviders/{id}/SamlMetadata": {
       "put": {
-        "summary": "Add a SAML metadata version on the specified IdentityProvider",
-        "description": "Add a `SamlMetadata` version on the specified `IdentityProvider`",
+        "summary": "Update the SAML metadata version on the specified IdentityProvider",
+        "description": "Update the `SamlMetadata` version on the specified `IdentityProvider`",
         "tags": [
           "IdP"
         ],
@@ -3154,13 +2915,10 @@
           {
             "name": "body",
             "in": "body",
-            "description": "The metadata to add",
+            "description": "The metadata to update",
             "required": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
+              "$ref": "#/definitions/SamlMetadata"
             }
           }
         ],
@@ -3207,31 +2965,178 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SamlMetadata version on the specified IdentityProvider",
-        "description": "Delete a `SamlMetadata` version on the specified `IdentityProvider`",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the IdentityProvider to delete a SAML2.0 metadata version for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the SAML2.0 metadata version to delete. This is the ID attribute of the EntityDescriptor element in the saml metadata document.",
-            "required": true,
-            "type": "string"
-          }
-        ],
+    "/IdentityProviders/{id}/NSISAssuranceLevel/{value}": {
+      "put": {
+        "summary": "Set the NSISAssuranceLevel for this IdentityProvider",
+        "description": "Set the 'NSISAssuranceLevel' for this `IdentityProvider'",
         "tags": [
           "IdP"
         ],
         "produces": [
           "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/OIOSAMLProfile/{value}": {
+      "put": {
+        "summary": "Set the OIOSAMLProfile for this IdentityProvider",
+        "description": "Set the 'OIOSAMLProfile' for this `IdentityProvider'",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set OIO SAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The OIO SAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/ProductType/{value}": {
+      "put": {
+        "summary": "Set the ProductType for this IdentityProvider",
+        "description": "Set the 'ProductType' for this `IdentityProvider'",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The product for this identity provider. The value MUST not exceed 32 characters and it can be empty. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'.",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
@@ -3598,80 +3503,6 @@
         }
       }
     },
-    "/Jobfunktionsroller/{id}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Aktiveringstidspunkt (activation time) on the Jobfunktionsrolle (job function role)",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) on the `Jobfunktionsrolle` (job function role)",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "tags": [
-          "Role"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the job function role to set the activation time for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
     "/Jobfunktionsroller/{id}/DelegeretTil": {
       "put": {
         "summary": "Append a list of Anvenderkontekst (user context) to the JobfunktionsRolle (job function role)",
@@ -3820,25 +3651,9 @@
     }
   },
   "definitions": {
-    "Aktiveringstidspunkt": {
-      "description": "Aktiveringstidspunkt (activation time). A time range, when an object is enabled",
-      "properties": {
-        "Sluttidspunkt": {
-          "type": "string",
-          "description": "The end time for this Aktiveringstidspunkt (activation time)"
-        },
-        "Starttidspunkt": {
-          "type": "string",
-          "description": "The start time for this Aktiveringstidspunkt (activation time)"
-        }
-      }
-    },
     "Anvenderkontekst": {
       "description": "Anvenderkontekst (a user context)",
       "properties": {
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Cvr": {
           "type": "string",
           "description": "The CVR of the organization this user context represents"
@@ -3853,11 +3668,8 @@
           "description": "The SAML2.0 EntityId of the `AttributeService`"
         },
         "SamlMetadata": {
-          "description": "A list of SAML2.0 metadata documents for this `AttributeService`",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this `AttributeService`",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "Anvenderkontekster": {
           "description": "A list of Anvenderkontekst (user context) this attribute service applies to",
@@ -3877,9 +3689,6 @@
         "Id": {
           "type": "string",
           "description": "The id of the role."
-        },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
         },
         "Dataafgraensningstyper": {
           "description": "A list of Dataafgraensningstyper (data restrictions) for this user system role",
@@ -3909,11 +3718,8 @@
           "description": "The requested assurance level of this Brugervendt system (user system). This property must be a value of 1-4."
         },
         "SamlMetadata": {
-          "description": "A list SAML2.0 metadata documents for this `BrugervendtSystem`",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this `BrugervendtSystem`",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "RoleMappings": {
           "description": "A list of role mappings for this BrugervendtSystem (user system)",
@@ -3925,6 +3731,14 @@
         "Cvr": {
           "type": "string",
           "description": "The CVR for the organization this BrugervendtSystem belongs to. This property is necessary to support the scoping element required by a proxy IdP in accordance with OIOSAML."
+        },
+        "OIOSAMLProfile": {
+          "type": "string",
+          "description": "Specifies what OIOSAML profile a UserSystem uses. Valid values are OIOSAML2 and OIOSAML3"
+        },
+        "NSISAssuranceLevel": {
+          "type": "string",
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
         }
       }
     },
@@ -4043,11 +3857,8 @@
           "description": "The name this identity provider will be presented as to the user"
         },
         "SamlMetadata": {
-          "description": "A list SAML2.0 metadata documents for this IdentityProvider",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this IdentityProvider",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "IpAdresser": {
           "description": "A list of IP addresses. If a user comes from one of these IP addresses, then this identity provider will be automatically selected, if it is the only identity provider for which the addreses are registered.",
@@ -4055,6 +3866,19 @@
           "items": {
             "type": "string"
           }
+        },
+        "OIOSAMLProfile": {
+          "type": "string",
+          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2 and OIOSAML3"
+        },
+        "NSISAssuranceLevel": {
+          "type": "string",
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+        },
+        "ProductType": {
+          "type": "string",
+          "maxLength": 32,
+          "description": "Specifies what software product that an Identity Provider is using. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'. Empty value is allowed."
         }
       }
     },
@@ -4071,9 +3895,6 @@
         "Version": {
           "type": "string",
           "description": "The version of the job function role. The last part of the JFR name is always '/[version]', e.g. '/1', and this property must be set to '[version]' for this JFR, e.g. '1'"
-        },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
         },
         "DelegeretTil": {
           "type": "array",
@@ -4119,12 +3940,10 @@
       "description": "Represents a SAML2.0 metadata document",
       "required": [
         "Id",
-        "Xml"
+        "Xml",
+        "MetadataUrl"
       ],
       "properties": {
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Id": {
           "type": "string",
           "description": "The id of this metadata document. The id also corresponds to the version of this metadata document. The id (or version) is computed derived from the certificate present in the metadta. Per the business rules, a different certificate must be used for each version of a metadata document."
@@ -4132,6 +3951,10 @@
         "Xml": {
           "type": "string",
           "description": "A base64 encoded string with the XML of the SAML2.0 metadata document"
+        },
+        "MetadataUrl": {
+          "type": "string",
+          "description": "An URL to pull the Saml Metadata"
         }
       }
     }
