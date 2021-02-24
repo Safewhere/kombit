@@ -4474,7 +4474,7 @@
       }
     },
     "User": {
-      "description": "Represents a User",
+      "description": "Represents a User.",
       "required": [
         "Authority",
         "Id",
@@ -4487,10 +4487,10 @@
         },
         "Id": {
           "type": "string",
-          "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider"
+          "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
         },
         "Claims": {
-          "description": "A list claims for this `User`",
+          "description": "A claims list for this `User`.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/KeyValue"
@@ -4499,7 +4499,7 @@
       }
     },
     "KeyValue": {
-      "description": "Represents a key-value pair",
+      "description": "Represents a key-value pair.",
       "required": [
         "Key",
         "Value"
@@ -4507,11 +4507,11 @@
       "properties": {
         "Key": {
           "type": "string",
-          "description": "Represents a Key of a key-value pair"
+          "description": "Represents a Key of a key-value pair."
         },
         "Value": {
           "type": "string",
-          "description": "Represents a Value of a key-value pair"
+          "description": "Represents a Value of a key-value pair."
         }
       }
     }
