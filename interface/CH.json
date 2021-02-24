@@ -150,7 +150,7 @@
     "/AttributServices/{id}": {
       "get": {
         "summary": "Get a specific AttributeService",
-        "description": "Get a specific `AttributeService`",
+        "description": "Get a specific AttributeService",
         "tags": [
           "IdP"
         ],
@@ -282,7 +282,7 @@
       },
       "delete": {
         "summary": "Delete a specific AttributeService",
-        "description": "Delete a specific `AttributeService`",
+        "description": "Delete a specific AttributeService",
         "tags": [
           "IdP"
         ],
@@ -341,7 +341,7 @@
     "/AttributServices/{id1}/Anvenderkontekster": {
       "put": {
         "summary": "Add an Anvenderkontekst to this attribute service",
-        "description": "Add an `Anvenderkontekst` (user context) to the list of Anvenderkontekster on this attribute service",
+        "description": "Add an Anvenderkontekst (user context) to the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
             "name": "id1",
@@ -418,7 +418,7 @@
     "/AttributServices/{id1}/Anvenderkontekster/{id2}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst from this attribute service",
-        "description": "Delete an `Anvenderkontekst` (user context) from the list of Anvenderkontekster on this attribute service",
+        "description": "Delete an Anvenderkontekst (user context) from the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
             "name": "id1",
@@ -487,7 +487,7 @@
     "/AttributServices/{id}/SamlMetadata": {
       "put": {
         "summary": "Update the SAML2.0 metadata document on this AttributService",
-        "description": "Update the SAML2.0 metadata document on this `AttributeService`",
+        "description": "Update the SAML2.0 metadata document on this AttributeService",
         "tags": [
           "IdP"
         ],
@@ -1091,7 +1091,7 @@
       },
       "post": {
         "summary": "Create a new BrugervendtSystem",
-        "description": "Create a new `BrugervendtSystem`",
+        "description": "Create a new BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1159,7 +1159,7 @@
     "/BrugervendteSystemer/{id}": {
       "get": {
         "summary": "Get a specific BrugervendtSystem",
-        "description": "Get a specific `BrugervendtSystem`",
+        "description": "Get a specific BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1222,7 +1222,7 @@
       },
       "put": {
         "summary": "Update a specific BrugervendtSystem",
-        "description": "Update a specific `BrugervendtSystem`",
+        "description": "Update a specific BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1291,7 +1291,7 @@
       },
       "delete": {
         "summary": "Delete a specific BrugervendtSystem",
-        "description": "Delete a specific `BrugervendtSystem`",
+        "description": "Delete a specific BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1353,7 +1353,7 @@
     "/BrugervendteSystemer/{id}/AssuranceLevel/{value}": {
       "put": {
         "summary": "Set the minimum required assurance level for this BrugervendtSystem (user system)",
-        "description": "Set the minimum required assurance level for this `BrugervendtSystem` (user system)",
+        "description": "Set the minimum required assurance level for this BrugervendtSystem (user system)",
         "tags": [
           "SP"
         ],
@@ -1425,7 +1425,7 @@
     "/BrugervendteSystemer/{id}/OIOSAMLProfile/{value}": {
       "put": {
         "summary": "Set the OIOSAMLProfile for this BrugervendtSystem (user system)",
-        "description": "Set the 'OIOSAMLProfile' for this `BrugervendtSystem` (user system)",
+        "description": "Set the OIOSAMLProfile for this BrugervendtSystem (user system)",
         "tags": [
           "SP"
         ],
@@ -1439,14 +1439,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set OIO SAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set OIOSAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "The OIO SAML profile for this user system. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
+            "description": "The OIOSAML profile for this user system. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
             "required": true,
             "type": "string"
           }
@@ -1497,7 +1497,7 @@
     "/BrugervendteSystemer/{id}/NSISAssuranceLevel/{value}": {
       "put": {
         "summary": "Set the NSISAssuranceLevel for this BrugervendtSystem (user system)",
-        "description": "Set the 'NSISAssuranceLevel' for this `BrugervendtSystem` (user system)",
+        "description": "Set the NSISAssuranceLevel for this BrugervendtSystem (user system)",
         "tags": [
           "SP"
         ],
@@ -1511,7 +1511,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1569,7 +1569,7 @@
     "/BrugervendteSystemer/{id}/SamlMetadata": {
       "put": {
         "summary": "Update the SAML metadata version on the specified user system",
-        "description": "Update the `SamlMetadata` version on the specified `BrugervendtSystem`",
+        "description": "Update the SamlMetadata version on the specified BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1643,7 +1643,7 @@
     "/BrugervendteSystemer/{id}/RoleMappings": {
       "put": {
         "summary": "Add a role mapping on the specified user system",
-        "description": "Add `RoleMapping` items on the specified `BrugervendtSystem`",
+        "description": "Add RoleMapping items on the specified BrugervendtSystem",
         "tags": [
           "SP"
         ],
@@ -1720,7 +1720,7 @@
     "/BrugervendteSystemer/{id1}/RoleMappings/{id2}": {
       "delete": {
         "summary": "Delete a role mapping on the specified user system",
-        "description": "Delete a `RoleMapping` item on the specified `BrugervendtSystem`",
+        "description": "Delete a RoleMapping item on the specified BrugervendtSystem",
         "produces": [
           "application/json"
         ],
@@ -1849,7 +1849,7 @@
       },
       "post": {
         "summary": "Create a new identity provider",
-        "description": "Create a new `IdentityProvider`",
+        "description": "Create a new IdentityProvider",
         "tags": [
           "IdP"
         ],
@@ -1917,12 +1917,12 @@
     "/IdentityProviders/{id}": {
       "get": {
         "summary": "Get a specific IdentityProvider object.",
-        "description": "Get a specific `IdentityProvider` object.",
+        "description": "Get a specific IdentityProvider object.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the IdentityProvider to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -1977,12 +1977,12 @@
       },
       "put": {
         "summary": "Update a specific IdentityProvider object.",
-        "description": "Update a specific `IdentityProvider` object.",
+        "description": "Update a specific IdentityProvider object.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the IdentityProvider to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2043,12 +2043,12 @@
       },
       "delete": {
         "summary": "Delete a specific IdentityProvider object.",
-        "description": "Delete a specific `IdentityProvider` object.",
+        "description": "Delete a specific IdentityProvider object.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the IdentityProvider to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2102,7 +2102,7 @@
     "/IdentityProviders/{id}/Anvenderkontekster": {
       "put": {
         "summary": "Add user contexts the list on the specified identity provider",
-        "description": "Add a list of `Anvenderkontekst` (user context) to the list on the specified `IdentityProvider`. The list is appended to the existing list on the specified identity provider.",
+        "description": "Add a list of Anvenderkontekst (user context) to the list on the specified IdentityProvider. The list is appended to the existing list on the specified identity provider.",
         "tags": [
           "IdP"
         ],
@@ -2179,7 +2179,7 @@
     "/IdentityProviders/{id1}/Anvenderkontekster/{id2}": {
       "delete": {
         "summary": "Delete an anvenderkontekst (user context) on the specified IdentityProvider",
-        "description": "Delete an `Anvenderkontekst` (user context) on the specified `IdentityProvider`",
+        "description": "Delete an Anvenderkontekst (user context) on the specified IdentityProvider",
         "parameters": [
           {
             "name": "id1",
@@ -2259,7 +2259,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set an assurance level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2680,7 +2680,7 @@
     "/IdentityProviders/{id}/NSISAssuranceLevel/{value}": {
       "put": {
         "summary": "Set the NSISAssuranceLevel for this IdentityProvider",
-        "description": "Set the 'NSISAssuranceLevel' for this `IdentityProvider'",
+        "description": "Set the NSISAssuranceLevel for this IdentityProvider",
         "tags": [
           "IdP"
         ],
@@ -2752,7 +2752,7 @@
     "/IdentityProviders/{id}/OIOSAMLProfile/{value}": {
       "put": {
         "summary": "Set the OIOSAMLProfile for this IdentityProvider",
-        "description": "Set the 'OIOSAMLProfile' for this `IdentityProvider'",
+        "description": "Set the OIOSAMLProfile for this IdentityProvider",
         "tags": [
           "IdP"
         ],
@@ -2766,14 +2766,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set OIO SAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set OIOSAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "The OIO SAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
+            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
             "required": true,
             "type": "string"
           }
@@ -2900,7 +2900,7 @@
     "/IdentityProviders/{id}/ProductType/{value}": {
       "put": {
         "summary": "Set the ProductType for this IdentityProvider",
-        "description": "Set the 'ProductType' for this `IdentityProvider'",
+        "description": "Set the ProductType for this IdentityProvider",
         "tags": [
           "IdP"
         ],
@@ -2972,7 +2972,7 @@
     "/IdentityProviders/{id}/SamlMetadata": {
       "put": {
         "summary": "Update the SAML metadata version on the specified IdentityProvider",
-        "description": "Update the `SamlMetadata` version on the specified `IdentityProvider`",
+        "description": "Update the SamlMetadata version on the specified IdentityProvider",
         "tags": [
           "IdP"
         ],
@@ -3244,7 +3244,7 @@
       },
       "post": {
         "summary": "Create a new JobfunktionsRolle (job function role)",
-        "description": "Creates a new `Jobfunktionsrolle`.",
+        "description": "Creates a new Jobfunktionsrolle.",
         "tags": [
           "Role"
         ],
@@ -3312,7 +3312,7 @@
     "/Jobfunktionsroller/{id}": {
       "get": {
         "summary": "Get a specific job function role",
-        "description": "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be retrieved, and the calling get with the ID of the found role.",
+        "description": "Get a specific Jobfunktionsrolle object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be retrieved, and the calling get with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3375,7 +3375,7 @@
       },
       "put": {
         "summary": "Update a specific job function role",
-        "description": "Update a specific `Jobfunktionsrolle` object",
+        "description": "Update a specific Jobfunktionsrolle object",
         "tags": [
           "Role"
         ],
@@ -3444,7 +3444,7 @@
       },
       "delete": {
         "summary": "Delete a specific job function role",
-        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be deleted, and the calling delet with the ID of the found role.",
+        "description": "Delete a specific Jobfunktionsrolle object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be deleted, and the calling delet with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3506,7 +3506,7 @@
     "/Jobfunktionsroller/{id}/DelegeretTil": {
       "put": {
         "summary": "Append a list of Anvenderkontekst (user context) to the JobfunktionsRolle (job function role)",
-        "description": "Append a list of `Anvenderkontekst` (user context) to the `Jobfunktionsrolle` (job funktion role)",
+        "description": "Append a list of Anvenderkontekst (user context) to the Jobfunktionsrolle (job funktion role)",
         "consumes": [
           "application/json"
         ],
@@ -3583,7 +3583,7 @@
     "/Jobfunktionsroller/{id1}/DelegeretTil/{id2}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst (user context) for the Jobfunktionsrolle (job function role)",
-        "description": "Delete an `Anvenderkontekst` (user context) for the `Jobfunktionsrolle` (job function role)",
+        "description": "Delete an Anvenderkontekst (user context) for the Jobfunktionsrolle (job function role)",
         "produces": [
           "application/json"
         ],
@@ -3665,10 +3665,10 @@
       "properties": {
         "Id": {
           "type": "string",
-          "description": "The SAML2.0 EntityId of the `AttributeService`"
+          "description": "The SAML2.0 EntityId of the AttributeService"
         },
         "SamlMetadata": {
-          "description": "A SAML2.0 metadata document for this `AttributeService`",
+          "description": "A SAML2.0 metadata document for this AttributeService",
           "$ref": "#/definitions/SamlMetadata"
         },
         "Anvenderkontekster": {
@@ -3681,7 +3681,7 @@
       }
     },
     "Brugersystemrolle": {
-      "description": "Brugersystemrolle (user system role). A `Brugersystemrolle` (user system role) is related to exactly one `BrugervendtSystem`. A `BrugervendtSystem` can have 0 or more `Brugersystemrolle` related.",
+      "description": "Brugersystemrolle (user system role). A Brugersystemrolle (user system role) is related to exactly one BrugervendtSystem. A BrugervendtSystem can have 0 or more Brugersystemrolle related.",
       "required": [
         "Id"
       ],
@@ -3710,7 +3710,7 @@
       "properties": {
         "Id": {
           "type": "string",
-          "description": "The SAML2.0 EntityId of the `BrugervendtSystem`. The EntityId must be globally unique within the federation."
+          "description": "The SAML2.0 EntityId of the BrugervendtSystem. The EntityId must be globally unique within the federation."
         },
         "AssuranceLevel": {
           "type": "integer",
@@ -3718,7 +3718,7 @@
           "description": "The requested assurance level of this Brugervendt system (user system). This property must be a value of 1-4."
         },
         "SamlMetadata": {
-          "description": "A SAML2.0 metadata document for this `BrugervendtSystem`",
+          "description": "A SAML2.0 metadata document for this BrugervendtSystem",
           "$ref": "#/definitions/SamlMetadata"
         },
         "RoleMappings": {
@@ -3802,6 +3802,10 @@
         },
         "message": {
           "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "description": "Set to “2.0” to indicate that a response is from the new service."
         }
       }
     },
