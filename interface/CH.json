@@ -3931,6 +3931,13 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the user to get. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "type": "string",
+            "required": true
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "The user to create",
