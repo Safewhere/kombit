@@ -3990,7 +3990,7 @@
         }
       }
     },
-    "ClientCertificates": {
+    "/ClientCertificates": {
       "get": {
         "summary": "Get all client certificates",
         "description": "Get all client certificates in base64 format",
@@ -4053,7 +4053,7 @@
       },
       "post": {
         "summary": "Add a client certificate",
-        "description": "Add a client certificate",
+        "description": "Add a client certificate (public key only) that a municipality can use to provision user data for the SEB profile.",
         "tags": [
           "ClientCertificate"
         ],
@@ -4063,7 +4063,9 @@
             "name": "body",
             "description": "The client certificate in base64 string format to add.",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "produces": [
@@ -4110,7 +4112,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/ClientCertificates/{certificate}": {
       "delete": {
         "summary": "Delete a specific client certificate.",
         "description": "Delete a specific client certificate.",
