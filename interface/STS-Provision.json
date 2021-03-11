@@ -1737,80 +1737,6 @@
         }
       }
     },
-    "/Servicesystemroller/{id}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the activation time for the specified service system role",
-        "description": "Set the activation time for the specified service system role",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the service system role to add activation times for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The activation time to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "tags": [
-          "Role"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
     "/Servicesystemroller/{id}/Dataafgraensningstyper": {
       "put": {
         "summary": "Add a Dataafgraensningstype to the Servicesystemrolle",
@@ -1959,28 +1885,12 @@
     }
   },
   "definitions": {
-    "Aktiveringstidspunkt": {
-      "description": "Aktiveringstidspunkt (activation time). A time ranges, when an object is enabled.",
-      "properties": {
-        "Sluttidspunkt": {
-          "type": "string",
-          "description": "The end time for this Aktiveringstidspunkt (activation time)"
-        },
-        "Starttidspunkt": {
-          "type": "string",
-          "description": "The start time for this Aktiveringstidspunkt (activation time)"
-        }
-      }
-    },
     "Anvenderkontekst": {
       "description": "An Anvenderkontekst (user context)",
       "required": [
         "Cvr"
       ],
       "properties": {
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Cvr": {
           "type": "string",
           "description": "The CVR of the organization this Anvenderkontekst (user context) represents"
@@ -2092,6 +2002,10 @@
         },
         "message": {
           "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "description": "Set to '2.0' to indicate that a response is from the new service."
         }
       }
     },
@@ -2110,9 +2024,6 @@
         "OcesCertificate": {
           "type": "string",
           "description": "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
-        },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
         }
       }
     },
@@ -2165,9 +2076,6 @@
           "type": "string",
           "description": "The Id of this SAML metadata document"
         },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Identifier": {
           "type": "string",
           "description": "The identifier for this service"
@@ -2207,9 +2115,6 @@
         "Id": {
           "type": "string",
           "description": "The id of the role."
-        },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
         },
         "Dataafgraensningstyper": {
           "description": "A list of Dataafgraensningstyper (data restriction types) this Servicesystemrolle supports",

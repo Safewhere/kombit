@@ -1033,7 +1033,7 @@
         "summary": "Get all user systems",
         "description": "Get all user systems",
         "tags": [
-          "Role"
+          "SP"
         ],
         "consumes": [
           "application/json"
