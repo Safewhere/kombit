@@ -1590,7 +1590,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
@@ -2248,20 +2248,20 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/Anvenderkontekster/{id2}": {
+    "/IdentityProviders/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete an anvenderkontekst (user context) on the specified IdentityProvider",
         "description": "Delete an `Anvenderkontekst` (user context) on the specified `IdentityProvider`",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
             "description": "The id of the anvenderkontekst to delete",
             "required": true,
@@ -2539,7 +2539,7 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/IpAdresser/{id2}": {
+    "/IdentityProviders/{id}/IpAdresser/{value}": {
       "delete": {
         "summary": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
         "description": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
@@ -2554,14 +2554,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "value",
             "in": "path",
             "description": "The IP address to delete",
             "required": true,
@@ -2773,7 +2773,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
@@ -2993,7 +2993,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The product for this identity provider. The value MUST not exceed 32 characters and it can be empty. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'.",
+            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or empty.",
             "required": true,
             "type": "string"
           }
@@ -4269,7 +4269,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
         }
       }
     },
@@ -4408,7 +4408,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
         },
         "ProductType": {
           "type": "string",
@@ -4474,15 +4474,10 @@
     "SamlMetadata": {
       "description": "Represents a SAML2.0 metadata document",
       "required": [
-        "Id",
         "Xml",
         "MetadataUrl"
       ],
       "properties": {
-        "Id": {
-          "type": "string",
-          "description": "The id of this metadata document. The id also corresponds to the version of this metadata document. The id (or version) is computed derived from the certificate present in the metadta. Per the business rules, a different certificate must be used for each version of a metadata document."
-        },
         "Xml": {
           "type": "string",
           "description": "A base64 encoded string with the XML of the SAML2.0 metadata document"
