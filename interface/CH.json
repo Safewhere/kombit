@@ -3384,7 +3384,7 @@
     "/Jobfunktionsroller/{id}": {
       "get": {
         "summary": "Get a specific job function role",
-        "description": "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be retrieved, and the calling get with the ID of the found role.",
+        "description": "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling get with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3516,7 +3516,7 @@
       },
       "delete": {
         "summary": "Delete a specific job function role",
-        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be deleted, and the calling delet with the ID of the found role.",
+        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling delet with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -4481,10 +4481,6 @@
         "Id": {
           "description": "The id of the job function role.",
           "type": "string"
-        },
-        "Version": {
-          "type": "string",
-          "description": "The version of the job function role. The last part of the JFR name is always '/[version]', e.g. '/1', and this property must be set to '[version]' for this JFR, e.g. '1'"
         },
         "DelegeretTil": {
           "type": "array",
