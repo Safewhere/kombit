@@ -338,13 +338,13 @@
         }
       }
     },
-    "/AttributServices/{id1}/Anvenderkontekster": {
+    "/AttributServices/{id}/Anvenderkontekster": {
       "put": {
         "summary": "Add an Anvenderkontekst to this attribute service",
         "description": "Add an `Anvenderkontekst` (user context) to the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
@@ -415,22 +415,22 @@
         }
       }
     },
-    "/AttributServices/{id1}/Anvenderkontekster/{id2}": {
+    "/AttributServices/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst from this attribute service",
         "description": "Delete an `Anvenderkontekst` (user context) from the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the anvenderkontekst",
+            "description": "The cvr of the anvenderkontekst",
             "required": true,
             "type": "string"
           }
@@ -959,7 +959,7 @@
         }
       }
     },
-    "/Brugersystemroller/{id1}/Dataafgraensningstyper/{id2}": {
+    "/Brugersystemroller/{id}/Dataafgraensningstyper/{dataafgraensningstypeId}": {
       "delete": {
         "summary": "Delete a data restriction from a user system role",
         "description": "Delete a data restriction from a user system role",
@@ -968,14 +968,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the user system role to delete a data restriction for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "dataafgraensningstypeId",
             "in": "path",
             "description": "The id of the data restriction to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
@@ -1590,7 +1590,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
@@ -1789,7 +1789,7 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id1}/RoleMappings/{id2}": {
+    "/BrugervendteSystemer/{id}/RoleMappings/{roleMappingId}": {
       "delete": {
         "summary": "Delete a role mapping on the specified user system",
         "description": "Delete a `RoleMapping` item on the specified `BrugervendtSystem`",
@@ -1798,14 +1798,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the user system to delete the role mapping from. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "roleMappingId",
             "in": "path",
             "description": "The id of the role mapping to delete. This is the SAML2.0 attribute name of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
@@ -2248,22 +2248,22 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/Anvenderkontekster/{id2}": {
+    "/IdentityProviders/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete an anvenderkontekst (user context) on the specified IdentityProvider",
         "description": "Delete an `Anvenderkontekst` (user context) on the specified `IdentityProvider`",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the anvenderkontekst to delete",
+            "description": "The cvr of the anvenderkontekst to delete",
             "required": true,
             "type": "string"
           }
@@ -2539,7 +2539,7 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/IpAdresser/{id2}": {
+    "/IdentityProviders/{id}/IpAdresser/{value}": {
       "delete": {
         "summary": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
         "description": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
@@ -2554,14 +2554,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "value",
             "in": "path",
             "description": "The IP address to delete",
             "required": true,
@@ -2773,7 +2773,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
             "required": true,
             "type": "string"
           }
@@ -2993,7 +2993,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The product for this identity provider. The value MUST not exceed 32 characters and it can be empty. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'.",
+            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or empty.",
             "required": true,
             "type": "string"
           }
@@ -3652,7 +3652,7 @@
         }
       }
     },
-    "/Jobfunktionsroller/{id1}/DelegeretTil/{id2}": {
+    "/Jobfunktionsroller/{id}/DelegeretTil/{cvr}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst (user context) for the Jobfunktionsrolle (job function role)",
         "description": "Delete an `Anvenderkontekst` (user context) for the `Jobfunktionsrolle` (job function role)",
@@ -3661,16 +3661,16 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the Jobfunktionsrolle (job function role). This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the Anvenderkontekst (user context) to delete",
+            "description": "The cvr of the Anvenderkontekst (user context) to delete",
             "required": true,
             "type": "string"
           }
@@ -3783,12 +3783,12 @@
         }
       },
       "post": {
-        "summary": "Create new Users",
-        "description": "Creates new `User` objects.",
+        "summary": "Create a new User",
+        "description": "Creates a new `User`. The existing user with corresponding Id will be deleted then create a new user.",
         "tags": [
           "User"
         ],
-        "operationId": "createUsers",
+        "operationId": "createUser",
         "produces": [
           "application/json"
         ],
@@ -3799,13 +3799,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "The users to create",
+            "description": "The user to create",
             "required": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/User"
-              }
+              "$ref": "#/definitions/User"
             }
           }
         ],
@@ -3916,13 +3913,75 @@
           }
         }
       },
-      "post": {
-        "summary": "Create a new User",
-        "description": "Creates a new `User`. The existing user with corresponding Id will be deleted then create a new user.",
+      "delete": {
+        "summary": "Delete a specific user",
+        "description": "Delete a specific `User` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all users, findings the user to be deleted, and the calling delet with the ID of the found user.",
         "tags": [
           "User"
         ],
-        "operationId": "createUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the user to delete.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Users/bulk": {
+      "post": {
+        "summary": "Create new Users",
+        "description": "Creates new `User` objects.",
+        "tags": [
+          "User"
+        ],
+        "operationId": "createUsers",
         "produces": [
           "application/json"
         ],
@@ -3931,19 +3990,15 @@
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the user to get. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "type": "string",
-            "required": true
-          },
-          {
             "in": "body",
             "name": "body",
-            "description": "The user to create",
+            "description": "The users to create",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
             }
           }
         ],
@@ -4269,7 +4324,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
         }
       }
     },
@@ -4408,7 +4463,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/nsis/loa/Low', 'https://data.gov.dk/nsis/loa/Substantial' or 'https://data.gov.dk/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
         },
         "ProductType": {
           "type": "string",
@@ -4474,15 +4529,10 @@
     "SamlMetadata": {
       "description": "Represents a SAML2.0 metadata document",
       "required": [
-        "Id",
         "Xml",
         "MetadataUrl"
       ],
       "properties": {
-        "Id": {
-          "type": "string",
-          "description": "The id of this metadata document. The id also corresponds to the version of this metadata document. The id (or version) is computed derived from the certificate present in the metadta. Per the business rules, a different certificate must be used for each version of a metadata document."
-        },
         "Xml": {
           "type": "string",
           "description": "A base64 encoded string with the XML of the SAML2.0 metadata document"
