@@ -4116,7 +4116,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "The client certificate to add where it's Id must be the certificate's case-insensitive thumbprint and not contains space character.",
+            "description": "The client certificate to add where its Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/ClientCertificate"
@@ -4180,7 +4180,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the client certificate to get. It must be the certificate's case-insensitive thumbprint and not contains space character.",
+            "description": "The id of the client certificate to get. The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
             "type": "string",
             "required": true
           }
@@ -4243,7 +4243,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the client certificate to delete. It must be the certificate's case-insensitive thumbprint and not contains space character.",
+            "description": "The id of the client certificate to delete. The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
             "type": "string",
             "required": true
           }
@@ -4399,7 +4399,7 @@
       "properties": {
         "Id": {
           "type": "string",
-          "description": "It must be the case-insensitive thumbprint (without space character) of the client certificate."
+          "description": "The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive."
         },
         "Base64Certificate": {
           "type": "string"
