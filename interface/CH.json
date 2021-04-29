@@ -4048,7 +4048,7 @@
     "/ClientCertificates": {
       "get": {
         "summary": "Get all client certificates",
-        "description": "Get all client certificates in base64 format",
+        "description": "Get all client certificates",
         "tags": [
           "ClientCertificate"
         ],
@@ -4060,11 +4060,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response. A list of certificates in base64 format.",
+            "description": "Successful response. A list of client certificate objects.",
             "schema": {
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/ClientCertificate"
               }
             }
           },
@@ -4116,10 +4116,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "The client certificate in base64 string format to add.",
+            "description": "The client certificate to add where it's Id must be the certificate's case-insensitive thumbprint and not contains space character.",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/definitions/ClientCertificate"
             }
           }
         ],
@@ -4169,7 +4169,70 @@
         }
       }
     },
-    "/ClientCertificates/{certificate}": {
+    "/ClientCertificates/{id}": {
+      "get": {
+        "summary": "Get a specific client certificate",
+        "description": "Get a specific `ClientCertificate` object.",
+        "tags": [
+          "ClientCertificate"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the client certificate to get. It must be the certificate's case-insensitive thumbprint and not contains space character.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ClientCertificate"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
       "delete": {
         "summary": "Delete a specific client certificate.",
         "description": "Delete a specific client certificate.",
@@ -4178,9 +4241,9 @@
         ],
         "parameters": [
           {
-            "name": "certificate",
+            "name": "id",
             "in": "path",
-            "description": "The base64 string format client certificate to delete.",
+            "description": "The id of the client certificate to delete. It must be the certificate's case-insensitive thumbprint and not contains space character.",
             "type": "string",
             "required": true
           }
@@ -4325,6 +4388,21 @@
         "NSISAssuranceLevel": {
           "type": "string",
           "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+        }
+      }
+    },
+    "ClientCertificate": {
+      "required": [
+        "Id",
+        "Base64Certificate"
+      ],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "It must be the case-insensitive thumbprint (without space character) of the client certificate."
+        },
+        "Base64Certificate": {
+          "type": "string"
         }
       }
     },
@@ -4493,6 +4571,23 @@
         }
       }
     },
+    "KeyValue": {
+      "description": "Represents a key-value pair.",
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "properties": {
+        "Key": {
+          "type": "string",
+          "description": "Represents a Key of a key-value pair."
+        },
+        "Value": {
+          "type": "string",
+          "description": "Represents a Value of a key-value pair."
+        }
+      }
+    },
     "RoleMapping": {
       "description": "Defines a mapping between a job function role, and a Brugersystemrolle (user system role) including data restrictions.",
       "required": [
@@ -4561,23 +4656,6 @@
           "items": {
             "$ref": "#/definitions/KeyValue"
           }
-        }
-      }
-    },
-    "KeyValue": {
-      "description": "Represents a key-value pair.",
-      "required": [
-        "Key",
-        "Value"
-      ],
-      "properties": {
-        "Key": {
-          "type": "string",
-          "description": "Represents a Key of a key-value pair."
-        },
-        "Value": {
-          "type": "string",
-          "description": "Represents a Value of a key-value pair."
         }
       }
     }
