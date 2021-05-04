@@ -947,7 +947,7 @@
         }
       }
     },
-    "/Service": {
+    "/Services": {
       "get": {
         "summary": "Get a list of all Service",
         "description": "Get a list of all Service",
@@ -1076,7 +1076,7 @@
         }
       }
     },
-    "/Service/{id}": {
+    "/Services/{id}": {
       "get": {
         "summary": "Get a specific service",
         "description": "Get a specific `Service`",
@@ -1270,7 +1270,7 @@
         }
       }
     },
-    "/Service/{id}/ServiceMetadata": {
+    "/Services/{id}/ServiceMetadata": {
       "put": {
         "summary": "Add service metadata to the list of service metadata on this service",
         "description": "Add service metadata to the list of service metadtaa on the specified `Service`",
@@ -1344,7 +1344,7 @@
         }
       }
     },
-    "/Service/{id}/ServiceMetadata/{serviceMetadataId}": {
+    "/Services/{id}/ServiceMetadata/{serviceMetadataId}": {
       "delete": {
         "summary": "Delete a version of service metadata",
         "description": "Delete a version of service metadata",
