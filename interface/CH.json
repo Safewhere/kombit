@@ -1590,7 +1590,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
             "required": true,
             "type": "string"
           }
@@ -2773,7 +2773,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
             "required": true,
             "type": "string"
           }
@@ -2993,7 +2993,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or empty.",
+            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or 'Unspecified'.",
             "required": true,
             "type": "string"
           }
@@ -4482,7 +4482,8 @@
         "KenderRoller",
         "Mobilvenlig",
         "Praesentationsnavn",
-        "SamlMetadata"
+        "SamlMetadata",
+        "OIOSAMLProfile"
       ],
       "properties": {
         "Id": {
@@ -4518,7 +4519,7 @@
         },
         "SupportsStepUp": {
           "type": "string",
-          "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED, and SUPPORTED_ADFS. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED. Although ADFS doesn’t support Scoping, the combination of[SupportsScope = true, SupportsStepUp = SUPPORTED_ADFS] is still allowed."
+          "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED."
         },
         "Praesentationsnavn": {
           "type": "string",
@@ -4541,12 +4542,12 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
         },
         "ProductType": {
           "type": "string",
           "maxLength": 32,
-          "description": "Specifies what software product that an Identity Provider is using. Some possible values are 'ADFS 3', 'ADFS 3.1', 'ADFS 4'. Empty value is allowed."
+          "description": "Specifies what software product that an Identity Provider is using. Valid values are 'ADFS' and 'Unspecified'."
         }
       }
     },
