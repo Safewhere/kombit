@@ -1273,7 +1273,7 @@
     "/Service/{id}/ServiceMetadata": {
       "put": {
         "summary": "Add service metadata to the list of service metadata on this service",
-        "description": "Add service metadata to the list of service metadtaa on the specified `Service`",
+        "description": "Add service metadata to the list of service metadata on the specified `Service`",
         "tags": [
           "Service"
         ],
@@ -1294,10 +1294,13 @@
           {
             "name": "body",
             "in": "body",
-            "description": "The service metadata to add",
+            "description": "A list of service metadata to add",
             "required": true,
             "schema": {
+              "type": "array",
+              "items": {
               "$ref": "#/definitions/ServiceMetadata"
+              }
             }
           }
         ],
