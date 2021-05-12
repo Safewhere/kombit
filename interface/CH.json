@@ -4350,7 +4350,8 @@
         "AssuranceLevel",
         "Cvr",
         "Id",
-        "SamlMetadata"
+        "SamlMetadata",
+        "OIOSAMLProfile"
       ],
       "properties": {
         "Id": {
@@ -4387,7 +4388,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
         }
       }
     },
@@ -4482,7 +4483,8 @@
         "KenderRoller",
         "Mobilvenlig",
         "Praesentationsnavn",
-        "SamlMetadata"
+        "SamlMetadata",
+        "OIOSAMLProfile"
       ],
       "properties": {
         "Id": {
@@ -4541,7 +4543,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This value can be empty when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
         },
         "ProductType": {
           "type": "string",
