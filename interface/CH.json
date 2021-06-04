@@ -696,7 +696,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -765,7 +765,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to update. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system role to update. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -831,7 +831,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -899,7 +899,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to add data restrictions for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system role to add data restrictions for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -970,14 +970,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to delete a data restriction for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system role to delete a data restriction for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "dataafgraensningstypeId",
             "in": "path",
-            "description": "The id of the data restriction to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the data restriction to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -1170,7 +1170,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to get. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to get. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1233,7 +1233,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to update. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to update. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -1302,7 +1302,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to delete. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to delete. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1367,7 +1367,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set assurance level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to set assurance level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1439,7 +1439,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set attribute profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to set attribute profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1511,7 +1511,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set OIOSAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to set OIOSAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1583,14 +1583,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value  must be the base64 encoded.",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
             "required": true,
             "type": "string"
           }
@@ -1655,7 +1655,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1729,7 +1729,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to add role mappings for. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to add role mappings for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1800,14 +1800,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to delete the role mapping from. This is the SAML2.0 entityId of the BrugervendtSystem. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user system to delete the role mapping from. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "roleMappingId",
             "in": "path",
-            "description": "The id of the role mapping to delete. This is the SAML2.0 attribute name of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the role mapping to delete. This is the SAML2.0 attribute name of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -1994,7 +1994,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2054,7 +2054,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2120,7 +2120,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2188,7 +2188,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to add an anvenderkontekst (user context) for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to add an anvenderkontekst (user context) for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2256,7 +2256,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2331,7 +2331,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set an assurance level for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to set an assurance level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2403,7 +2403,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2479,7 +2479,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to add IP addresses for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to add IP addresses for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2556,7 +2556,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2625,7 +2625,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2694,7 +2694,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2766,14 +2766,14 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value  must be the base64 encoded.",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
             "required": true,
             "type": "string"
           }
@@ -2838,7 +2838,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set OIOSAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to set OIOSAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2910,7 +2910,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2986,7 +2986,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3058,7 +3058,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to add SAML2.0 metadata for. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider to add SAML2.0 metadata for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3129,7 +3129,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3198,7 +3198,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3392,7 +3392,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -3455,7 +3455,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -3524,7 +3524,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the job function role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -3592,7 +3592,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to append Anvenderkontekst for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the job function role to append Anvenderkontekst for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3663,7 +3663,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the Jobfunktionsrolle (job function role). This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the Jobfunktionsrolle (job function role). This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3860,7 +3860,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to get. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user to get. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -3923,7 +3923,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to delete. The id  must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user to delete. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
