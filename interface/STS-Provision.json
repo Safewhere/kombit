@@ -1090,7 +1090,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to get. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to get. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1153,7 +1153,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to update. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to update. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -1222,7 +1222,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to delete. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to delete. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1273,7 +1273,7 @@
     "/Service/{id}/ServiceMetadata": {
       "put": {
         "summary": "Add service metadata to the list of service metadata on this service",
-        "description": "Add service metadata to the list of service metadtaa on the specified `Service`",
+        "description": "Add service metadata to the list of service metadata on the specified `Service`",
         "tags": [
           "Service"
         ],
@@ -1287,17 +1287,20 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "body",
             "in": "body",
-            "description": "The service metadata to add",
+            "description": "A list of service metadata to add",
             "required": true,
             "schema": {
+              "type": "array",
+              "items": {
               "$ref": "#/definitions/ServiceMetadata"
+              }
             }
           }
         ],
@@ -1361,7 +1364,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1546,7 +1549,7 @@
     "/Servicesystemroller/{id}": {
       "get": {
         "summary": "Get a specific Servicesystemrolle",
-        "description": "Get a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Get a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1609,7 +1612,7 @@
       },
       "put": {
         "summary": "Update a specific Servicesystemrolle",
-        "description": "Update a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Update a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1678,7 +1681,7 @@
       },
       "delete": {
         "summary": "Delete a specific Servicesystemrolle",
-        "description": "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1754,7 +1757,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service system role to add a Dataafgraensningstype for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service system role to add a Dataafgraensningstype for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1825,7 +1828,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service system role. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service system role. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
