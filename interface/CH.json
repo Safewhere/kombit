@@ -2993,7 +2993,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or 'Unspecified'.",
+            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or 'Unspecified'. If ProductType field is 'Unspecified', empty string will be saved to database.",
             "required": true,
             "type": "string"
           }
@@ -4548,7 +4548,7 @@
         "ProductType": {
           "type": "string",
           "maxLength": 32,
-          "description": "Specifies what software product that an Identity Provider is using. Valid values are 'ADFS' and 'Unspecified'."
+          "description": "Specifies what software product that an Identity Provider is using. Valid values are 'ADFS' and empty."
         }
       }
     },
