@@ -2993,7 +2993,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The product type of this identity provider. Valid values must be either 'ADFS' or 'Unspecified'. If ProductType field is 'Unspecified', empty string will be saved to database.",
+            "description": "The product type of this identity provider. Its value must be either 'ADFS' or 'Unspecified'. The 'Unspecified' value is equivalent to the empty value when POST-ing an Identity Provider. This alternative is needed because we cannot leave the parameter empty which causes a routing issue. When the ProductType field is 'Unspecified', the empty value is actually saved to the database to ensure data consistency. This means that when you GET the Identity Provider back, its ProductType attribute is empty.",
             "required": true,
             "type": "string"
           }
