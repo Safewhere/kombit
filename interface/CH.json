@@ -4046,7 +4046,7 @@
       },
       "put": {
         "summary": "Overwrite the list of Users",
-        "description": "Overwrite all existing `User` objects and insert new users while all old objects will be kept.",
+        "description": "Overwrite all existing `User` objects and insert new users while all unmatched objects will be kept.",
         "tags": [
           "User"
         ],
@@ -4722,10 +4722,10 @@
           "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
         },
         "ModifiedDate": {
-          "description": "Lasted modified date of the `User`.",
+          "description": "The latest modified date of the `User`.",
           "type": "string",
           "format": "date-time",
-          "readOnly":  true
+          "readOnly": true
         },
         "Claims": {
           "description": "A claims list for this `User`.",
@@ -4748,7 +4748,7 @@
           "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
         },
         "ModifiedDate": {
-          "description": "Lasted modified date of the `User`.",
+          "description": "The latest modified date of the `User`.",
           "type": "string",
           "format": "date-time"
         }
