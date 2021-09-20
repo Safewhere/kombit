@@ -3736,11 +3736,11 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response. A list of id's of all User objects.",
+            "description": "Successful response. A list of id and modified date of all User objects.",
             "schema": {
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/UserBase"
               }
             }
           },
@@ -3976,12 +3976,81 @@
     },
     "/Users/bulk": {
       "post": {
-        "summary": "Create new Users",
-        "description": "Creates new `User` objects.",
+        "summary": "Create completely new list of Users",
+        "description": "Rebuild `User` objects, all old objects will be deleted.",
         "tags": [
           "User"
         ],
-        "operationId": "createUsers",
+        "operationId": "createNewUsers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The users to create",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite the list of Users",
+        "description": "Overwrite all existing `User` objects and insert new users while all unmatched objects will be kept.",
+        "tags": [
+          "User"
+        ],
+        "operationId": "overwriteUsers",
         "produces": [
           "application/json"
         ],
@@ -4652,12 +4721,36 @@
           "type": "string",
           "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
         },
+        "ModifiedDate": {
+          "description": "The latest modified date of the `User`.",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
         "Claims": {
           "description": "A claims list for this `User`.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/KeyValue"
           }
+        }
+      }
+    },
+    "UserBase": {
+      "description": "Represents a basic User information.",
+      "required": [
+        "Id",
+        "ModifiedDate"
+      ],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
+        },
+        "ModifiedDate": {
+          "description": "The latest modified date of the `User`.",
+          "type": "string",
+          "format": "date-time"
         }
       }
     }
