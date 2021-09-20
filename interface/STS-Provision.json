@@ -1932,6 +1932,10 @@
             "$ref": "#/definitions/RoleAssignment"
           }
         },
+        "CanImpersonate": {
+          "type": "boolean",
+          "description": "Specifies if STS will allow OnBehalfOf for all requests from this Anvendersystem (user system)"
+        },
         "ImpersonationAssignments": {
           "description": "A list of impersonation assignments assigned to this Anvendersystem (service consumer).",
           "type": "array",
