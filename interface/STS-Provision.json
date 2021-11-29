@@ -490,18 +490,17 @@
         }
       }
     },
-    "/Anvendersystemer/{id}/ImpersonationAssignments": {
+    "/Anvendersystemer/{id}/CanImpersonate/{value}":{
       "put": {
-        "summary": "Add ImpersonationAssignments on an Anvendersystem (user system)",
-        "operationId": "addImpersonationAssignmentsByAnvendersystemId",
-        "description": "Add an ImpersonationAssignments on an `Anvendersystem`",
+        "summary": "Set the CanImpersonate for this Anvendersystem (user system)",
+        "description": "Set the CanImpersonate for this `Anvendersystem` (user system)",
         "tags": [
           "Service"
         ],
-        "consumes": [
+        "produces": [
           "application/json"
         ],
-        "produces": [
+        "consumes": [
           "application/json"
         ],
         "parameters": [
@@ -509,93 +508,15 @@
             "name": "id",
             "in": "path",
             "description": "The id of the Anvendersystem (user system)",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The list of ImpersonationAssignments to add",
             "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ImpersonationAssignment"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
+            "type": "string"
           },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete an ImpersonationAssignment on an Anvendersystem (user system)",
-        "operationId": "deleteImpersonationAssignmentByAnvendersystemId",
-        "description": "Delete an ImpersonationAssignment on an `Anvendersystem`",
-        "tags": [
-          "Service"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
           {
-            "name": "id",
+            "name": "value",
             "in": "path",
-            "description": "The id of the Anvendersystem (user system)",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The ImpersonationAssignment to delete",
+            "description": "true/false to specifies if this Anvendersystem can impersonate other IT systems",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/ImpersonationAssignment"
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -1935,13 +1856,6 @@
         "CanImpersonate": {
           "type": "boolean",
           "description": "Specifies if STS will allow OnBehalfOf for all requests from this Anvendersystem (user system)"
-        },
-        "ImpersonationAssignments": {
-          "description": "A list of impersonation assignments assigned to this Anvendersystem (service consumer).",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ImpersonationAssignment"
-          }
         }
       }
     },
@@ -2013,23 +1927,6 @@
         "version": {
           "type": "string",
           "description": "Set to '2.0' to indicate that a response is from the new service."
-        }
-      }
-    },
-    "ImpersonationAssignment": {
-      "description": "The relation between an Anvenderkontekst (user context) and a certificate for an Anvendersystem (service consumer). An impersonation assignment is a relation between a Anvendersystem (service consumer) as represented by a certificate, and a user context (Anvenderkontekst) for which another Anvendersystem (service consumer) may request a proxy-OnBehalfOf token. The ImpersonationAssignment is added to the Anvendersystem (service consumer) that may request the token.",
-      "required": [
-        "Anvenderkontekst",
-        "OcesCertificate"
-      ],
-      "properties": {
-        "Anvenderkontekst": {
-          "type": "string",
-          "description": "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
-        },
-        "OcesCertificate": {
-          "type": "string",
-          "description": "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
         }
       }
     },
