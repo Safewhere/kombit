@@ -75,6 +75,77 @@
           }
         }
       }
+    },
+    "/api/rest/oauth/v1/issue": {
+      "post": {
+        "summary": "Request a new JWT access token",
+        "description": "Request a new JWT access token",
+        "tags": [
+          "STS"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "query",
+            "description": "client_id is the Identifier of a ServiceMetadata, similar to the “AppliesTo” parameter of the endpoint to issue the SAML token.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "grant_type",
+            "in": "query",
+            "description": "must be always 'client_credentials'",
+            "required": true,
+            "type": "string",
+            "default": "client_credentials"
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "description": "this is a customized scope parameter following strictly a format: [entityid:{Identifier},anvenderkontekst:{cvr},onbehalfof:{thumbprint}] where entityid and anvenderkontekst are required.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/AccessTokenResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "OAuth 2.0 Error Response",
+            "schema": {
+              "$ref": "#/definitions/OAuthErrorResponse"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -206,6 +277,42 @@
         "Assertion": {
           "type": "string",
           "description": "The base64 encoded value of the issued SAML2.0 token"
+        }
+      }
+    },
+    "AccessTokenResponse": {
+      "description": "The AS issues an access token and constructs the response by adding the following parameters (access_token, token_type and expire_in) to the entity-body of the HTTP response with a 200 (OK) status code.",
+      "required": [
+        "error"
+      ],
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The JWT access token."
+        },
+        "token_type": {
+          "type": "string",
+          "description": "The OAuth 2.0 token type. It is always 'bearer'."
+        },
+        "expires_in": {
+          "type": "number",
+          "description": "The number of seconds until the access token is expired."
+        }
+      }
+    },
+    "OAuthErrorResponse": {
+      "description": "The AS responds with an HTTP 400 (Bad Request) status code and includes the “error” and “error_description” with the response.",
+      "required": [
+        "error"
+      ],
+      "properties": {
+        "error": {
+          "type": "string",
+          "description": "The OAuth 2.0 error code"
+        },
+        "error_description": {
+          "type": "string",
+          "description": "The OAuth 2.0 error description"
         }
       }
     }
