@@ -108,7 +108,7 @@
           {
             "name": "scope",
             "in": "query",
-            "description": "this is a customized scope parameter following strictly a format: [entityid:{Identifier},anvenderkontekst:{cvr},onbehalfof:{thumbprint}] where entityid and anvenderkontekst are required.",
+            "description": "this custom scope parameter has the following format: [entityid:{Identifier},anvenderkontekst:{cvr},onbehalfof:{thumbprint}]. The entityid and anvenderkontekst parameters are required.",
             "required": true,
             "type": "string"
           }
