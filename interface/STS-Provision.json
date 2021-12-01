@@ -514,7 +514,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "true/false to specifies if this Anvendersystem can impersonate other IT systems",
+            "description": "true/false to specify if this Anvendersystem can impersonate other IT systems",
             "required": true,
             "type": "string"
           }
@@ -1855,7 +1855,7 @@
         },
         "CanImpersonate": {
           "type": "boolean",
-          "description": "Specifies if STS will allow OnBehalfOf for all requests from this Anvendersystem (user system)"
+          "description": "Specifies if this Anvendersystem can impersonate other systems."
         }
       }
     },
