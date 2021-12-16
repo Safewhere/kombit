@@ -120,22 +120,10 @@
               "$ref": "#/definitions/AccessTokenResponse"
             }
           },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
           "400": {
             "description": "OAuth 2.0 Error Response",
             "schema": {
               "$ref": "#/definitions/OAuthErrorResponse"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
             }
           },
           "500": {
