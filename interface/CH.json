@@ -3860,7 +3860,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to get.",
+            "description": "The ID of the user to get. The ID is the Serial value that comes in the NameID of a token returning from an Identity Provider.",
             "type": "string",
             "required": true
           }
@@ -3923,7 +3923,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to delete.",
+            "description": "The ID of the user to delete. The ID is the Serial value that comes in the NameID of a token returning from an Identity Provider.",
             "type": "string",
             "required": true
           }
