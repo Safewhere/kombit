@@ -3860,7 +3860,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to get. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user to get.",
             "type": "string",
             "required": true
           }
@@ -3923,7 +3923,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user to delete. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "description": "The id of the user to delete.",
             "type": "string",
             "required": true
           }
