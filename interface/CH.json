@@ -1353,7 +1353,7 @@
     "/BrugervendteSystemer/{id}/AssuranceLevel/{value}": {
       "put": {
         "summary": "Set the minimum required assurance level for this BrugervendtSystem (user system)",
-        "description": "Set the minimum required assurance level for this `BrugervendtSystem` (user system)",
+        "description": "Set the minimum required assurance level for this `BrugervendtSystem` (user system). For OIOSAML3 profile, the NSISAssuranceLevel attribute will be reset to empty (if it currently has any value).",
         "tags": [
           "SP"
         ],
@@ -1569,7 +1569,7 @@
     "/BrugervendteSystemer/{id}/NSISAssuranceLevel/{value}": {
       "put": {
         "summary": "Set the NSISAssuranceLevel for this BrugervendtSystem (user system)",
-        "description": "Set the `NSISAssuranceLevel` for this `BrugervendtSystem` (user system)",
+        "description": "Set the `NSISAssuranceLevel` for this `BrugervendtSystem` (user system). This property is only applicable for the OIOSAML3 profile. The AssuranceLevel attribute will be reset to 0 (if it currently has any value).",
         "tags": [
           "SP"
         ],
@@ -4430,7 +4430,7 @@
         "AssuranceLevel": {
           "type": "integer",
           "format": "int32",
-          "description": "The requested assurance level of this Brugervendt system (user system). This property must be a value of 1-4."
+          "description": "The requested assurance level of this Brugervendt system (user system). This property is required for the OIOSAML2 profile, moreover, it can be used and required for the OIOSAML3 profile when the NSISAssuranceLevel is not specified. This property (if specified) must be a value of 1-4."
         },
         "AttributeProfile": {
           "type": "string",
@@ -4457,7 +4457,7 @@
         },
         "NSISAssuranceLevel": {
           "type": "string",
-          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This property is required for OIOSAML3 profile (if the AssuranceLevel is not specified) but its value must be empty when the OIOSAMLProfile is OIOSAML2."
         }
       }
     },
