@@ -3516,7 +3516,7 @@
       },
       "delete": {
         "summary": "Delete a specific job function role",
-        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling delet with the ID of the found role.",
+        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling delete with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3849,6 +3849,88 @@
         }
       }
     },
+    "/Users/.filter": {
+      "get": {
+        "summary": "Retrieve users by filtering",
+        "description": "Retrieve users by filtering",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "description": "This parameter specifies the list of attributes (claims) that are returned. Claims should be separated by comma (','). If the parameter is missing, no claims will be returned. Invalid claim types will be ignored.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Number of objects to be returned per page. If both 'pageIndex' and 'pageSize' are missing, all users will be returned. If only 'pageSize' is missing or set to a value less than or equal to 0, the Provisioning Service will return an error",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "Index of the page containing the returned objects. If both 'pageIndex' and 'pageSize' are missing, all users will be returned. The index is 0-based. If only 'pageIndex' is missing or set to a value less than 0, the Provisioning Service will return an error.",
+            "type": "integer",
+            "required": false
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. A list of User objects is sorted by ModifiedDate.",
+            "schema": {
+              "$ref": "#/definitions/PageInfoResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Users/{id}": {
       "get": {
         "summary": "Get a specific user",
@@ -3860,7 +3942,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the user to get. The ID is the Serial value that comes in the NameID of a token returning from an Identity Provider.",
+            "description": "The ID of the user to get. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
             "type": "string",
             "required": true
           }
@@ -3915,7 +3997,7 @@
       },
       "delete": {
         "summary": "Delete a specific user",
-        "description": "Delete a specific `User` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all users, findings the user to be deleted, and the calling delet with the ID of the found user.",
+        "description": "Delete a specific `User` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found by first getting a list of all users, finding the user to be deleted, and then calling the delete operation with the ID of the located user.",
         "tags": [
           "User"
         ],
@@ -3923,9 +4005,78 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the user to delete. The ID is the Serial value that comes in the NameID of a token returning from an Identity Provider.",
+            "description": "The ID of the user to delete. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
             "type": "string",
             "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite a specific user",
+        "description": "Overwrite a specific `User` object. To overwrite the object, it is necessary to know the ID of the object to be overwrite. This can be found by first getting a list of all users, finding the user to be overwrite, and then calling the overwrite operation with the ID of the located user.",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the user to overwrite. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "New user attributes to update. All the other fields (Id, ModifiedDate, and Authority) are not updatable.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserUpdate"
+            }
           }
         ],
         "produces": [
@@ -4718,7 +4869,7 @@
         },
         "Id": {
           "type": "string",
-          "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
+          "description": "An ID provided by the caller municipally, which can uniquely identify a user. When provisioning a user to match a local IdP login, this unique ID must match the serial number that comes in the NameID of a token returned from that IdP. In cases where a local UUID does not exist for a user provisioned to match a NemLog-In user, this unique ID must be set to the value of the 'https://data.gov.dk/model/core/eid/professional/uuid/persistent' claim."
         },
         "ModifiedDate": {
           "description": "The latest modified date of the `User`.",
@@ -4726,6 +4877,21 @@
           "format": "date-time",
           "readOnly": true
         },
+        "Claims": {
+          "description": "A claims list for this `User`.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyValue"
+          }
+        }
+      }
+    },
+    "UserUpdate": {
+      "description": "Represents a User.",
+      "required": [
+        "Claims"
+      ],
+      "properties": {
         "Claims": {
           "description": "A claims list for this `User`.",
           "type": "array",
@@ -4744,12 +4910,38 @@
       "properties": {
         "Id": {
           "type": "string",
-          "description": "An Id provided by the caller municipal which can uniquely identity a user. This unique id must match one that comes in the NameID of a token returning from an Identity Provider."
+          "description": "An ID provided by the caller municipality, which can uniquely identify a user. This unique ID must match the serial number that comes in the NameID when using a Local IdP or the NemLog-in UUID (the 'https://data.gov.dk/model/core/eid/professional/uuid/persistent' claim)."
         },
         "ModifiedDate": {
           "description": "The latest modified date of the `User`.",
           "type": "string",
           "format": "date-time"
+        }
+      }
+    },
+    "PageInfoResponse": {
+      "description": "Indicate the request is success and the will response all users.",
+      "properties": {
+        "TotalResults": {
+          "type": "integer"
+        },
+        "PageIndex": {
+          "type": "integer"
+        },
+        "PageSize": {
+          "type": "integer"
+        },
+        "SortBy": {
+          "type": "string"
+        },
+        "SortOrder": {
+          "type": "string"
+        },
+        "Resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
         }
       }
     }
