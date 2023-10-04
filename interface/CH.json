@@ -3858,7 +3858,7 @@
         ],
         "parameters": [
           {
-            "name": "select",
+            "name": "$select",
             "in": "query",
             "description": "This parameter specifies the list of attributes (claims) that are returned. Claims should be separated by comma (','). If the parameter is missing, no claims will be returned. Invalid claim types will be ignored.",
             "type": "string",
