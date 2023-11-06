@@ -1,0 +1,95 @@
+<Response ID="id74493948ff1d4a7388bf1022dbfe7602"
+          Version="2.0"
+          IssueInstant="2023-09-13T07:10:02.475163Z"
+          Destination="https://kombitoces3.safewhere.local/runtime/saml2auth/consume.idp"
+          Consent="urn:oasis:names:tc:SAML:2.0:consent:unspecified"
+          InResponseTo="id7117fea2d72f4d70951987b8cc628a0c"
+          xmlns="urn:oasis:names:tc:SAML:2.0:protocol"
+          >
+    <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://saml.oces3kombitidp.safewhere.local/runtime/</Issuer>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#id74493948ff1d4a7388bf1022dbfe7602">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>gQ5Hampvjs+z7diaattDH2JNW3FOQ9VzqUgFdnXQKlM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Kqtfp6L9IrNQo3fU7v268FR8dD9gcDpLMh7m73YSPiYCpV4iE1XhrYTgrdaitKm+HghOiPEt4eN7lsWwRFiLm3T/KOcpGxN8xn4NnrOW3TIVDe30m3ntfYOco1WYcT45+wE8Un40iGZvI3FSZBhsg9Ib0Rd73AlYz67bvSaxiYTqBFnaZTCVUlsLC8f4B47KvOOuIUrUf94kL0SXiTpQeOR5vrwkDXwT1lnuL5de/QAcjsHQLorP9Mix0N0omZdrXGZvz5qHf/7SCVDXXle2ejSZQJe5AaYB0aMsJvEf0DCc7cGgZpGz147IZyx6Pvy3Q4PFEUg0vbcMXE1INJ8urneBgGDd/ssZ7vkhhhaR4z4UgdPYM/Xdyn8X1xKXUEKIwGdlE8IYPai+9wh+AfDDSNqF1pjomk/n1rMIQq9aT2s9VMOK0WNJ1bgg6A5dx2jFhfckSYusdguOwBhGbPN/5CcsxR/hb6EdNrf8+f0tVrUeC88VjhoAt8jxdw2yDfx2</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    <Status>
+        <StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </Status>
+    <Assertion ID="id2fcb919de0414764b58ec21924660c95"
+               IssueInstant="2023-09-13T07:10:02.475Z"
+               Version="2.0"
+               xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+               >
+        <Issuer>https://saml.oces3kombitidp.safewhere.local/runtime/</Issuer>
+        <Subject>
+            <NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C = DK, O = 19435075, CN = user1 oces3kombitidp, Serial = 555ed208-2ed1-4739-8d79-119908219311</NameID>
+            <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <SubjectConfirmationData InResponseTo="id7117fea2d72f4d70951987b8cc628a0c"
+                                         NotOnOrAfter="2023-09-13T07:15:02.475Z"
+                                         Recipient="https://kombitoces3.safewhere.local/runtime/saml2auth/consume.idp"
+                                         />
+            </SubjectConfirmation>
+        </Subject>
+        <Conditions NotBefore="2023-09-13T07:10:02.475Z"
+                    NotOnOrAfter="2023-09-13T08:10:02.475Z"
+                    >
+            <AudienceRestriction>
+                <Audience>https://saml.kombitoces3.safewhere.local/runtime/</Audience>
+            </AudienceRestriction>
+        </Conditions>
+        <AuthnStatement AuthnInstant="2023-09-13T07:10:02.475Z"
+                        SessionIndex="5H5IkoeJjhiCC8RLoNLI9g=="
+                        >
+            <AuthnContext>
+                <AuthnContextClassRef>https://data.gov.dk/concept/core/nsis/loa/Substantial</AuthnContextClassRef>
+            </AuthnContext>
+        </AuthnStatement>
+        <AttributeStatement>            
+            <Attribute Name="https://data.gov.dk/model/core/eid/privilegesIntermediate"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4gCgo8YnBwOlByaXZpbGVnZUxpc3QgeG1sbnM6YnBwPSJodHRwOi8vaXRzdC5kay9vaW9zYW1sL2Jhc2ljX3ByaXZpbGVnZV9wcm9maWxlIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIj4gCgogICAgICAgPFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3OCI+IAoKICAgIAk8UHJpdmlsZWdlPmh0dHA6Ly9rb21tdW5lQS5kay9yb2xlcy9qb2Jyb2xlL2tvbWJpdHJvbGxlMi8xPC9Qcml2aWxlZ2U+IAoKICAgICAgICAgICAgICAgIDxDb25zdHJhaW50IE5hbWU9Imh0dHA6Ly9rb21iaXQuZGsvY29uc3RyYWludHMvS0xFLzEvcGFyYW1ldHJpYyI+MTAuNC4xPC9Db25zdHJhaW50PiAgCgogICAgICAgPC9Qcml2aWxlZ2VHcm91cD4gCgogICAgICAgPFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NiI+IAoKICAgICAgICAgICAgICAgIDxQcml2aWxlZ2U+aHR0cDovL2tvbW11bmVCLmRrL3JvbGVzL2pvYnJvbGUva29tYml0cm9sbGUxLzE8L1ByaXZpbGVnZT4gICAgICAgICAKCiAgICAgICA8L1ByaXZpbGVnZUdyb3VwPiAKCiAgICAgIDxQcml2aWxlZ2VHcm91cCBTY29wZT0idXJuOmRrOmdvdjpzYW1sOmN2ck51bWJlcklkZW50aWZpZXI6MTk0MzUwNzYiPiAKCiAgICAgICAgICAgICAgICA8UHJpdmlsZWdlPmh0dHA6Ly9rb21tdW5lQi5kay9yb2xlcy9qb2Jyb2xlL2tvbWJpdHJvbGxlMi8xPC9Qcml2aWxlZ2U+ICAgICAgICAgCgogICAgICAgPC9Qcml2aWxlZ2VHcm91cD4gCgogICAgICAgPFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NyI+IAoKICAgICAgICAgICAgICAgPFByaXZpbGVnZT5odHRwOi8va29tbXVuZUMuZGsvcm9sZXMvam9icm9sZS9rb21iaXRyb2xsZTEvMTwvUHJpdmlsZWdlPiAgICAgCgogICAgICAgPC9Qcml2aWxlZ2VHcm91cD4gCgogICAgICAgPFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NyI+IAoKICAgICAgICAgICAgICAgPFByaXZpbGVnZT5odHRwOi8va29tbXVuZUMuZGsvcm9sZXMvam9icm9sZS9rb21iaXRyb2xsZTIvMTwvUHJpdmlsZWdlPiAgICAgICAKCiAgICAgICAgICAgICAgIDxDb25zdHJhaW50IE5hbWU9Imh0dHA6Ly9rb21iaXQuZGsvY29uc3RyYWludHMvS0xFLzEvcGFyYW1ldHJpYyI+Mi40LjE8L0NvbnN0cmFpbnQ+IAoKICAgICAgIDwvUHJpdmlsZWdlR3JvdXA+IAoKPC9icHA6UHJpdmlsZWdlTGlzdD4=</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/professional/cvr"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>19435075</AttributeValue>
+            </Attribute>            
+            <Attribute Name="https://data.gov.dk/model/core/specVersion"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>OIO-SAML-3.0</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/professional/orgName"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>Safewhere Identify</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/concept/core/nsis/loa"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>Substantial</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/email"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>user1@gmail.com</AttributeValue>
+            </Attribute>            
+        </AttributeStatement>
+    </Assertion>
+</Response>
