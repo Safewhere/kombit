@@ -158,7 +158,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the attribute service to get. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service to get. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -224,7 +224,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the attribute service to update. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service to update. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -290,7 +290,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the attribute service to delete. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service to delete. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -338,15 +338,15 @@
         }
       }
     },
-    "/AttributServices/{id1}/Anvenderkontekster": {
+    "/AttributServices/{id}/Anvenderkontekster": {
       "put": {
         "summary": "Add an Anvenderkontekst to this attribute service",
         "description": "Add an `Anvenderkontekst` (user context) to the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -415,109 +415,28 @@
         }
       }
     },
-    "/AttributServices/{id1}/Anvenderkontekster/{id2}": {
+    "/AttributServices/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst from this attribute service",
         "description": "Delete an `Anvenderkontekst` (user context) from the list of Anvenderkontekster on this attribute service",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the anvenderkontekst",
+            "description": "The cvr of the anvenderkontekst",
             "required": true,
             "type": "string"
           }
         ],
         "tags": [
           "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/AttributServices/{id1}/Anvenderkontekster/{id2}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Akteringstidspunkt (activation times) for this attribute service",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) for this attribute service",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the anvenderkontekst to set the activation time for",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "tags": [
-          "IdP"
-        ],
-        "consumes": [
-          "application/json"
         ],
         "produces": [
           "application/json"
@@ -567,8 +486,8 @@
     },
     "/AttributServices/{id}/SamlMetadata": {
       "put": {
-        "summary": "Add a SAML2.0 metadata document on this AttributService",
-        "description": "Add a SAML2.0 metadata document on this `AttributeService`",
+        "summary": "Update the SAML2.0 metadata document on this AttributService",
+        "description": "Update the SAML2.0 metadata document on this `AttributeService`",
         "tags": [
           "IdP"
         ],
@@ -582,93 +501,18 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "body",
             "in": "body",
-            "description": "A list of metadata elements to add. The list MUST contain exactly one element.",
+            "description": "A metadata document to update.",
             "required": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
+              "$ref": "#/definitions/SamlMetadata"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/AttributServices/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SAML2.0 metadata document from this AttributService",
-        "description": "Delete a SAML2.0 metadata document from this `AttributeService`",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the attribute service. The id must be the base64 encoded entityId. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the metadata to delete",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -852,7 +696,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -921,7 +765,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to update. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system role to update. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -987,83 +831,9 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "Role"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/Brugersystemroller/{id}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Aktiveringstidspunkt (activation time) on the specified user system role",
-        "description": "Set the Aktiveringstidspunkt (activation time) on the specified user system role",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the user system role to add activation times for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
           }
         ],
         "tags": [
@@ -1129,7 +899,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system role to add data restrictions for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system role to add data restrictions for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1189,7 +959,7 @@
         }
       }
     },
-    "/Brugersystemroller/{id1}/Dataafgraensningstyper/{id2}": {
+    "/Brugersystemroller/{id}/Dataafgraensningstyper/{dataafgraensningstypeId}": {
       "delete": {
         "summary": "Delete a data restriction from a user system role",
         "description": "Delete a data restriction from a user system role",
@@ -1198,16 +968,16 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the user system role to delete a data restriction for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system role to delete a data restriction for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "dataafgraensningstypeId",
             "in": "path",
-            "description": "The id of the data restriction to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the data restriction to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -1263,7 +1033,7 @@
         "summary": "Get all user systems",
         "description": "Get all user systems",
         "tags": [
-          "Role"
+          "SP"
         ],
         "consumes": [
           "application/json"
@@ -1400,7 +1170,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to get. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to get. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1463,7 +1233,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to update. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to update. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -1532,7 +1302,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the BrugervendtSystem to delete. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the BrugervendtSystem to delete. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1583,7 +1353,7 @@
     "/BrugervendteSystemer/{id}/AssuranceLevel/{value}": {
       "put": {
         "summary": "Set the minimum required assurance level for this BrugervendtSystem (user system)",
-        "description": "Set the minimum required assurance level for this `BrugervendtSystem` (user system)",
+        "description": "Set the minimum required assurance level for this `BrugervendtSystem` (user system). For OIOSAML3 profile, the NSISAssuranceLevel attribute will be reset to empty (if it currently has any value).",
         "tags": [
           "SP"
         ],
@@ -1597,7 +1367,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to set assurance level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set assurance level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1652,10 +1422,10 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id}/SamlMetadata": {
+    "/BrugervendteSystemer/{id}/AttributeProfile/{value}": {
       "put": {
-        "summary": "Add a SAML metadata version on the specified user system",
-        "description": "Add a `SamlMetadata` version on the specified `BrugervendtSystem`",
+        "summary": "Set the attribute profile for this BrugervendtSystem (user system)",
+        "description": "Set the attribute profile for this `BrugervendtSystem` (user system)",
         "tags": [
           "SP"
         ],
@@ -1669,21 +1439,16 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set attribute profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "body",
-            "in": "body",
-            "description": "The metadata to add",
+            "name": "value",
+            "in": "path",
+            "description": "The attribute profile for this user system. Supported values are KOMBIT and SEB. Default value when empty is KOMBIT.",
             "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -1729,31 +1494,180 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SAML metadata version on the specified user system",
-        "description": "Delete a `SamlMetadata` version on the specified `BrugervendtSystem`",
+    "/BrugervendteSystemer/{id}/OIOSAMLProfile/{value}": {
+      "put": {
+        "summary": "Set the OIOSAMLProfile for this BrugervendtSystem (user system)",
+        "description": "Set the `OIOSAMLProfile` for this `BrugervendtSystem` (user system). The processing rules are:</br></br>- If the current profile is OIOSAML2 and it is updated to OIOSAML3:</br>1. Convert the current AssuranceLevel value from NIST value to NSIS and set to the NSISAssuranceLevel attribute:{1, 2} => https://data.gov.dk/concept/core/nsis/loa/Low, 3 => https://data.gov.dk/concept/core/nsis/loa/Substantial, and 4 => https://data.gov.dk/concept/core/nsis/loa/High.</br>2. Reset the AssuranceLevel to 0.</br></br>- If the current profile is OIOSAML3 and it is updated to OIOSAML2:</br>1. Convert the current NSISAssuranceLevel value from NSIS to NIST and set the converted value to the AssuranceLevel attribute:https://data.gov.dk/concept/core/nsis/loa/Low => 2, https://data.gov.dk/concept/core/nsis/loa/Substantial => 3, and https://data.gov.dk/concept/core/nsis/loa/High => 4.</br>2. Reset the NSISAssuranceLevel to empty.",
+        "tags": [
+          "SP"
+        ],
         "produces": [
+          "application/json"
+        ],
+        "consumes": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the user system to delete a SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to set OIOSAML profile for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "value",
             "in": "path",
-            "description": "The id of the SAML2.0 metadata version to delete",
+            "description": "The OIOSAML profile for this user system. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
             "required": true,
             "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BrugervendteSystemer/{id}/NSISAssuranceLevel/{value}": {
+      "put": {
+        "summary": "Set the NSISAssuranceLevel for this BrugervendtSystem (user system)",
+        "description": "Set the `NSISAssuranceLevel` for this `BrugervendtSystem` (user system). This property is only applicable for the OIOSAML3 profile. The AssuranceLevel attribute will be reset to 0 (if it currently has any value).",
         "tags": [
           "SP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the user system to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The NSIS Assurance Level for this user system. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BrugervendteSystemer/{id}/SamlMetadata": {
+      "put": {
+        "summary": "Update the SAML metadata version on the specified user system",
+        "description": "Update the `SamlMetadata` version on the specified `BrugervendtSystem`",
+        "tags": [
+          "SP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the user system to add SAML2.0 metadata version for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The metadata to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SamlMetadata"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -1815,7 +1729,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the user system to add role mappings for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to add role mappings for. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1875,7 +1789,7 @@
         }
       }
     },
-    "/BrugervendteSystemer/{id1}/RoleMappings/{id2}": {
+    "/BrugervendteSystemer/{id}/RoleMappings/{roleMappingId}": {
       "delete": {
         "summary": "Delete a role mapping on the specified user system",
         "description": "Delete a `RoleMapping` item on the specified `BrugervendtSystem`",
@@ -1884,16 +1798,16 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the user system to delete the role mapping from. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the user system to delete the role mapping from. This is the SAML2.0 entityId of the BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "roleMappingId",
             "in": "path",
-            "description": "The id of the role mapping to delete. This is the SAML2.0 attribute name of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the role mapping to delete. This is the SAML2.0 attribute name of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2080,7 +1994,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2140,7 +2054,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to get. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2206,7 +2120,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the `IdentityProvider` to delete. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           }
@@ -2274,7 +2188,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to add an anvenderkontekst (user context) for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to add an anvenderkontekst (user context) for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2334,109 +2248,28 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/Anvenderkontekster/{id2}": {
+    "/IdentityProviders/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete an anvenderkontekst (user context) on the specified IdentityProvider",
         "description": "Delete an `Anvenderkontekst` (user context) on the specified `IdentityProvider`",
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the IdentityProvider to delete an anvenderkontekst for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the anvenderkontekst to delete",
+            "description": "The cvr of the anvenderkontekst to delete",
             "required": true,
             "type": "string"
           }
         ],
         "tags": [
           "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id1}/Anvenderkontekster/{id2}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Akteringstidspunkt (activation time) on this Anvenderkontekst (user context)",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) on this `Anvenderkontekst` (user context)",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the IdentityProvider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the anvenderkontekst to set the activation time for",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation times) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
-        ],
-        "tags": [
-          "IdP"
-        ],
-        "consumes": [
-          "application/json"
         ],
         "produces": [
           "application/json"
@@ -2498,7 +2331,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set an assurance level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2570,7 +2403,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2646,7 +2479,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to add IP addresses for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to add IP addresses for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2706,7 +2539,7 @@
         }
       }
     },
-    "/IdentityProviders/{id1}/IpAdresser/{id2}": {
+    "/IdentityProviders/{id}/IpAdresser/{value}": {
       "delete": {
         "summary": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
         "description": "Delete an IP address from the list of IP addresses for which this IdP should be pre-selected.",
@@ -2721,14 +2554,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to delete an IP address for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "value",
             "in": "path",
             "description": "The IP address to delete",
             "required": true,
@@ -2792,7 +2625,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2861,7 +2694,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider to set mobile friendly for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2871,6 +2704,372 @@
             "description": "true/false if the identity provider is mobile friendly",
             "required": true,
             "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/NSISAssuranceLevel/{value}": {
+      "put": {
+        "summary": "Set the NSISAssuranceLevel for this IdentityProvider",
+        "description": "Set the `NSISAssuranceLevel` for this `IdentityProvider'",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set a NSIS Assurance Level for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The NSIS Assurance Level for this identity provider. The value MUST be 'https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'. The value must be the base64 encoded.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/OIOSAMLProfile/{value}": {
+      "put": {
+        "summary": "Set the OIOSAMLProfile for this IdentityProvider",
+        "description": "Set the `OIOSAMLProfile` for this `IdentityProvider`",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set OIOSAML Profile for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/Praesentationsnavn": {
+      "put": {
+        "summary": "Set the Præsentationsnavn (display name) of this identity provider",
+        "description": "Set the Præsentationsnavn (display name) of this identity provider",
+        "tags": [
+          "IdP"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The Præsentationsnavn (display name) of this identity provider",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Praesentationsnavn",
+              "description": "The Præsentationsnavn (display name) of this identity provider."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/ProductType/{value}": {
+      "put": {
+        "summary": "Set the ProductType for this IdentityProvider",
+        "description": "Set the `ProductType` for this `IdentityProvider`",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The product type of this identity provider. Its value must be either 'ADFS' or 'Unspecified'. The 'Unspecified' value is equivalent to the empty value when POST-ing an Identity Provider. This alternative is needed because we cannot leave the parameter empty which causes a routing issue. When the ProductType field is 'Unspecified', the empty value is actually saved to the database to ensure data consistency. This means that when you GET the Identity Provider back, its ProductType attribute is empty.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/IdentityProviders/{id}/SamlMetadata": {
+      "put": {
+        "summary": "Update the SAML metadata version on the specified IdentityProvider",
+        "description": "Update the `SamlMetadata` version on the specified `IdentityProvider`",
+        "tags": [
+          "IdP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the identity provider to add SAML2.0 metadata for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The metadata to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SamlMetadata"
+            }
           }
         ],
         "responses": {
@@ -2930,7 +3129,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -2999,239 +3198,17 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "value",
             "in": "path",
-            "description": "One of predefined values 'NOT_SUPPORTED', 'SUPPORTED', 'SUPPORTED_ADFS'",
+            "description": "One of predefined values 'NOT_SUPPORTED', 'SUPPORTED'.",
             "required": true,
             "type": "string"
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/Praesentationsnavn": {
-      "put": {
-        "summary": "Set the Præsentationsnavn (display name) of this identity provider",
-        "description": "Set the Præsentationsnavn (display name) of this identity provider",
-        "tags": [
-          "IdP"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Præsentationsnavn (display name) of this identity provider",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Praesentationsnavn",
-              "description": "The Præsentationsnavn (display name) of this identity provider."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/SamlMetadata": {
-      "put": {
-        "summary": "Add a SAML metadata version on the specified IdentityProvider",
-        "description": "Add a `SamlMetadata` version on the specified `IdentityProvider`",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider to add SAML2.0 metadata for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The metadata to add",
-            "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SamlMetadata"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id1}/SamlMetadata/{id2}": {
-      "delete": {
-        "summary": "Delete a SamlMetadata version on the specified IdentityProvider",
-        "description": "Delete a `SamlMetadata` version on the specified `IdentityProvider`",
-        "parameters": [
-          {
-            "name": "id1",
-            "in": "path",
-            "description": "The id of the IdentityProvider to delete a SAML2.0 metadata version for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id2",
-            "in": "path",
-            "description": "The id of the SAML2.0 metadata version to delete. This is the ID attribute of the EntityDescriptor element in the saml metadata document.",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
         ],
         "responses": {
           "200": {
@@ -3407,7 +3384,7 @@
     "/Jobfunktionsroller/{id}": {
       "get": {
         "summary": "Get a specific job function role",
-        "description": "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be retrieved, and the calling get with the ID of the found role.",
+        "description": "Get a specific `Jobfunktionsrolle` object. To get the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling get with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3415,7 +3392,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -3478,7 +3455,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the job function role to get. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -3539,7 +3516,7 @@
       },
       "delete": {
         "summary": "Delete a specific job function role",
-        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, findings the role with the specific Version to be deleted, and the calling delet with the ID of the found role.",
+        "description": "Delete a specific `Jobfunktionsrolle` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found, by first getting a list of all job function roles, and the calling delete with the ID of the found role.",
         "tags": [
           "Role"
         ],
@@ -3547,87 +3524,13 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the job function role to delete. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
         ],
         "produces": [
           "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/Jobfunktionsroller/{id}/Aktiveringstidspunkt": {
-      "put": {
-        "summary": "Set the Aktiveringstidspunkt (activation time) on the Jobfunktionsrolle (job function role)",
-        "description": "Set the `Aktiveringstidspunkt` (activation time) on the `Jobfunktionsrolle` (job function role)",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "tags": [
-          "Role"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the job function role to set the activation time for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The Aktiveringstidspunkt (activation time) to set",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Aktiveringstidspunkt"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -3689,7 +3592,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the job function role to append Anvenderkontekst for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the job function role to append Anvenderkontekst for. This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -3749,7 +3652,7 @@
         }
       }
     },
-    "/Jobfunktionsroller/{id1}/DelegeretTil/{id2}": {
+    "/Jobfunktionsroller/{id}/DelegeretTil/{cvr}": {
       "delete": {
         "summary": "Delete an Anvenderkontekst (user context) for the Jobfunktionsrolle (job function role)",
         "description": "Delete an `Anvenderkontekst` (user context) for the `Jobfunktionsrolle` (job function role)",
@@ -3758,16 +3661,16 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the Jobfunktionsrolle (job function role). This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the Jobfunktionsrolle (job function role). This is the SAML2.0 attribute name, of the SAML2.0 attribute. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
-            "description": "The id of the Anvenderkontekst (user context) to delete",
+            "description": "The cvr of the Anvenderkontekst (user context) to delete",
             "required": true,
             "type": "string"
           }
@@ -3817,28 +3720,805 @@
           }
         }
       }
-    }
-  },
-  "definitions": {
-    "Aktiveringstidspunkt": {
-      "description": "Aktiveringstidspunkt (activation time). A time range, when an object is enabled",
-      "properties": {
-        "Sluttidspunkt": {
-          "type": "string",
-          "description": "The end time for this Aktiveringstidspunkt (activation time)"
-        },
-        "Starttidspunkt": {
-          "type": "string",
-          "description": "The start time for this Aktiveringstidspunkt (activation time)"
+    },
+    "/Users": {
+      "get": {
+        "summary": "Get all users",
+        "description": "Get all user",
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. A list of id and modified date of all User objects.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserBase"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new User",
+        "description": "Creates a new `User`. The existing user with corresponding Id will be deleted then create a new user.",
+        "tags": [
+          "User"
+        ],
+        "operationId": "createUser",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The user to create",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
         }
       }
     },
+    "/Users/.filter": {
+      "get": {
+        "summary": "Retrieve users by filtering",
+        "description": "Retrieve users by filtering",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "This parameter specifies the list of attributes (claims) that are returned. Claims should be separated by comma (','). If the parameter is missing, no claims will be returned. Invalid claim types will be ignored.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Number of objects to be returned per page. If both 'pageIndex' and 'pageSize' are missing, all users will be returned. If only 'pageSize' is missing or set to a value less than or equal to 0, the Provisioning Service will return an error",
+            "type": "integer",
+            "required": false
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "Index of the page containing the returned objects. If both 'pageIndex' and 'pageSize' are missing, all users will be returned. The index is 0-based. If only 'pageIndex' is missing or set to a value less than 0, the Provisioning Service will return an error.",
+            "type": "integer",
+            "required": false
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. A list of User objects is sorted by ModifiedDate.",
+            "schema": {
+              "$ref": "#/definitions/PageInfoResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Users/{id}": {
+      "get": {
+        "summary": "Get a specific user",
+        "description": "Get a specific `User` object.",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the user to get. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific user",
+        "description": "Delete a specific `User` object. To delete the object, it is necessary to know the ID of the object to be deleted. This can be found by first getting a list of all users, finding the user to be deleted, and then calling the delete operation with the ID of the located user.",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the user to delete. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite a specific user",
+        "description": "Overwrite a specific `User` object. To overwrite the object, it is necessary to know the ID of the object to be overwrite. This can be found by first getting a list of all users, finding the user to be overwrite, and then calling the overwrite operation with the ID of the located user.",
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the user to overwrite. The ID is the Serial value that comes in the NameID when using Local IdP or the NemLog-in UUID of a token returning from an Identity Provider.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "New user attributes to update. All the other fields (Id, ModifiedDate, and Authority) are not updatable.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserUpdate"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Users/bulk": {
+      "post": {
+        "summary": "Create completely new list of Users",
+        "description": "Rebuild `User` objects, all old objects will be deleted.",
+        "tags": [
+          "User"
+        ],
+        "operationId": "createNewUsers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The users to create",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Overwrite the list of Users",
+        "description": "Overwrite all existing `User` objects and insert new users while all unmatched objects will be kept.",
+        "tags": [
+          "User"
+        ],
+        "operationId": "overwriteUsers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The users to create",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ClientCertificates": {
+      "get": {
+        "summary": "Get all client certificates",
+        "description": "Get all client certificates",
+        "tags": [
+          "ClientCertificate"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. A list of client certificate objects.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ClientCertificate"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a client certificate",
+        "description": "Add a client certificate (public key only) that a municipality can use to provision user data for the SEB profile.",
+        "tags": [
+          "ClientCertificate"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The client certificate to add where its Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClientCertificate"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ClientCertificates/{id}": {
+      "get": {
+        "summary": "Get a specific client certificate",
+        "description": "Get a specific `ClientCertificate` object.",
+        "tags": [
+          "ClientCertificate"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the client certificate to get. The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ClientCertificate"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific client certificate.",
+        "description": "Delete a specific client certificate.",
+        "tags": [
+          "ClientCertificate"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the client certificate to delete. The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
     "Anvenderkontekst": {
       "description": "Anvenderkontekst (a user context)",
       "properties": {
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Cvr": {
           "type": "string",
           "description": "The CVR of the organization this user context represents"
@@ -3853,11 +4533,8 @@
           "description": "The SAML2.0 EntityId of the `AttributeService`"
         },
         "SamlMetadata": {
-          "description": "A list of SAML2.0 metadata documents for this `AttributeService`",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this `AttributeService`",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "Anvenderkontekster": {
           "description": "A list of Anvenderkontekst (user context) this attribute service applies to",
@@ -3878,9 +4555,6 @@
           "type": "string",
           "description": "The id of the role."
         },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "Dataafgraensningstyper": {
           "description": "A list of Dataafgraensningstyper (data restrictions) for this user system role",
           "type": "array",
@@ -3893,10 +4567,10 @@
     "BrugervendtSystem": {
       "description": "A BrugervendtSystem (user system)",
       "required": [
-        "AssuranceLevel",
         "Cvr",
         "Id",
-        "SamlMetadata"
+        "SamlMetadata",
+        "OIOSAMLProfile"
       ],
       "properties": {
         "Id": {
@@ -3906,14 +4580,15 @@
         "AssuranceLevel": {
           "type": "integer",
           "format": "int32",
-          "description": "The requested assurance level of this Brugervendt system (user system). This property must be a value of 1-4."
+          "description": "The requested assurance level of this Brugervendt system (user system). This property is required for the OIOSAML2 profile, moreover, it is also required for the OIOSAML3 profile when the NSISAssuranceLevel is not specified. This property (if specified) must be a value of 1-4."
+        },
+        "AttributeProfile": {
+          "type": "string",
+          "description": "Specifies what attribute profile that a User System needs. Supported values are KOMBIT and SEB. Default value when empty is KOMBIT."
         },
         "SamlMetadata": {
-          "description": "A list SAML2.0 metadata documents for this `BrugervendtSystem`",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this `BrugervendtSystem`",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "RoleMappings": {
           "description": "A list of role mappings for this BrugervendtSystem (user system)",
@@ -3925,6 +4600,29 @@
         "Cvr": {
           "type": "string",
           "description": "The CVR for the organization this BrugervendtSystem belongs to. This property is necessary to support the scoping element required by a proxy IdP in accordance with OIOSAML."
+        },
+        "OIOSAMLProfile": {
+          "type": "string",
+          "description": "Specifies what OIOSAML profile a UserSystem uses. Valid values are OIOSAML2 and OIOSAML3"
+        },
+        "NSISAssuranceLevel": {
+          "type": "string",
+          "description": "Describes which level the Service Provider expects (the minimum level). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). This property is required for OIOSAML3 profile (if the AssuranceLevel is not specified) but its value must be empty or omitted when the OIOSAMLProfile is OIOSAML2."
+        }
+      }
+    },
+    "ClientCertificate": {
+      "required": [
+        "Id",
+        "Base64Certificate"
+      ],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "The Id must be the certificate's thumbprint without spaces, dashes, or any other special characters. The thumbprint is case-insensitive."
+        },
+        "Base64Certificate": {
+          "type": "string"
         }
       }
     },
@@ -3988,6 +4686,10 @@
         },
         "message": {
           "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "description": "Set to '2.0' to indicate that a response is from the new service."
         }
       }
     },
@@ -4000,7 +4702,8 @@
         "KenderRoller",
         "Mobilvenlig",
         "Praesentationsnavn",
-        "SamlMetadata"
+        "SamlMetadata",
+        "OIOSAMLProfile"
       ],
       "properties": {
         "Id": {
@@ -4036,18 +4739,15 @@
         },
         "SupportsStepUp": {
           "type": "string",
-          "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED, and SUPPORTED_ADFS. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED. Although ADFS doesn’t support Scoping, the combination of[SupportsScope = true, SupportsStepUp = SUPPORTED_ADFS] is still allowed."
+          "description": "Specifies if this IdentityProvider should be enabled for Step-Up support. Valid values are NOT_SUPPORTED, SUPPORTED. When an Identity Provider is provisioned without the attribute, the default value will be NOT_SUPPORTED."
         },
         "Praesentationsnavn": {
           "type": "string",
           "description": "The name this identity provider will be presented as to the user"
         },
         "SamlMetadata": {
-          "description": "A list SAML2.0 metadata documents for this IdentityProvider",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SamlMetadata"
-          }
+          "description": "A SAML2.0 metadata document for this IdentityProvider",
+          "$ref": "#/definitions/SamlMetadata"
         },
         "IpAdresser": {
           "description": "A list of IP addresses. If a user comes from one of these IP addresses, then this identity provider will be automatically selected, if it is the only identity provider for which the addreses are registered.",
@@ -4055,6 +4755,19 @@
           "items": {
             "type": "string"
           }
+        },
+        "OIOSAMLProfile": {
+          "type": "string",
+          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2 and OIOSAML3"
+        },
+        "NSISAssuranceLevel": {
+          "type": "string",
+          "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
+        },
+        "ProductType": {
+          "type": "string",
+          "maxLength": 32,
+          "description": "Specifies what software product that an Identity Provider is using. Valid values are 'ADFS' and empty."
         }
       }
     },
@@ -4068,13 +4781,6 @@
           "description": "The id of the job function role.",
           "type": "string"
         },
-        "Version": {
-          "type": "string",
-          "description": "The version of the job function role. The last part of the JFR name is always '/[version]', e.g. '/1', and this property must be set to '[version]' for this JFR, e.g. '1'"
-        },
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
         "DelegeretTil": {
           "type": "array",
           "items": {
@@ -4083,6 +4789,23 @@
         },
         "Anvenderkontekst": {
           "$ref": "#/definitions/Anvenderkontekst"
+        }
+      }
+    },
+    "KeyValue": {
+      "description": "Represents a key-value pair.",
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "properties": {
+        "Key": {
+          "type": "string",
+          "description": "Represents a Key of a key-value pair."
+        },
+        "Value": {
+          "type": "string",
+          "description": "Represents a Value of a key-value pair."
         }
       }
     },
@@ -4118,20 +4841,107 @@
     "SamlMetadata": {
       "description": "Represents a SAML2.0 metadata document",
       "required": [
-        "Id",
-        "Xml"
+        "Xml",
+        "MetadataUrl"
       ],
       "properties": {
-        "Aktiveringstidspunkt": {
-          "$ref": "#/definitions/Aktiveringstidspunkt"
-        },
-        "Id": {
-          "type": "string",
-          "description": "The id of this metadata document. The id also corresponds to the version of this metadata document. The id (or version) is computed derived from the certificate present in the metadta. Per the business rules, a different certificate must be used for each version of a metadata document."
-        },
         "Xml": {
           "type": "string",
           "description": "A base64 encoded string with the XML of the SAML2.0 metadata document"
+        },
+        "MetadataUrl": {
+          "type": "string",
+          "description": "An URL to pull the Saml Metadata"
+        }
+      }
+    },
+    "User": {
+      "description": "Represents a User.",
+      "required": [
+        "Authority",
+        "Id",
+        "Claims"
+      ],
+      "properties": {
+        "Authority": {
+          "type": "string",
+          "description": "Specifies what authority that it belongs to. This value is a CVR and is extracted from the in-use client certificate or OAuth 2.0 bearer token."
+        },
+        "Id": {
+          "type": "string",
+          "description": "An ID provided by the caller municipally, which can uniquely identify a user. When provisioning a user to match a local IdP login, this unique ID must match the serial number that comes in the NameID of a token returned from that IdP. In cases where a local UUID does not exist for a user provisioned to match a NemLog-In user, this unique ID must be set to the value of the 'https://data.gov.dk/model/core/eid/professional/uuid/persistent' claim."
+        },
+        "ModifiedDate": {
+          "description": "The latest modified date of the `User`.",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "Claims": {
+          "description": "A claims list for this `User`.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyValue"
+          }
+        }
+      }
+    },
+    "UserUpdate": {
+      "description": "Represents a User.",
+      "required": [
+        "Claims"
+      ],
+      "properties": {
+        "Claims": {
+          "description": "A claims list for this `User`.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyValue"
+          }
+        }
+      }
+    },
+    "UserBase": {
+      "description": "Represents a basic User information.",
+      "required": [
+        "Id",
+        "ModifiedDate"
+      ],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "An ID provided by the caller municipality, which can uniquely identify a user. This unique ID must match the serial number that comes in the NameID when using a Local IdP or the NemLog-in UUID (the 'https://data.gov.dk/model/core/eid/professional/uuid/persistent' claim)."
+        },
+        "ModifiedDate": {
+          "description": "The latest modified date of the `User`.",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "PageInfoResponse": {
+      "description": "Indicate the request is success and the will response all users.",
+      "properties": {
+        "TotalResults": {
+          "type": "integer"
+        },
+        "PageIndex": {
+          "type": "integer"
+        },
+        "PageSize": {
+          "type": "integer"
+        },
+        "SortBy": {
+          "type": "string"
+        },
+        "SortOrder": {
+          "type": "string"
+        },
+        "Resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
         }
       }
     }

@@ -1,0 +1,101 @@
+<Response ID="id4d05e80fa69e47739732d786116dc64b"
+          Version="2.0"
+          IssueInstant="2023-09-13T07:10:02.5891436Z"
+          Destination="https://oces3saml2wif3kombitnsis.safewhere.local/login.ashx"
+          Consent="urn:oasis:names:tc:SAML:2.0:consent:unspecified"
+          InResponseTo="ide3663fa813054cee9dc9abdb4d33a986"
+          xmlns="urn:oasis:names:tc:SAML:2.0:protocol"
+          >
+    <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion">https://saml.kombitoces3.safewhere.local/runtime/</Issuer>
+    <Status>
+        <StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </Status>
+    <Assertion ID="idb93be5b329964fdbbeef0317bed781eb"
+               IssueInstant="2023-09-13T07:10:02.590Z"
+               Version="2.0"
+               xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+               >
+        <Issuer>https://saml.kombitoces3.safewhere.local/runtime/</Issuer>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+                <Reference URI="#idb93be5b329964fdbbeef0317bed781eb">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                        <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                    <DigestValue>uonRVWsNO0S7q/DRcdmqJW/uf8Ag4C+fbWPxgVblfPk=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>mu7TKAcmnnVVOnQyEY8Od+NINxh08j3cqirsquzkpW9wGrvsNJkX0DRebqS6XqbtRU/CBcRlreQfaHC0Nq93a8DZnjI01tZfy8LWqXm0dg+jsBdEdhe4ZaU6WP02bgF9iKMR+vD1stH7O/1s6JrT5agbESsRY+QlQQbU8wkS4xNvzz+RffQBAunagwuQDVinLjW1hNvdhHFb582KjtbKNAVnFPrqIMuYR/pD4Ov+DDfy19KaOi/B5zMYr+WXqoWeGSsxSOOKl6oQ/H+vLIQc7Mh55OeODsRSRlWxqkTPmRa2T+PkeJAJ19w44qxRs66bYxmlbYv3KWR2Gspgf7ZEMSEhOffgyZlwvrCYFk7KrNQdQHL0ysE47Izp3iroKhvxWouGNi23qi3dRRYOFGLusUTnwGWbbhpMqlWf5AznL8HafC8me08cfkM/L2ffvUhn+voteiIpPRy9tBr2HUGAg+Kw7eMgmC+8rbYWHh82EmR81CQ6A5Uk7fL0zco0/XUZ</SignatureValue>
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>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</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+        <Subject>
+            <NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">C = DK, O = 19435075, CN = user1 oces3kombitidp, Serial = 555ed208-2ed1-4739-8d79-119908219311</NameID>
+            <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <SubjectConfirmationData InResponseTo="ide3663fa813054cee9dc9abdb4d33a986"
+                                         NotOnOrAfter="2023-09-13T07:15:02.590Z"
+                                         Recipient="https://oces3saml2wif3kombitnsis.safewhere.local/login.ashx"
+                                         />
+            </SubjectConfirmation>
+        </Subject>
+        <Conditions NotBefore="2023-09-13T07:10:02.590Z"
+                    NotOnOrAfter="2023-09-13T07:15:02.590Z"
+                    >
+            <AudienceRestriction>
+                <Audience>https://oces3saml2wif3kombitnsis.safewhere.local/</Audience>
+            </AudienceRestriction>
+        </Conditions>
+        <AuthnStatement AuthnInstant="2023-09-13T07:10:02.590Z"
+                        SessionIndex="WUkV1sgEnIlnouAlAhVpwQ=="
+                        >
+            <AuthnContext>
+                <AuthnContextClassRef>https://data.gov.dk/concept/core/nsis/loa/Substantial</AuthnContextClassRef>
+                <AuthenticatingAuthority>https://saml.oces3kombitidp.safewhere.local/runtime/</AuthenticatingAuthority>
+            </AuthnContext>
+        </AuthnStatement>
+        <AttributeStatement>
+            <Attribute Name="https://data.gov.dk/concept/core/nsis/loa"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>Substantial</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/email"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>user1@gmail.com</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/specVersion"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>OIO-SAML-3.0</AttributeValue>
+            </Attribute>
+            <Attribute Name="dk:gov:saml:attribute:KombitSpecVer"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>2.0</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/professional/cvr"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>19435075</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/professional/orgName"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>KOMBIT A/S</AttributeValue>
+            </Attribute>
+            <Attribute Name="https://data.gov.dk/model/core/eid/privilegesIntermediate"
+                       NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+                       >
+                <AttributeValue>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48YnBwOlByaXZpbGVnZUxpc3QgeG1sbnM6YnBwPSJodHRwOi8vZGlnc3QuZGsvb2lvc2FtbC9iYXNpY19wcml2aWxlZ2VfcHJvZmlsZSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSI+PFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NiI+PFByaXZpbGVnZT5odHRwOi8va29tYml0LmRrL3JvbGVzL3VzZXJzeXN0ZW1yb2xlL2tvbWJpdHJvbGxlNC8xPC9Qcml2aWxlZ2U+PENvbnN0cmFpbnQgTmFtZT0iaHR0cDovL2tvbWJpdC5kay9jb25zdHJhaW50cy9LTEUvNCI+S0xFLzQwMDAwMTwvQ29uc3RyYWludD48L1ByaXZpbGVnZUdyb3VwPjxQcml2aWxlZ2VHcm91cCBTY29wZT0idXJuOmRrOmdvdjpzYW1sOmN2ck51bWJlcklkZW50aWZpZXI6MTk0MzUwNzYiPjxQcml2aWxlZ2U+aHR0cDovL2tvbWJpdC5kay9yb2xlcy91c2Vyc3lzdGVtcm9sZS9rb21iaXRyb2xsZTQvMTwvUHJpdmlsZWdlPjxDb25zdHJhaW50IE5hbWU9Imh0dHA6Ly9rb21iaXQuZGsvY29uc3RyYWludHMvS0xFLzQiPktMRS80MDAwMDE8L0NvbnN0cmFpbnQ+PC9Qcml2aWxlZ2VHcm91cD48UHJpdmlsZWdlR3JvdXAgU2NvcGU9InVybjpkazpnb3Y6c2FtbDpjdnJOdW1iZXJJZGVudGlmaWVyOjE5NDM1MDc3Ij48UHJpdmlsZWdlPmh0dHA6Ly9rb21iaXQuZGsvcm9sZXMvdXNlcnN5c3RlbXJvbGUva29tYml0cm9sbGU1LzE8L1ByaXZpbGVnZT48Q29uc3RyYWludCBOYW1lPSJodHRwOi8va29tYml0LmRrL2NvbnN0cmFpbnRzL0tMRS81Ij5LTEUvNTAwMDAxPC9Db25zdHJhaW50PjxDb25zdHJhaW50IE5hbWU9Imh0dHA6Ly9rb21iaXQuZGsvY29uc3RyYWludHMvS0xFLzUiPktMRS81MDAwMDI8L0NvbnN0cmFpbnQ+PENvbnN0cmFpbnQgTmFtZT0iaHR0cDovL2tvbWJpdC5kay9jb25zdHJhaW50cy9LTEUvNSI+S0xFLzUwMDAwMzwvQ29uc3RyYWludD48L1ByaXZpbGVnZUdyb3VwPjxQcml2aWxlZ2VHcm91cCBTY29wZT0idXJuOmRrOmdvdjpzYW1sOmN2ck51bWJlcklkZW50aWZpZXI6MTk0MzUwNzciPjxQcml2aWxlZ2U+aHR0cDovL2tvbWJpdC5kay9yb2xlcy91c2Vyc3lzdGVtcm9sZS9rb21iaXRyb2xsZTUvMTwvUHJpdmlsZWdlPjxDb25zdHJhaW50IE5hbWU9Imh0dHA6Ly9rb21iaXQuZGsvY29uc3RyYWludHMvS0xFLzUiPktMRS81MDAwMDE8L0NvbnN0cmFpbnQ+PENvbnN0cmFpbnQgTmFtZT0iaHR0cDovL2tvbWJpdC5kay9jb25zdHJhaW50cy9LTEUvNSI+S0xFLzUwMDAwMjwvQ29uc3RyYWludD48Q29uc3RyYWludCBOYW1lPSJodHRwOi8va29tYml0LmRrL2NvbnN0cmFpbnRzL0tMRS81Ij5LTEUvNTAwMDAzPC9Db25zdHJhaW50PjwvUHJpdmlsZWdlR3JvdXA+PFByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NyI+PFByaXZpbGVnZT5odHRwOi8va29tYml0LmRrL3JvbGVzL3VzZXJzeXN0ZW1yb2xlL2tvbWJpdHJvbGxlNi8xPC9Qcml2aWxlZ2U+PENvbnN0cmFpbnQgTmFtZT0iaHR0cDovL2tvbWJpdC5kay9jb25zdHJhaW50cy9LTEUvNiI+Mi40LjE8L0NvbnN0cmFpbnQ+PC9Qcml2aWxlZ2VHcm91cD48UHJpdmlsZWdlR3JvdXAgU2NvcGU9InVybjpkazpnb3Y6c2FtbDpjdnJOdW1iZXJJZGVudGlmaWVyOjE5NDM1MDc3Ij48UHJpdmlsZWdlPmh0dHA6Ly9rb21iaXQuZGsvcm9sZXMvdXNlcnN5c3RlbXJvbGUva29tYml0cm9sbGU2LzE8L1ByaXZpbGVnZT48Q29uc3RyYWludCBOYW1lPSJodHRwOi8va29tYml0LmRrL2NvbnN0cmFpbnRzL0tMRS82Ij4yLjQuMTwvQ29uc3RyYWludD48L1ByaXZpbGVnZUdyb3VwPjwvYnBwOlByaXZpbGVnZUxpc3Q+</AttributeValue>
+            </Attribute>
+        </AttributeStatement>
+    </Assertion>
+</Response>
