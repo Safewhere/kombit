@@ -420,7 +420,7 @@
         }
       }
     },
-    "/Anvendersystemer/{id1}/Anvenderkontekster/{id2}": {
+    "/Anvendersystemer/{id}/Anvenderkontekster/{cvr}": {
       "delete": {
         "summary": "Delete a specific Anvenderkontekst (user context) from this Anvendersystem (user system)",
         "operationId": "deleteAnvenderkontekstByAnvendersystemId",
@@ -433,14 +433,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the Anvendersystem (user system)",
             "type": "string",
             "required": true
           },
           {
-            "name": "id2",
+            "name": "cvr",
             "in": "path",
             "description": "The CVR of the Anvenderkontekst to delete",
             "type": "string",
@@ -490,18 +490,17 @@
         }
       }
     },
-    "/Anvendersystemer/{id}/ImpersonationAssignments": {
+    "/Anvendersystemer/{id}/CanImpersonate/{value}":{
       "put": {
-        "summary": "Add ImpersonationAssignments on an Anvendersystem (user system)",
-        "operationId": "addImpersonationAssignmentsByAnvendersystemId",
-        "description": "Add an ImpersonationAssignments on an `Anvendersystem`",
+        "summary": "Set the CanImpersonate for this Anvendersystem (user system)",
+        "description": "Set the CanImpersonate for this `Anvendersystem` (user system)",
         "tags": [
           "Service"
         ],
-        "consumes": [
+        "produces": [
           "application/json"
         ],
-        "produces": [
+        "consumes": [
           "application/json"
         ],
         "parameters": [
@@ -509,93 +508,15 @@
             "name": "id",
             "in": "path",
             "description": "The id of the Anvendersystem (user system)",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The list of ImpersonationAssignments to add",
             "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ImpersonationAssignment"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
+            "type": "string"
           },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete an ImpersonationAssignment on an Anvendersystem (user system)",
-        "operationId": "deleteImpersonationAssignmentByAnvendersystemId",
-        "description": "Delete an ImpersonationAssignment on an `Anvendersystem`",
-        "tags": [
-          "Service"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
           {
-            "name": "id",
+            "name": "value",
             "in": "path",
-            "description": "The id of the Anvendersystem (user system)",
-            "type": "string",
-            "required": true
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "The ImpersonationAssignment to delete",
+            "description": "true/false to specify if this Anvendersystem can impersonate other IT systems",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/ImpersonationAssignment"
-            }
+            "type": "string"
           }
         ],
         "responses": {
@@ -719,7 +640,7 @@
         }
       }
     },
-    "/Anvendersystemer/{id1}/RoleAssignments/{id2}": {
+    "/Anvendersystemer/{id}/RoleAssignments/{roleAssignmentId}": {
       "delete": {
         "summary": "Delete a specific RoleAssignment from this Anvendersystem (user system)",
         "operationId": "deleteRoleAssignmentByAnvendersystemId",
@@ -735,14 +656,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "description": "The id of the Anvendersystem (user system)",
             "type": "string",
             "required": true
           },
           {
-            "name": "id2",
+            "name": "roleAssignmentId",
             "in": "path",
             "description": "The unique id of this RoleAssignment. This property is generated by the caller that provisions this role assignment, and is used again by this caller to delete the role assignment. The value of this Id must be URL safe, since it's used in the path in a DELETE request to delete the role assignment.",
             "type": "string",
@@ -1090,7 +1011,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to get. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to get. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1153,7 +1074,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to update. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to update. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           },
@@ -1222,7 +1143,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service to delete. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service to delete. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "type": "string",
             "required": true
           }
@@ -1273,7 +1194,7 @@
     "/Service/{id}/ServiceMetadata": {
       "put": {
         "summary": "Add service metadata to the list of service metadata on this service",
-        "description": "Add service metadata to the list of service metadtaa on the specified `Service`",
+        "description": "Add service metadata to the list of service metadata on the specified `Service`",
         "tags": [
           "Service"
         ],
@@ -1287,17 +1208,20 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
             "name": "body",
             "in": "body",
-            "description": "The service metadata to add",
+            "description": "A list of service metadata to add",
             "required": true,
             "schema": {
+              "type": "array",
+              "items": {
               "$ref": "#/definitions/ServiceMetadata"
+              }
             }
           }
         ],
@@ -1344,7 +1268,7 @@
         }
       }
     },
-    "/Service/{id1}/ServiceMetadata/{id2}": {
+    "/Service/{id}/ServiceMetadata/{serviceMetadataId}": {
       "delete": {
         "summary": "Delete a version of service metadata",
         "description": "Delete a version of service metadata",
@@ -1359,14 +1283,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service. The id must be the base64 encoded identifier of the service. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "serviceMetadataId",
             "in": "path",
             "description": "The id of the metadata to delete",
             "required": true,
@@ -1546,7 +1470,7 @@
     "/Servicesystemroller/{id}": {
       "get": {
         "summary": "Get a specific Servicesystemrolle",
-        "description": "Get a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Get a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1609,7 +1533,7 @@
       },
       "put": {
         "summary": "Update a specific Servicesystemrolle",
-        "description": "Update a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Update a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1678,7 +1602,7 @@
       },
       "delete": {
         "summary": "Delete a specific Servicesystemrolle",
-        "description": "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+        "description": "Delete a specific `Servicesystemrolle`. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
         "tags": [
           "Role"
         ],
@@ -1754,7 +1678,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "The id of the service system role to add a Dataafgraensningstype for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service system role to add a Dataafgraensningstype for. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
@@ -1814,7 +1738,7 @@
         }
       }
     },
-    "/Servicesystemroller/{id1}/Dataafgraensningstyper/{id2}": {
+    "/Servicesystemroller/{id}/Dataafgraensningstyper/{dataafgraensningstypeId}": {
       "delete": {
         "summary": "Delete a Dataafgraensningstype from the Servicesystemrolle",
         "description": "Delete a Dataafgraensningstype from the Servicesystemrolle",
@@ -1823,14 +1747,14 @@
         ],
         "parameters": [
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
-            "description": "The id of the service system role. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding, to ensure interoperability.",
+            "description": "The id of the service system role. The id must be the base64 encoded SAML2.0 attribute name of the SAML2.0 attribute. See processing instructions for handling base64 encoding to ensure interoperability.",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id2",
+            "name": "dataafgraensningstypeId",
             "in": "path",
             "description": "The id of the Dataafgraensningstype to delete",
             "required": true,
@@ -1929,12 +1853,9 @@
             "$ref": "#/definitions/RoleAssignment"
           }
         },
-        "ImpersonationAssignments": {
-          "description": "A list of impersonation assignments assigned to this Anvendersystem (service consumer).",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ImpersonationAssignment"
-          }
+        "CanImpersonate": {
+          "type": "boolean",
+          "description": "Specifies if this Anvendersystem can impersonate other systems."
         }
       }
     },
@@ -2009,24 +1930,6 @@
         }
       }
     },
-    "ImpersonationAssignment": {
-      "description": "The relation between an Anvenderkontekst (user context) and a certificate for an Anvendersystem (service consumer). An impersonation assignment is a relation between a Anvendersystem (service consumer) as represented by a certificate, and a user context (Anvenderkontekst) for which another Anvendersystem (service consumer) may request a proxy-OnBehalfOf token. The ImpersonationAssignment is added to the Anvendersystem (service consumer) that may request the token.",
-      "required": [
-        "Aktiveringstidspunkt",
-        "Anvenderkontekst",
-        "OcesCertificate"
-      ],
-      "properties": {
-        "Anvenderkontekst": {
-          "type": "string",
-          "description": "The Anvenderkontekst (user context) this role assignment applies to. The Anvenderkontekst is specified as the CVR of the organization."
-        },
-        "OcesCertificate": {
-          "type": "string",
-          "description": "A base64 encoded string representing the certificate for this Anvendersystem (user system). The string MUST be the certificate in PEM format, and MUST NOT contain Begin- and End lines. The string MUST only contain the actual base64 encoded data."
-        }
-      }
-    },
     "RoleAssignment": {
       "description": "The relation between an Anvendersystem (user system) and assigned Servicesystemrolle for a Service",
       "required": [
@@ -2068,7 +1971,6 @@
       "description": "Metadata for a service",
       "required": [
         "Id",
-        "Aktiveringstidspunkt",
         "Identifier"
       ],
       "properties": {
