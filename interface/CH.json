@@ -2845,7 +2845,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2' or 'OIOSAML3'.",
+            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2'', 'OIOSAML2_ADFS_MULTIPLEAUTHN', 'OIOSAML2_WITHOUT_REQUESTED_LOA', 'OIOSAML3', 'OIOSAML3_ADFS_MULTIPLEAUTHN', or 'OIOSAML3_WITHOUT_REQUESTED_LOA'.",
             "required": true,
             "type": "string"
           }
@@ -2924,78 +2924,6 @@
               "title": "Praesentationsnavn",
               "description": "The Præsentationsnavn (display name) of this identity provider."
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response"
-          },
-          "400": {
-            "description": "Invalid data supplied",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "404": {
-            "description": "Unknown id",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "409": {
-            "description": "Conflicting request",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "500": {
-            "description": "Unexpected server error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          },
-          "503": {
-            "description": "Unavailable",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/IdentityProviders/{id}/ProductType/{value}": {
-      "put": {
-        "summary": "Set the ProductType for this IdentityProvider",
-        "description": "Set the `ProductType` for this `IdentityProvider`",
-        "tags": [
-          "IdP"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The id of the identity provider to set product type for. This is the SAML2.0 entityId of the IdentityProvider. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "value",
-            "in": "path",
-            "description": "The product type of this identity provider. Its value must be either 'ADFS' or 'Unspecified'. The 'Unspecified' value is equivalent to the empty value when POST-ing an Identity Provider. This alternative is needed because we cannot leave the parameter empty which causes a routing issue. When the ProductType field is 'Unspecified', the empty value is actually saved to the database to ensure data consistency. This means that when you GET the Identity Provider back, its ProductType attribute is empty.",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -4758,16 +4686,11 @@
         },
         "OIOSAMLProfile": {
           "type": "string",
-          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2 and OIOSAML3"
+          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2, OIOSAML2_ADFS_MULTIPLEAUTHN, OIOSAML2_WITHOUT_REQUESTED_LOA, OIOSAML3, OIOSAML3_ADFS_MULTIPLEAUTHN, and OIOSAML3_WITHOUT_REQUESTED_LOA"
         },
         "NSISAssuranceLevel": {
           "type": "string",
           "description": "Describes which level the Identity Provider can issue (the highest one). Valid values are the 3 NSIS levels ('https://data.gov.dk/concept/core/nsis/loa/Low', 'https://data.gov.dk/concept/core/nsis/loa/Substantial' or 'https://data.gov.dk/concept/core/nsis/loa/High'). The provisioning service ignores this value when the OIOSAMLProfile is OIOSAML2."
-        },
-        "ProductType": {
-          "type": "string",
-          "maxLength": 32,
-          "description": "Specifies what software product that an Identity Provider is using. Valid values are 'ADFS' and empty."
         }
       }
     },
