@@ -2845,7 +2845,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2'', 'OIOSAML2_ADFS_MULTIPLEAUTHN', 'OIOSAML2_WITHOUT_REQUESTED_LOA', 'OIOSAML3', 'OIOSAML3_ADFS_MULTIPLEAUTHN', or 'OIOSAML3_WITHOUT_REQUESTED_LOA'.",
+            "description": "The OIOSAML Profile for this identity provider. The value MUST be 'OIOSAML2', 'OIOSAML2_ADFS_MULTIPLEAUTHN', 'OIOSAML2_WITHOUT_REQUESTED_LOA', 'OIOSAML3', 'OIOSAML3_ADFS_MULTIPLEAUTHN', or 'OIOSAML3_ADFS_RELAY_STATE'.",
             "required": true,
             "type": "string"
           }
@@ -4686,7 +4686,7 @@
         },
         "OIOSAMLProfile": {
           "type": "string",
-          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2, OIOSAML2_ADFS_MULTIPLEAUTHN, OIOSAML2_WITHOUT_REQUESTED_LOA, OIOSAML3, OIOSAML3_ADFS_MULTIPLEAUTHN, and OIOSAML3_WITHOUT_REQUESTED_LOA"
+          "description": "Specifies what OIOSAML profile a Identity Provider uses. Valid values are OIOSAML2, OIOSAML2_ADFS_MULTIPLEAUTHN, OIOSAML2_WITHOUT_REQUESTED_LOA, OIOSAML3, OIOSAML3_ADFS_MULTIPLEAUTHN, and OIOSAML3_ADFS_RELAY_STATE"
         },
         "NSISAssuranceLevel": {
           "type": "string",
