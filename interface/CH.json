@@ -1446,7 +1446,7 @@
           {
             "name": "value",
             "in": "path",
-            "description": "The attribute profile for this user system. Supported values are KOMBIT and SEB. Default value when empty is KOMBIT.",
+            "description": "The attribute profile for this user system. Supported values are KOMBIT, SEB and KOMBIT_WITHOUT_PERSONAL_DATA. Default value when empty is KOMBIT.",
             "required": true,
             "type": "string"
           }
@@ -4512,7 +4512,7 @@
         },
         "AttributeProfile": {
           "type": "string",
-          "description": "Specifies what attribute profile that a User System needs. Supported values are KOMBIT and SEB. Default value when empty is KOMBIT."
+          "description": "Specifies what attribute profile that a User System needs. Supported values are KOMBIT, SEB and KOMBIT_WITHOUT_PERSONAL_DATA. Default value when empty is KOMBIT."
         },
         "SamlMetadata": {
           "description": "A SAML2.0 metadata document for this `BrugervendtSystem`",
