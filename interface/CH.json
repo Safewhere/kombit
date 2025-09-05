@@ -5127,6 +5127,122 @@
           }
         }
       }
+    },
+    "/Validation/BrugervendteSystemSamlMetadata": {
+      "post": {
+        "summary": "Validate BrugervendteSystem SAML metadata's SPSSODescriptor",
+        "description": "Validates SAML metadata for a BrugervendteSystem (Service Provider). Performs comprehensive validation including schema compliance (SAML 2.0 metadata XSD), OCES3 certificate validation and uniqueness checks, endpoint binding validation (AssertionConsumerService must use HTTP-POST, SingleLogoutService must use HTTP-Redirect), metadata signature validation, and KeyDescriptor validation. Requires client certificate authentication.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Metadata validation request containing SAML metadata to validate. Must include SamlMetadata with either Xml (base64-encoded SAML metadata, max size limit applies) or MetadataUrl (accessible HTTPS URL), but not both.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MetadataValidation"
+            }
+          }
+        ],
+        "tags": [
+          "Validation"
+        ],
+        "responses": {
+          "200": {
+            "description": "Validation completed successfully. Returns the entityID of the validated EntityDescriptor.",
+            "schema": {
+              "$ref": "#/definitions/MetadataValidationSuccessResult"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied. Common scenarios include: input validation failures (missing required fields, both Xml and MetadataUrl provided, metadata size exceeds limit, Base64 decode failures), metadata schema validation failures, certificate validation errors (expired, not OCES3 compliant), endpoint binding validation errors (SPSSODescriptor must have HTTP-POST for AssertionConsumerService and HTTP-Redirect for SingleLogoutService), KeyDescriptor validation failures, or certificate uniqueness conflict - used by another BrugervendteSystem.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Client certificate authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error during validation process",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Service unavailable: external validation services (OCSP/CRL) are not accessible, or the metadata URL is not found or not accessible.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Validation/IdentityProviderSamlMetadata": {
+      "post": {
+        "summary": "Validate Identity Provider SAML metadata's IDPSSODescriptor",
+        "description": "Validates SAML metadata for an Identity Provider. Performs comprehensive validation including schema compliance (SAML 2.0 metadata XSD), OCES3 certificate validation and uniqueness checks, endpoint binding validation (SingleSignOnService must use HTTP-Redirect, SingleLogoutService must use HTTP-Redirect), metadata signature validation, and KeyDescriptor validation. Requires client certificate authentication.",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Metadata validation request containing SAML metadata to validate. Must include SamlMetadata with either Xml (base64-encoded SAML metadata, max size limit applies) or MetadataUrl (accessible HTTPS URL), but not both.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MetadataValidation"
+            }
+          }
+        ],
+        "tags": [
+          "Validation"
+        ],
+        "responses": {
+          "200": {
+            "description": "Validation completed successfully. Returns the entityID of the validated metadata.",
+            "schema": {
+              "$ref": "#/definitions/MetadataValidationSuccessResult"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied. Common scenarios include: input validation failures (missing required fields, both Xml and MetadataUrl provided, metadata size exceeds limit, Base64 decode failures), metadata schema validation failures, certificate validation errors (expired, not OCES3 compliant), endpoint binding validation errors (IDPSSODescriptor must have HTTP-Redirect for both SingleSignOnService and SingleLogoutService), KeyDescriptor validation failures, or certificate uniqueness conflict - used by another Identity provider.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Client certificate authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error during validation process",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Service unavailable: external validation services (OCSP/CRL) are not accessible, or the metadata URL is not found or not accessible.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -5326,6 +5442,18 @@
         }
       }
     },
+    "MetadataValidationSuccessResult": {
+      "description": "Success result containing the entity ID of the validated EntityDescriptor",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "The SAML EntityID extracted from the validated metadata"
+        }
+      }
+    },
     "Error": {
       "required": [
         "code",
@@ -5342,6 +5470,13 @@
         "version": {
           "type": "string",
           "description": "Set to '2.0' to indicate that a response is from the new service."
+        },
+        "errorDetails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Collection of detailed error messages for validation scenarios with multiple errors."
         }
       }
     },
@@ -5682,6 +5817,17 @@
           "items": {
             "$ref": "#/definitions/User"
           }
+        }
+      }
+    },
+    "MetadataValidation": {
+      "description": "Represents the input body for validation endpoints. Either Xml or MetadataUrl must be provided in SamlMetadata, but not both.",
+      "required": [
+        "SamlMetadata"
+      ],
+      "properties": {
+        "SamlMetadata": {
+          "$ref": "#/definitions/SamlMetadata"
         }
       }
     }
