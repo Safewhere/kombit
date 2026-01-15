@@ -5451,6 +5451,13 @@
         "Id": {
           "type": "string",
           "description": "The SAML EntityID extracted from the validated metadata"
+        },
+        "WarningDetails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Collection of warning messages for validation scenarios."
         }
       }
     },
@@ -5460,23 +5467,30 @@
         "message"
       ],
       "properties": {
-        "code": {
+        "Code": {
           "type": "integer",
           "format": "int32"
         },
-        "message": {
+        "Message": {
           "type": "string"
         },
-        "version": {
+        "Version": {
           "type": "string",
           "description": "Set to '2.0' to indicate that a response is from the new service."
         },
-        "errorDetails": {
+        "ErrorDetails": {
           "type": "array",
           "items": {
             "type": "string"
           },
           "description": "Collection of detailed error messages for validation scenarios with multiple errors."
+        },
+        "WarningDetails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Collection of warning messages for validation scenarios."
         }
       }
     },
