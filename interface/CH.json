@@ -4908,6 +4908,78 @@
         }
       }
     },
+    "/OIDCBrugervendteSystemer/{id}/AttributeProfile/{value}": {
+      "put": {
+        "summary": "Set the attribute profile for this OIDC BrugervendtSystem (user system)",
+        "description": "Set the attribute profile for this `OIDCBrugervendtSystem` (user system)",
+        "tags": [
+          "SP"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the OIDC user system to set attribute profile for. This is the client ID of the OIDC BrugervendtSystem. The id must be the base64 encoded. See processing instructions for handling base64 encoding to ensure interoperability.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The attribute profile for this OIDC user system. Supported values are KOMBIT, SEB and KOMBIT_WITHOUT_PERSONAL_DATA. Default value when empty is KOMBIT.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Invalid data supplied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Unknown id",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflicting request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "503": {
+            "description": "Unavailable",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/OIDCBrugervendteSystemer/{id}/OIDCMetadata": {
       "put": {
         "summary": "Update the OIDC metadata version on the specified OIDC user system",
@@ -5358,6 +5430,10 @@
           "format": "int32",
           "description": "The minimum requested NIST assurance level of this OIDC BrugervendtSystem (user system). Either this property or the NSISAssuranceLevel property must have a value, but both properties cannot simultaneously have values. This property, if specified, must be a value of 1-4."
         },
+        "AttributeProfile": {
+          "type": "string",
+          "description": "Specifies what attribute profile that an OIDC User System needs. Supported values are KOMBIT, SEB and KOMBIT_WITHOUT_PERSONAL_DATA. Default value when empty is KOMBIT."
+        },
         "OIDCMetadata": {
           "description": "An object of type OIDCMetadata",
           "$ref": "#/definitions/OIDCMetadata"
@@ -5678,15 +5754,19 @@
         },
         "jwks": {
           "type": "string",
-          "description": "Required when the 'token_endpoint_auth_method' attribute is 'private_key_jwt'. This is the client's JSON Web Key Set [RFC7517] document value, which contains the client's public keys. The value of this field MUST be a JSON object containing a valid JWK Set."
+          "description": "This field or 'jwks_uri' is required when the 'token_endpoint_auth_method' attribute is 'private_key_jwt' or when ‘id_token/encrypted_response_alg’ is set to an algorithm. This is the client's JSON Web Key Set [RFC7517] document value, which contains the client's public keys. The value of this field MUST be a JSON object containing a valid JWK Set."
+        },
+        "jwks_uri": {
+          "type": "string",
+          "description": "The URL where the JWK Set document can be retrieved. This field or jwks is required when the 'token_endpoint_auth_method' attribute is 'private_key_jwt' or when ‘id_token/encrypted_response_alg’ is set to an algorithm. The value of this field MUST be a valid URL."
         },
         "frontchannel_logout_uri": {
           "type": "string",
-          "description": "The URL that will cause the User System to log itself out when rendered in an iframe by the CH2. No wildcards are allowed and the URI must not include a fragment component. At least one of the 'frontchannel_logout_uri' and 'backchannel_logout_uri' properties must have a value. When both properties have values, front channel logout takes precedence."
+          "description": "The URL that will cause the User System to log itself out when rendered in an iframe by the CH2. No wildcards are allowed and the URI must not include a fragment component."
         },
         "backchannel_logout_uri": {
           "type": "string",
-          "description": "The URL that the CH2 will cause the User System to log itself out when received an logout request from the CH2. No wildcards are allowed and the URI must not include a fragment component. At least one of the 'frontchannel_logout_uri' and 'backchannel_logout_uri' properties must have a value. When both properties have values, front channel logout takes precedence."
+          "description": "The URL that the CH2 will cause the User System to log itself out when received an logout request from the CH2. No wildcards are allowed and the URI must not include a fragment component."
         },
         "post_logout_redirect_uri": {
           "type": "string",
@@ -5715,7 +5795,7 @@
         },
         "encrypted_response_alg": {
           "type": "string",
-          "description": "JWE alg algorithm required for encrypting the ID Token issued to this Client. “alg” stands for key management algorithm. It defines how the CEK (Content Encryption Key) is generated, encrypted, or derived from another key. If this is requested, the response will be signed then encrypted, with the result being a Nested JWT, as defined in JWT.Supported values are 'RSA-OAEP', 'RSA-OAEP-256', 'A128KW', 'A192KW', 'A256KW'. The default, if omitted, is 'RSA-OAEP-256'."
+          "description": "JWE alg algorithm required for encrypting the ID Token issued to this Client. “alg” stands for key management algorithm. It defines how the CEK (Content Encryption Key) is generated, encrypted, or derived from another key. If this is requested, the response will be signed then encrypted, with the result being a Nested JWT, as defined in JWT.Supported values are 'None', 'RSA-OAEP', 'RSA-OAEP-256', 'A128KW', 'A192KW', 'A256KW'. The default, if omitted, is 'None'. This also means that the default behavior, if omitted or set to 'None', is that no encryption is performed."
         },
         "encrypted_response_enc": {
           "type": "string",
