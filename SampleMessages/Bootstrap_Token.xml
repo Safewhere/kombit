@@ -1,0 +1,74 @@
+<Assertion ID="_3cfc73bf-a913-4efc-9c97-0d6c178d5b8a"
+           IssueInstant="2026-06-18T03:40:11Z"
+           Version="2.0"
+           xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+	<Issuer>https://saml.kombit.anyid.eu/runtime/</Issuer>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+			<Reference URI="#_3cfc73bf-a913-4efc-9c97-0d6c178d5b8a">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+				<DigestValue>QOhpwckBIanGXNR2HvJannV4pyaJfMuyTN+aXt4qY5U=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>fXnRhf5p4U2lBgQT2isiztAJahxe8owJk8fhER8qlT0ZHzO7QwUKdz/Xizbks2Py0kceILyTtwawLg04xXaka/AQk3aS7bcN50eVJSlawMeclQCfCWoEGEZ1+QtwKWKvzs38riyAE6DdSlg7+y3cHgQHrysAz5sF4QRbvQH6bsLhcFoBO9JIqJEZeR2J4SDGFQWbCB+TC8jF1ocGT4BIPoiLv+/be1KVCz2UcVG2TUQk9TlZkS0nmbUIxj9MnxF9/ChRPlVVpfgIKpmZ+JAsfxWJZc5m3mI+30qn78cPXZWQUjYefaB6cEcakiK+z1GJxIVHfI7DlnCqkOaszbv0OC0k0blfFPtvkZYvJDPNr0qpiB0D629hEDOqRuYq6vpgW9DLiL6j4DpbaFHQJFh6ryxjn+4rxhnU377HMIrpiIGjkjahJZjOhFRNhIyBrGHuDFBi4WxTV6yT8PUCPrJ2Dp7ol13zbqxhWj9jaRHzcTHW1RuTSyPXazlhhR1EQvi6</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>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</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<Subject>
+		<NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">local-idp-ac4e-4d0d-4b74-9397-c7833030a26c</NameID>
+		<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+			<SubjectConfirmationData p4:type="KeyInfoConfirmationDataType"
+			                         xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">
+				<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+					<X509Data>
+						<X509Certificate>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</X509Certificate>
+					</X509Data>
+				</KeyInfo>
+			</SubjectConfirmationData>
+		</SubjectConfirmation>
+	</Subject>
+	<Conditions NotOnOrAfter="2026-06-18T11:40:11Z">
+		<AudienceRestriction>
+			<Audience>https://sts.sosi.dk/</Audience>
+		</AudienceRestriction>
+	</Conditions>
+	<AttributeStatement>
+		<Attribute Name="https://data.gov.dk/model/core/specVersion"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>OIO-SAML-3.0</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://healthcare.data.gov.dk/model/core/specVersion"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>OIO-SAML-H-3.0</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://data.gov.dk/model/core/eid/professional/cvr"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>19435075</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://data.gov.dk/model/core/eid/professional/uuid/persistent"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>local-idp-ac4e-4d0d-4b74-9397-c7833030a26c</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://data.gov.dk/model/core/eid/professional/orgName"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>KOMBIT A/S</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://data.gov.dk/concept/core/nsis/loa"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>Substantial</AttributeValue>
+		</Attribute>
+		<Attribute Name="https://data.gov.dk/model/core/eid/privilegesIntermediate"
+		           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<AttributeValue>PGJwcDpQcml2aWxlZ2VMaXN0IHhtbG5zOmJwcD0iaHR0cDovL2RpZ3N0LmRrL29pb3NhbWwvYmFzaWNfcHJpdmlsZWdlX3Byb2ZpbGUiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPg0KICA8YnBwOlByaXZpbGVnZUdyb3VwIFNjb3BlPSJ1cm46ZGs6Z292OnNhbWw6Y3ZyTnVtYmVySWRlbnRpZmllcjoxOTQzNTA3NSI+DQogICAgPGJwcDpQcml2aWxlZ2U+dXJuOmRrOmhlYWx0aGNhcmU6bmF0aW9uYWwtZmVkZXJhdGlvbi1yb2xlOkF1ZGlvbG9naU1lZGFyYlI0PC9icHA6UHJpdmlsZWdlPg0KICAgIDxicHA6UHJpdmlsZWdlPnVybjpkazpoZWFsdGhjYXJlOm5hdGlvbmFsLWZlZGVyYXRpb24tcm9sZTpQbGVqZUFzc1IzPC9icHA6UHJpdmlsZWdlPg0KICA8L2JwcDpQcml2aWxlZ2VHcm91cD4NCiAgPGJwcDpQcml2aWxlZ2VHcm91cCBTY29wZT0idXJuOmRrOmdvdjpzYW1sOmN2ck51bWJlcklkZW50aWZpZXI6MTk0MzUwNzYiPg0KICAgIDxicHA6UHJpdmlsZWdlPnVybjpkazpoZWFsdGhjYXJlOm5hdGlvbmFsLWZlZGVyYXRpb24tcm9sZTpBdWRpb2xvZ2lNZWRhcmJSNDwvYnBwOlByaXZpbGVnZT4NCiAgPC9icHA6UHJpdmlsZWdlR3JvdXA+DQo8L2JwcDpQcml2aWxlZ2VMaXN0Pg==</AttributeValue>
+		</Attribute>
+	</AttributeStatement>
+</Assertion>
